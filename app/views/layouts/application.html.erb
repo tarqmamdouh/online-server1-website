@@ -53,7 +53,7 @@
 
               <li class="col-md-8 user-name">
 
-                <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
+                <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.username, length: 25)).html_safe,
 
                             edit_user_registration_path, title: 'Edit Profile' %>
 
