@@ -13,6 +13,10 @@
         <%= f.label :username %>
         <%= f.text_field :username, autofocus: true, class: 'form-control' %>
       </div>
+      <div class="field">
+      <%= f.label :birthdate %>
+      <%= f.date_field :birthdate, class: 'form-control' %>
+      </div>
       <div class="form-group">
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>
