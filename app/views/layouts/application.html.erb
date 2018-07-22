@@ -84,6 +84,15 @@
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
+          <% flash.each do |name, msg| %>
+
+            <ul>
+
+              <li><%= msg %></li>
+
+            </ul>
+
+          <% end %>
           <%= yield %>
         </div>
       </div><!--/row-->
