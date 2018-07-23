@@ -1,4 +1,7 @@
 <h1 align="center">Listing all articles</h1>
+<div align="center">
+  <%= will_paginate %>
+</div>
 
 <% @articles.each do |article| %>
 
@@ -17,6 +20,15 @@
         <div class="article-body">
 
           <%= truncate(article.description, length: 100) %>
+          <div class="article-meta-details">
+
+            <small>Created by: <%= article.user.username if article.user%>,
+
+              <%= time_ago_in_words(article.created_at) %> ago,
+
+              last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
+
+          </div>
 
         </div>
 
@@ -39,3 +51,6 @@
   </div>
 
 <% end %>
+<div align="center">
+  <%= will_paginate %>
+</div>
