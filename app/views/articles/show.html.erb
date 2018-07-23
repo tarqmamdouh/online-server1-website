@@ -9,7 +9,7 @@
   <%= simple_format(@article.description) %>
 
   <div class="article-actions">
-    <% if current_user == @article.user %>
+    <% if current_user == current_user.admin? %>
 
     <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
 
