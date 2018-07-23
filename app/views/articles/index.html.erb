@@ -31,6 +31,7 @@
           </div>
 
         </div>
+        <% if current_user == article.user %>
 
         <div class="article-actions">
 
@@ -43,7 +44,7 @@
                       class: "btn btn-xs btn-danger" %>
 
         </div>
-
+<% end %>
       </div>
 
     </div>
