@@ -1,5 +1,7 @@
 <h1 align="center">Listing all articles</h1>
-
+<% if current_user.admin? %>
+  <%= link_to "new article", new_article_path %>
+  <% end %>
 <div align="center">
   <%= will_paginate %>
 </div>
@@ -28,11 +30,10 @@
               <%= time_ago_in_words(article.created_at) %> ago,
 
               last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
-
           </div>
 
         </div>
-        <% if current_user == current_user.admin? %>
+        <% if current_user.admin? %>
 
         <div class="article-actions">
 
