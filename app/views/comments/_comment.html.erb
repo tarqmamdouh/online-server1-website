@@ -1,3 +1,5 @@
+<h2>This Article has <%= pluralize(@comments.count, "Comment") %></h2>
+
 <% @comments.each do |comment| %>
   <p><b><%= comment.user.username %></b></p>
 <p><%= comment.content %></p>
