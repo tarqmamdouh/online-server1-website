@@ -17,6 +17,7 @@
         <% if article.categories.any? %>
           <p>Categories: <%= render article.categories %></p>
         <% end %>
+        <h2>This Article has <%= pluralize(article.comments.count,"Comment") %></h2>
         <% if current_user.admin? %>
           <div class="article-actions">
             <%= link_to "Edit this article" , edit_article_path(article), class: "btn btn-xs btn-primary" %>
