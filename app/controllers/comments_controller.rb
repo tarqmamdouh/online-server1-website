@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   before_action :find_article
-  before_action :find_comment , only: [:destroy, :edit , :update]
+  before_action :find_comment , only: [:destroy, :edit , :update, :comment_owner,:comment_deleter]
+  before_action :comment_owner , only: [:edit, :update]
+  before_action :comment_deleter , only: [:destroy]
   def create
 @comment = @article.comments.create(params[:comment].permit(:content))
     @comment.user_id = current_user.id
@@ -36,5 +38,19 @@ class CommentsController < ApplicationController
   end
   def find_comment
     @comment = @article.comments.find(params[:id])
+  end
+  def comment_owner
+    unless current_user.id == @comment.user_id
+      flash[:danger]= "You cant do that!!!"
+      redirect_to @article
+
+    end
+  end
+  def comment_deleter
+    unless (current_user.id == @comment.user_id || current_user.admin?)
+      flash[:danger]= "You cant do that!!!"
+      redirect_to @article
+
+    end
   end
 end
