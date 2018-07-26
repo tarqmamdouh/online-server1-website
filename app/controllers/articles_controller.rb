@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
     end
 
   def show
-@comments = Comment.where(article_id: @article).order("created_at DESC")
+@comments = Comment.where(article_id: @article)
   end
   def destroy
 
