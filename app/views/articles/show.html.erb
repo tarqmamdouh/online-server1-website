@@ -1,4 +1,9 @@
-<h2 align="center">Title: <%= @article.title %></h2>
+<h2 align="center">Title: <%= @article.title %> <small><%if @article.updated_at != @article.created_at %>
+    (Edited)
+  <% end %></small></h2>
+
+
+
 <div class="well col-xs-8 col-xs-offset-2">
   <% if @article.user %>
     <ul class="listing">

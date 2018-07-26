@@ -5,7 +5,12 @@
         <div class= "article-title"?>
 
           <%=link_to article.title, article_path(article) %>
+          <small><%if article.updated_at != article.created_at %>
+              (Edited)
+            <% end %>
+          </small>
         </div>
+
         <div class="article-body">
           <%= truncate(article.description,length: 100) %>
           <div class="article-meta-details">
