@@ -13,6 +13,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'jquery-rails'
 gem 'tiny_tds'
+gem 'byebug'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
