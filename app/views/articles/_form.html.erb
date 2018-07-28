@@ -1,6 +1,6 @@
 <% if @article.errors.any? %>
 
-  <h2>The following errors prevented the article from getting created</h2>
+  <h2 xmlns="http://www.w3.org/1999/html">The following errors prevented the article from getting created</h2>
 
   <ul>
 
@@ -68,6 +68,37 @@
         </div>
 
       </div>
+      <div class="form-group">
+
+        <div class="control-label col-sm-2">
+
+          <%= f.label "thumbnail image" %>
+
+        </div>
+
+        <div class="col-sm-8">
+
+          <%= f.text_field :timage, class: "form-control", placeholder: "Link to thumbnail image", autofocus: true %>
+
+        </div>
+
+      </div>
+      <div class="form-group">
+
+        <div class="control-label col-sm-2">
+
+          <%= f.label "featured image" %>
+
+        </div>
+
+        <div class="col-sm-8">
+
+          <%= f.text_field :fimage, class: "form-control", placeholder: "Link to Featured image", autofocus: true %>
+
+        </div>
+
+      </div>
+
 
       <div class="form-group">
 
