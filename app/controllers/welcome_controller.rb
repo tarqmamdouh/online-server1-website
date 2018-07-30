@@ -9,4 +9,7 @@ class WelcomeController < ApplicationController
   def unconfirmed
 
   end
+  def admin
+
+  end
 end
