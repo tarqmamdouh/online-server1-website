@@ -14,6 +14,7 @@ gem 'devise-bootstrap-views'
 gem 'jquery-rails'
 gem 'tiny_tds'
 gem 'byebug'
+gem 'sequel'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
