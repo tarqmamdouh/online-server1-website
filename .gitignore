@@ -16,7 +16,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-.idea/
+.idea/*
 /config/local_env.yml
 
 
