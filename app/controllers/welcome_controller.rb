@@ -5,11 +5,11 @@ class WelcomeController < ApplicationController
 
   end
   def confirmed
-
   end
+
   def unconfirmed
-
   end
+
   def admin
 
   end

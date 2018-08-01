@@ -15,6 +15,8 @@ gem 'jquery-rails'
 gem 'tiny_tds'
 gem 'byebug'
 gem 'sequel'
+gem 'devise-encryptable'
+
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

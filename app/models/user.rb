@@ -2,11 +2,14 @@ class User < ApplicationRecord
   has_many :articles
   has_many :comments, dependent: :destroy
   # Include default devise modules. Others available are:
+
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :encryptable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
+
   validates :username , presence: true , uniqueness: {case_sensitive:false},
             length: {minimum: 3 , maximum: 25}
+
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
   validates_inclusion_of :birthdate,
@@ -19,4 +22,12 @@ class User < ApplicationRecord
     login = conditions.delete(:login)
     where(conditions).where(["lower(username) = :value OR lower(email) = :value", {value: login.strip.downcase}]).first
   end
+
+  def password_salt
+    'no salt'
+  end
+
+  def password_salt=(new_salt)
+  end
+
 end

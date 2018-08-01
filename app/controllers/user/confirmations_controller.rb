@@ -1,3 +1,4 @@
+require "SQL"
 class User::ConfirmationsController < Devise::ConfirmationsController
   protected
   def after_confirmation_path_for(resource_name, resource)
@@ -5,6 +6,8 @@ class User::ConfirmationsController < Devise::ConfirmationsController
       signed_in_root_path(resource)
     else
       #new_session_path(resource_name)
+      # @DB = SQL.connect_account
+      byebug
       confirmed_path
     end
   end
