@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'confirmed' , to: 'welcome#confirmed'
   get 'unconfirmed', to: 'welcome#unconfirmed'
   get 'admin', to: 'welcome#admin'
+  match '/users',   to: 'users#index',   via: 'get'
+  match '/:username',     to: 'users#show',       via: 'get'
+  get 'search_users', to: 'users#search'
   resources :articles do
     resources :comments
 

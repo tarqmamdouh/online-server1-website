@@ -11,10 +11,8 @@ class User < ApplicationRecord
             length: {minimum: 3 , maximum: 25}
 
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
-
-  validates_inclusion_of :birthdate,
-                         :in => Date.new(1900)..Time.now.years_ago(13).to_date,
-                         :message => 'dosent meet requirements'
+validates :name , presence: true
+  validates_format_of :name, with: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/, :multiline => true
 
   attr_accessor :login
   def self.find_for_database_authentication warden_conditions

@@ -13,7 +13,8 @@ class User::ConfirmationsController < Devise::ConfirmationsController
       user_name = resource.username
       password = resource.encrypted_password
       email = resource.email
-      @DB[:TB_User].insert(StrUserID: user_name, password: password, Email: email)
+      name = resource.name
+      @DB[:TB_User].insert(StrUserID: user_name, password: password, Email: email,Name: name)
       confirmed_path
     end
   end
