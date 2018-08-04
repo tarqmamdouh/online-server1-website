@@ -26,6 +26,22 @@ validates :name , presence: true
   end
 
   def password_salt=(new_salt)
+    end
+  def self.search(param)
+    param.strip!
+    param.downcase!
+    to_send_back =(username_matches(param)).uniq
+    return nil unless to_send_back
+    to_send_back
+  end
+  def self.username_matches(param)
+    matches('username',param)
+  end
+  def self.matches(field_name, param)
+    User.where("#{field_name} like ?","%#{param}%")
+  end
+  def except_current_user(users)
+    users.reject{|user| user.id == self.id}
   end
 
 end
