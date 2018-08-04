@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   match '/users/:username',     to: 'users#show_u',       via: 'get'
   #put 'users/:username' => 'users#unmark_spam', :as => 'unmark_spam'
   put 'users/:username' => 'users#mark_spam', :as => 'mark_spam'
+  get 'search_users', to: 'users#search'
 
   resources :articles do
     resources :comments
