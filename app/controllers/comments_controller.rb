@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   before_action :find_comment , only: [:destroy, :edit , :update, :comment_owner,:comment_deleter]
   before_action :comment_owner , only: [:edit, :update]
   before_action :comment_deleter , only: [:destroy]
+  before_action :require_not_spam , only: [:create,:destroy,:edit,:update]
   def create
 @comment = @article.comments.create(params[:comment].permit(:content))
     @comment.user_id = current_user.id
@@ -53,4 +54,10 @@ class CommentsController < ApplicationController
 
     end
   end
+  def require_not_spam
+    if current_user.spam?
+      flash[:danger]="You are spam you can't add comments!!!"
+      redirect_to root_path
+    end
+    end
 end

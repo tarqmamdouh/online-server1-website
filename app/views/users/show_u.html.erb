@@ -1,0 +1,5 @@
+<h1 align="center">Welcome to <%= @user.username %>'s page</h1>
+<h4 align="center"><%= @user.username %></h4>
+<%if current_user.admin? %>
+  <%= link_to "Mark this user as spam",{:controller => :users, :action => "mark_spam", :username => @user.username },data: {confirm: "Are you sure you want to mark this as spam?!!"} %>
+<% end %>

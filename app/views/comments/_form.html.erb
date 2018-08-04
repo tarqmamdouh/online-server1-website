@@ -1,5 +1,10 @@
 <%= form_for([@article,@article.comments.build]) do |f| %>
+  <% if current_user.spam? %>
+    <li><big>You are marked spam!!!</big></li>
+
+    <%else %>
   <%= f.text_area :content %>
   <%= f.submit %>
 
+<% end %>
 <% end %>
