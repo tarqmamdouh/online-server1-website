@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   match '/users',   to: 'users#index',   via: 'get'
   match '/Characters/:username',     to: 'users#show',       via: 'get'
   match '/users/:username',     to: 'users#show_u',       via: 'get'
-  get 'search_users', to: 'users#search'
+  #put 'users/:username' => 'users#unmark_spam', :as => 'unmark_spam'
+  put 'users/:username' => 'users#mark_spam', :as => 'mark_spam'
+
   resources :articles do
     resources :comments
 
