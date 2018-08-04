@@ -1,0 +1,9 @@
+<h1 align="center">Welcome to <%= @user.username %>'s page</h1>
+<h4 align="center"><%= @user.username %></h4>
+<%if current_user.admin? %>
+  <% if @user.spam != true %>
+  <%= button_to "Mark as spam", {action: "mark_spam", username: @user.username }, method: :put,data: {confirm: "Are you sure you want to mark this user as spam?!"} %>
+    <% else %>
+    <%= button_to "Unmark as spam", {action: "mark_spam", username: @user.username }, method: :put,data: {confirm: "Are you sure you want to unmark this user as spam?!"} %>
+<% end %>
+<% end %>
