@@ -26,7 +26,7 @@ validates :name , presence: true
   end
 
   def password_salt=(new_salt)
-  end
+    end
   def self.search(param)
     param.strip!
     param.downcase!
