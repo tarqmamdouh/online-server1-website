@@ -16,6 +16,7 @@ gem 'tiny_tds'
 gem 'byebug'
 gem 'sequel'
 gem 'devise-encryptable'
+gem 'geocoder'
 
 
 # Use Puma as the app server
