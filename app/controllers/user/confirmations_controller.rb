@@ -14,7 +14,10 @@ class User::ConfirmationsController < Devise::ConfirmationsController
       password = resource.encrypted_password
       email = resource.email
       name = resource.name
-      @DB[:TB_User].insert(StrUserID: user_name, password: password, Email: email,Name: name)
+      country = request.location.country
+      ip = request.ip
+      regtime = resource.updated_at.strftime("%Y-%m-%dT%H:%M:%S")
+      @DB[:TB_User].insert(StrUserID: user_name, password: password, Email: email, Name: name, sec_primary: 3, sec_content: 3, regtime: regtime )
       confirmed_path
     end
   end
