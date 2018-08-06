@@ -1,4 +1,7 @@
 <h1 align="center">Listing All Categories</h1>
+<% if current_user.admin? %>
+  <%= link_to "new category", new_category_path %>
+  <% end %>
 
 <div align="center">
 
