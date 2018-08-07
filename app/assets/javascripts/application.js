@@ -20,3 +20,4 @@
 //= stub 'login'
 // = stub 'R1'
 // = stub 'R2'
+// = stub_tree ./home-depenencies

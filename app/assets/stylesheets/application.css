@@ -15,5 +15,6 @@
  *= require_self
  *= stub 'login'
  *= stub 'register'
+ *= stub_tree ./home-dependencies
 
  */
