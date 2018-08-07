@@ -1,3 +1,5 @@
+<%= render 'layouts/adminNavbar'%>
+
 <h2 align="center">Title: <%= @article.title %> <small><%if @article.updated_at != @article.created_at %>
     (Edited)
   <% end %></small></h2>
