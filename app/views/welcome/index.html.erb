@@ -3,3 +3,7 @@
 <%= link_to "Downloads", download_path %>
 
 <%= render 'users/lookup' %>
+
+<% @lastkill.each do |row| %>
+  <%= row[:charname16]%> has killed <%= row[:objectname]%> <%= time_ago_in_words(row[:eventtime]) %></br>
+<% end %>
