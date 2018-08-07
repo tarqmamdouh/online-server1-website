@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'confirmed' , to: 'welcome#confirmed'
   get 'unconfirmed', to: 'welcome#unconfirmed'
   get 'admin', to: 'welcome#admin'
+  get 'download' , to: 'welcome#download'
   match '/users',   to: 'users#index',   via: 'get'
   match '/Characters/:username',     to: 'users#show',       via: 'get'
   match '/users/:username',     to: 'users#show_u',       via: 'get'

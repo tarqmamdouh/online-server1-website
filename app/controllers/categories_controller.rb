@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
 
     @category = Category.find(params[:id])
 
-    @category_articles = @category.articles.paginate(page: params[:page], per_page: 5)
+    @category_articles = @category.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 5)
 
   end
   def edit
