@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users ,:controllers =>{:registrations => "user/registrations", :confirmations => "user/confirmations" }
-  devise_scope :user do
-    post 'users/sign_up', to: 'devise/registrations#create'
-  end
   root 'welcome#index'
   get 'confirmed' , to: 'welcome#confirmed'
   get 'unconfirmed', to: 'welcome#unconfirmed'
