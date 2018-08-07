@@ -1,24 +1,69 @@
-<%= bootstrap_devise_error_messages! %>
-<div class="panel panel-default devise-bs">
-  <div class="panel-heading">
-    <h4><%= t('.change_your_password', default: 'Change your password') %></h4>
-  </div>
-  <div class="panel-body">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, role: 'form' }) do |f| %>
-      <%= f.hidden_field :reset_password_token %>
+<!DOCTYPE html>
+<html lang="en" class="Gibbu_@hotmail.com">
 
-      <div class="form-group">
-        <%= f.label :password, t('.new_password', default: 'New password') %>
-        <%= f.password_field :password, autofocus: true, class: 'form-control'  %>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <title> Reset Password | Login</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 
-      <div class="form-group">
-        <%= f.label :password_confirmation, t('.confirm_new_password', default: 'Confirm new password') %>
-        <%= f.password_field :password_confirmation, class: 'form-control'  %>
-      </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.js" integrity="sha256-mkdmXjMvBcpAyyFNCVdbwg4v+ycJho65QLDwVE3ViDs=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-      <%= f.submit t('.change_my_password', default: 'Change my password'), class: 'btn btn-primary' %>
-    <% end %>
+
+  <%= stylesheet_link_tag "login.css" %>
+
+
+</head>
+
+<body>
+
+
+<!-- NORMALIZED CSS INSTALLED-->
+<!-- View settings for more info.-->
+<div id="container">
+  <div id="inviteContainer">
+    <div class="logoContainer"><img class="logo" src="https://image.ibb.co/fPUhHJ/153074246521534012.png"/><img class="text" src="https://image.ibb.co/nKZrXT/cooltext292298163791256.png"/></div>
+    <div class="acceptContainer">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, role: 'form' }) do |f| %>
+        <%= f.hidden_field :reset_password_token %>
+        <h1> Reset Password </h1>
+
+        <div id="app-errors">
+          <% resource.errors.full_messages.each do |msg| %>
+            <h4 style=" color : #d50005"><%= msg %></h4>
+          <% end %>
+        </div>
+
+        <div class="formContainer">
+
+          <div class="formDiv" style="transition-delay: 0.2s;">
+            <p> new password </p>
+            <%= f.password_field :password, autofocus: true, type: "password" %>
+          </div>
+
+          <div class="formDiv" style="transition-delay: 0.4s;">
+            <p> Confirm new password </p>
+            <%= f.password_field :password_confirmation, type: "password" %>
+          </div>
+
+          <div class="formDiv" style="transition-delay: 0.6s;">
+            <%= f.submit  "Reset Password", class: "acceptBtn" %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
   </div>
 </div>
-<%= render 'devise/shared/links' %>
+
+
+
+<%= javascript_include_tag "login.js"  %>
+
+
+
+
+</body>
+
+</html>

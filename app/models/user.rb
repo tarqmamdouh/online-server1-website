@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :articles
   has_many :comments, dependent: :destroy
+  attr_accessor :terms_of_service
+  validates :terms_of_service, :acceptance => true
   # Include default devise modules. Others available are:
 
   # :confirmable, :lockable, :timeoutable and :omniauthable

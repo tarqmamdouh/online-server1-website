@@ -1,32 +1,320 @@
-<%= bootstrap_devise_error_messages! %>
-<div class="panel panel-default devise-bs">
-  <div class="panel-heading">
-    <h4><%= t('.sign_up', default: 'Sign up') %></h4>
-  </div>
-  <div class="panel-body">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form' }) do |f| %>
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+<html lang="en">
+<head><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <title> Register | Z Online </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:400,700,400italic,500,500italic,700italic" rel="stylesheet" type="text/css">
+
+
+  <%= stylesheet_link_tag "register.css" %>
+
+  <script async="" src="../www.google-analytics.com/analytics.js"></script><script type="text/javascript">
+
+
+    var globs = globs || {};
+    var webReg = webReg || {};
+
+    globs.wdl = globs.wdl || {};
+    globs.wdl.gameName = "Z Online";
+    globs.wdl.gameCode = "";
+    globs.wdl.theme = "";
+    globs.wdl.game = "";
+    globs.wdl.sitePrefix = "";
+    globs.wdl.scope = "full site";
+    globs.wdl.business = "";
+    globs.wdl.language = "en";
+    globs.wdl.pageID = "register";
+    globs.wdl.pageType = "register";
+    globs.wdl.env = "live";
+    globs.wdl.cid = "";
+    globs.wdl.productArray = [];
+    globs.wdl.skuArray = [];
+    globs.wdl.username = "";
+    globs.wdl.userLoggedIn = false;
+    globs.wdl.gvidEnabled = true;
+    globs.wdl.wdlCookDNT = false;
+    globs.wdl.googleAnalyticsId = '';
+
+    globs.soelocale = "en_US";
+    globs.urlparameters = {};
+
+    globs.urls = globs.urls || {};
+    globs.urls.login = "/login";
+    globs.urls.logout = "";
+    globs.urls.returnURL = "";
+    globs.urls.returnURL_encoded = "";
+    globs.urls.downloadURL = "";
+    globs.urls.uramRootUrl = ""; globs.urls.uramAjaxUrl = "";
+    globs.urls.dcsRoot = "";
+    globs.urls.censusUrl = "";
+    globs.urls.socialServiceURL = "";
+    globs.urls.appengRestUrl = "";
+    globs.urls.helpUrl = "";
+    globs.urls.supportUrl = "";
+    globs.urls.contactUsUrl = "";
+    globs.urls.installerUrl = "";
+    globs.urls.forumRootUrl = "";
+    globs.urls.soeRootUrl = "";
+
+    globs.urls.pacmanRoot = "";
+    globs.urls.camAmHome = "";
+    globs.urls.camEnterActivationCode = "";
+    globs.urls.camUpdateAccountInfo = "";
+    globs.urls.camSubscriptionsInfo = "";
+    globs.urls.camUpdateOptIns = "";
+    globs.urls.camStationCashBalance = "";
+    globs.urls.camPaymentHistory = "";
+    globs.urls.camPaymentSources = "";
+    globs.urls.camParentalControlsParentalControls = "";
+    globs.urls.dlcBuyDLCWithSkuAndMOPEntryPoint = "";
+    globs.urls.dlcBuyDLContentFlow = "";
+    globs.urls.dlcPreorderEntry = "";
+    globs.urls.csgCsgPurchaseFlow = "";
+    globs.urls.betaBetaRegistration = "";
+    globs.urls.betaSignUpForBetaRedirect = "";
+    globs.urls.commerceTryBuyOrActivate = "";
+    globs.urls.commerceKronosDeepEntry = "";
+    globs.urls.commerceAllAccessFlow = "";
+    globs.urls.hardgoodBuyAuthenticatorFlow = "";
+    globs.urls.linkWalletFundWallet = "";
+    globs.urls.linkWalletFundWalletWithMOP = "";
+    globs.urls.membershipMembership = "";
+    globs.urls.membershipMembershipWithSku = "";
+    globs.urls.regForgotStationName = "";
+    globs.urls.regForgotPassword = "";
+    globs.urls.currencyConversion = "";
+
+
+    webReg.isBeta = false;
+    webReg.betaID = -1;
+    webReg.underAgeMessage = "We're sorry, but you are unable to sign up for a Z Account at this time.";
+    webReg.popoverPos = "left";
+    webReg.theme = "";
+</script>
+</head>
+
+<body id="register" class="register">
+
+<div id="registerPage">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
       </div>
-      <div class="form-group">
-        <%= f.label :username %>
-        <%= f.text_field :username, autofocus: true, class: 'form-control' %>
+    </div>
+    <div class="row">
+      <div class="registration-header">
+
+        <p class="header-cta pc">Create an Account to <strong>Play for <em>Free</em></strong></p>
       </div>
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+    </div>
+    <div class="row">
+      <div class="registration-body">
+
+        <div class="system-panes tab-content">
+          <div id="regTabPC" class="tab-pane active">
+            <div class="web-registration">
+              <div class="panes">
+                <div class="pane reg-form">
+                  <p class="download-message">Already have a Z Online Account? <a href="" class="game-download-link">Download the Game.</a></p>
+                  <%= bootstrap_devise_error_messages! %>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="global-error hidden"></div>
+                    </div>
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form', class: "form-horizontal", id: "registration" , onsubmit: "SOE.Registration.FormProcessor.submitForm(); return false;" }) do |f| %>
+                      <div class="form-group username-group highlight">
+                        <label class="col-sm-4 control-label" for="wrCreateUsername">Full Name</label>
+                        <div class="col-sm-8">
+                          <%= f.text_field :name, autofocus: true, id: "wrCreateUsername1", spellcheck: "false", tabindex: "1",  class: 'form-control' %>
+                        </div>
+                      </div>
+                      <div class="form-group username-group highlight">
+                        <label class="col-sm-4 control-label" for="wrCreateUsername">Username</label>
+                        <div class="col-sm-8">
+                          <%= f.text_field :username, autofocus: true , id: "wrCreateUsername", spellcheck: "false", tabindex: "1", class: 'form-control' %>
+
+                        </div>
+                        <div class="requirements retracted col-sm-8 col-sm-offset-4">
+                          <p>Username Requirements:</p>
+                          <ul class="errors">
+                            <li data-error="isUsernameSize" class="has-error">Must be 4-15 characters in length</li>
+                            <li data-error="isUsernameValid" class="has-error">May only contain alphabetic characters (A-Z), numeric characters (0-9)</li>
+                            <li data-error="isUsernameTaken">Must be available <span class="suggestions"></span></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="form-group password-group highlight">
+                        <label class="col-sm-4 control-label" for="wrCreatePassword">Password</label>
+                        <div class="col-sm-8">
+<!--                          <div class="checkbox show-password">-->
+<!--                            <label>-->
+<!--                              <input name="skipPasswordConfirm" type="checkbox" id="wrSkipPasswordConfirm"><span class="checkbox-text">show</span><i></i>-->
+<!--                            </label>-->
+<!--                          </div>-->
+                          <%= f.password_field :password, type: "password" , id: "wrCreatePassword" , spellcheck: "false",  tabindex:"2" , class: 'form-control inspectletIgnore' %>
+                        </div>
+                        <div class="password-confirm">
+                          <label class="col-sm-4 control-label" for="wrCreatePassword2">Confirm Password</label>
+                          <div class="col-sm-8">
+                            <%= f.password_field :password_confirmation, type: "password" , id: "wrCreatePassword2" , spellcheck: "false",  tabindex:"3" , class: 'form-control inspectletIgnore' %>
+                          </div>
+                        </div>
+                        <div class="requirements retracted col-sm-8 col-sm-offset-4">
+                          <p>Password Requirements:</p>
+                          <ul class="errors">
+                            <li data-error="isPasswordSize" class="has-error">Must be 8-15 characters in length</li>
+                            <li data-error="isPasswordValid" class="has-error">May only contain alphabetic characters (A-Z), numeric characters (0-9) and special characters (!"#$%)</li>
+                            <li data-error="passwordHasNumberAndLetter" class="has-error">Must contain at least one letter and one number</li>
+                            <li data-error="isPasswordNotStationName" class="has-error">Cannot match the Z Online Username</li>
+                            <li data-error="isPasswordMatches" class="has-success">Passwords must match</li>
+                          </ul>
+                          <div id="passwordStrength">
+                            <p>Password Strength:&nbsp;
+                              <span class="strength-text">Too short</span>&nbsp;
+                              <i class="fa fa-question-circle password-strength-tooltip" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Try a mix of capital letters, numbers, and acceptable special characters (!&amp;quot;#$&amp;%)"></i>
+                            </p>
+                            <div id="progress" class="strength-0"><div class="strength-0"></div></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group email-group">
+                        <label class="col-sm-4 control-label" for="wrCreateEmail">Email Address</label>
+                        <div class="col-sm-8">
+                          <%= f.email_field :email, autofocus: true, type: "text" , id: "wrCreateEmail" , tabindex: "4", class: 'form-control', type: "email" %>
+                        </div>
+                        <div class="email-error col-sm-8 col-sm-offset-4">Please provide a valid email address. The e-mail address you provide will be used to verify your identity should you forget your username and/or password.</div>
+                      </div>
+                      <!--                      <div class="form-group country-group">-->
+                      <!--                        <label class="col-sm-4 control-label" for="wrCreateCountry">Country</label>-->
+                      <!--                        <div class="col-sm-8" id="countryList">-->
+                      <!--                          <div class="fancy-select country">-->
+                      <!--                            <select class="form-control" name="country" id="wrCreateCountry" tabindex="5">-->
+                      <!--                              <option selected="" value="US">United States</option>-->
+                      <!--                            </select>-->
+                      <!--                          </div>-->
+                      <!--                        </div>-->
+                      <!--                      </div>-->
+                      <div class="form-group tos-pp-group">
+                        <div class="col-sm-8 col-sm-offset-4 checkbox">
+                          <label>
+                            <%= f.check_box :terms_of_service , id: "wrAcceptTOS", tabindex: "10" %><i></i>
+                            <span class="tos-text checkbox-text">
+                              I have read and I accept the&nbsp;<a href="#" target="_blank">Terms of Service</a> and&nbsp;<a href="#">Privacy Policy</a>
+                            </span>
+                          </label>
+                        </div>
+                        <div class="col-sm-8 col-sm-offset-4 checkbox hidden" id="privacyPolicy">
+                          <label>
+                            <input name="privacyPolicyAccepted" type="checkbox" id="wrAcceptPP" tabindex="11"><i></i><span class="pp-text checkbox-text"></span>
+                          </label>
+                        </div>
+                        <div class="tos-error pp-error error col-sm-8 col-sm-offset-4 hidden">Please indicate that you have read and accepted the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>.</div>
+                      </div>
+                      <div class="form-group create-group">
+                        <div class="col-sm-12">
+                          <button type="submit" class="btn btn-default" tabindex="12"></button>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-      </div>
-      <%= f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary' %>
-    <% end %>
+    </div>
   </div>
 </div>
-<%= render 'devise/shared/links' %>
+
+<%= javascript_include_tag "R1.js"  %>
+
+
+<%#= javascript_include_tag "R2.js"  %>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+
+<%#= bootstrap_devise_error_messages! %>
+<!--<div class="panel panel-default devise-bs">-->
+<!--  <div class="panel-heading">-->
+<!--    <h4><%#= t('.sign_up', default: 'Sign up') %></h4>-->
+<!--  </div>-->
+<!--  <div class="panel-body">-->
+    <%#= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form' }) do |f| %>
+<!--      <div class="form-group">-->
+        <%#= f.label :email %>
+        <%#= f.email_field :email, autofocus: true, class: 'form-control' %>
+<!--      </div>-->
+<!--      <div class="form-group">-->
+        <%#= f.label :username %>
+        <%#= f.text_field :username, autofocus: true, class: 'form-control' %>
+<!--      </div>-->
+<!--      <div class="form-group">-->
+        <%#= f.label :name %>
+        <%#= f.text_field :name, autofocus: true, class: 'form-control' %>
+<!--      </div>-->
+<!--      <div class="form-group">-->
+        <%#= f.label :password %>
+        <%#= f.password_field :password, class: 'form-control' %>
+<!--      </div>-->
+<!--      <div class="form-group">-->
+        <%#= f.label :password_confirmation %>
+        <%#= f.password_field :password_confirmation, class: 'form-control' %>
+<!--      </div>-->
+      <%#= f.submit t('.sign_up', default: 'Sign up'), class: 'btn btn-primary' %>
+    <%# end %>
+<!--  </div>-->
+<!--</div>-->
+<%#= render 'devise/shared/links' %>

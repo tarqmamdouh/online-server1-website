@@ -1,17 +1,76 @@
-<%= bootstrap_devise_error_messages! %>
-<div class="panel panel-default devise-bs">
-  <div class="panel-heading">
-    <h4><%= t('.forgot_your_password', default: 'Forgot your password?') %></h4>
-  </div>
-  <div class="panel-body">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: "form" }) do |f| %>
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-      </div>
+<!DOCTYPE html>
+<html lang="en" class="Gibbu_@hotmail.com">
 
-      <%= f.submit t('.send_me_reset_password_instructions', default: 'Send me reset password instructions'), class: 'btn btn-primary' %>
-    <% end %>
+<head>
+  <meta charset="UTF-8">
+  <title> Forgot Password | Login</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.js" integrity="sha256-mkdmXjMvBcpAyyFNCVdbwg4v+ycJho65QLDwVE3ViDs=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+  <%= stylesheet_link_tag "login.css" %>
+
+
+</head>
+
+<body>
+
+
+<!-- NORMALIZED CSS INSTALLED-->
+<!-- View settings for more info.-->
+<div id="container">
+  <div id="inviteContainer">
+    <div class="logoContainer"><img class="logo" src="https://image.ibb.co/fPUhHJ/153074246521534012.png"/><img class="text" src="https://image.ibb.co/nKZrXT/cooltext292298163791256.png"/></div>
+    <div class="acceptContainer">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, role: "form" }) do |f| %>
+        <h1>Forgot your password ?</h1>
+
+        <div id="app-errors">
+          <% resource.errors.full_messages.each do |msg| %>
+            <h4 style=" color : #d50005"><%= msg %></h4>
+          <% end %>
+        </div>
+
+        <div class="formContainer">
+
+          <div class="formDiv" style="transition-delay: 0.2s;">
+            <p>EMAIL</p>
+            <%= f.email_field :email, autofocus: true, type: "email" %>
+          </div>
+
+
+          <div class="formDiv" style="transition-delay: 0.4s;">
+            <%= f.submit  t('.sign_in', default: 'Send email to reset password'), class: "acceptBtn" %>
+            <a class="forgotPas" href="../confirmation">Didn't receive confirmation instructions?</a>
+            <span class="register">Already have an account?<a href="../sign_in">Login</a></span>
+            <span class="register">Need an account?<a href="../sign_up">Register</a></span>
+
+          </div>
+        </div>
+
+      <% end %>
+    </div>
   </div>
 </div>
-<%= render 'devise/shared/links' %>
+
+
+
+<%= javascript_include_tag "login.js"  %>
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
