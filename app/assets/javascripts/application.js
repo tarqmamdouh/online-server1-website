@@ -17,3 +17,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= stub 'login'
+// = stub 'R1'
+// = stub 'R2'
+// = stub_tree ./home-depenencies
