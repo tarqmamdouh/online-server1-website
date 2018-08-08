@@ -1,5 +1,8 @@
+<%= render 'layouts/adminNavbar' %>
 <h1>This is the admin page </h1>
 <%= link_to 'Home' , root_path %>
 <%= link_to 'new article', new_article_path %>
 <%= link_to 'All articles', articles_path %>
 <%= link_to 'All users', users_path %>
+
+<%= render 'users/search' %>

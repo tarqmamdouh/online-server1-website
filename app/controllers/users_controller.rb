@@ -2,9 +2,13 @@ require'SQL'
 class UsersController < ApplicationController
   before_action :require_admin , only: [:mark_spam,:unmark_spam]
   def show
-    @DB= SQL.connect_shard
-    character = @DB[:_Char]
-    @info = character.where(:CharName16 => params[:charname]).all.last
+    if params[:charname].length > 17 || params[:charname].include?("-")|| params[:charname].include?("/")|| params[:charname].include?("\\")|| params[:charname].include?("'")|| params[:charname].include?("\"")
+      redirect_to root_path
+    else
+      @DB= SQL.connect_shard
+      character = @DB[:_Char]
+      @info = character.where(:CharName16 => params[:charname]).all.last
+    end
   end
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
@@ -38,6 +42,9 @@ class UsersController < ApplicationController
   def search_char
     if params[:search_param].blank?
       flash.now[:danger]="You have entered an empty search string"
+    elsif params[:search_param].length > 17 || params[:search_param].include?("-")|| params[:search_param].include?("/")|| params[:search_param].include?("\\")|| params[:search_param].include?("'")|| params[:search_param].include?("\"")
+      flash.now[:danger]= "You have entered invalid search string"
+
     else
       @DB= SQL.connect_shard
       character = @DB[:_Char]
