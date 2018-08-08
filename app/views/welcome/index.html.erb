@@ -24,15 +24,25 @@
   <meta name="theme-color" content="#3d0e03">
 
   <!-- Dependency Styles -->
-  <%= stylesheet_link_tag "site-dependencies.css" %>
+  <link rel="stylesheet" href="assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
 
 
 
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="assets/dependencies/swiper/swiper.min.css" type="text/css">
+  <link rel="stylesheet" href="assets/dependencies/wow/css/animate.css" type="text/css">
+  <link rel="stylesheet" href="assets/dependencies/magnific-popup/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="assets/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css" type="text/css">
+  <link rel="stylesheet" href="assets/home-dependencies/woocommerce.css" type="text/css">
+  <link rel="stylesheet" href="assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="assets/home-dependencies/app.css" type="text/css">
+
   <!-- Google Web Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
-
 
 </head>
 
@@ -2121,12 +2131,22 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-<%= javascript_include_tag "site-dependencies.js"  %>
 
+<script src="assets/dependencies/jquery/jquery.min.js"></script>
+<script src="assets/dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/dependencies/swiper/js/swiper.min.js"></script>
+<script src="assets/dependencies/swiperRunner/swiperRunner.min.js"></script>
+<script src="assets/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/dependencies/jquery-ui/jquery-ui.min.js"></script>
+<script src="assets/dependencies/jquery-animated-headlines/js/jquery.animatedheadline.min.js"></script>
+<script src="assets/dependencies/jquery.countdown/jquery.countdown.min.js"></script>
+<script src="assets/dependencies/countUp.js/js/countUp.min.js"></script>
+<script src="assets/dependencies/jquery.appear.bas2k/jquery.appear.js"></script>
+<script src="assets/dependencies/jquery.ripples/jquery.ripples.js"></script>
+<script src="assets/dependencies/wow/js/wow.min.js"></script>
+<%= javascript_include_tag "home-dependencies/app.js" %>
+<%= javascript_include_tag "home-dependencies/Timers.js" %>
 
-<!-- Site Scripts -->
-<!--<script src="assets/js/app.js"></script>-->
-<!--<script src="assets/js/Timers.js"></script>-->
 
 </body>
 
