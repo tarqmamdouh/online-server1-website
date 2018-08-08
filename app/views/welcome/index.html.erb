@@ -1,3 +1,4 @@
+<%= render 'layouts/adminNavbar' %>
 <h1>Welcome to Z-sro</h1>
 <%= link_to "Articles", articles_path %>
 <%= link_to "Downloads", download_path %>
@@ -7,3 +8,5 @@
 <% @lastkill.each do |row| %>
   <%= row[:charname16]%> has killed <%= row[:objectname]%> <%= time_ago_in_words(row[:eventtime]) %></br>
 <% end %>
+
+<%= render 'users/search' %>

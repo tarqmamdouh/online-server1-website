@@ -1,7 +1,10 @@
+require'SQL'
 class UsersController < ApplicationController
   before_action :require_admin , only: [:mark_spam,:unmark_spam]
   def show
-    @user = User.find_by_username(params[:username])
+    @DB= SQL.connect_shard
+    character = @DB[:_Char]
+    @info = character.where(:CharName16 => params[:charname]).all.last
   end
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
@@ -32,11 +35,24 @@ class UsersController < ApplicationController
       format.js{render partial: 'users/result'}
     end
   end
-
+  def search_char
+    if params[:search_param].blank?
+      flash.now[:danger]="You have entered an empty search string"
+    else
+      @DB= SQL.connect_shard
+      character = @DB[:_Char]
+      @chars = character.where(Sequel.like(:charname16, '%'+ params[:search_param]+'%')).all
+      flash.now[:danger]="No characters match this search criteria" if @chars.blank?
+    end
+    respond_to do |format|
+      format.js{render partial: 'users/resultchar'}
+    end
+  end
   private
   def require_admin
     if current_user.admin != true
       redirect_to root_path
     end
   end
+
 end
