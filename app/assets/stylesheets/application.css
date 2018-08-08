@@ -13,4 +13,8 @@
  *= require devise_bootstrap_views
  *= require_tree .
  *= require_self
+ *= stub 'login'
+ *= stub 'register'
+ *= stub_tree ./home-dependencies
+
  */

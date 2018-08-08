@@ -29,10 +29,7 @@ class SQL
       :password => ENV['SQL_password']
   }
 
-  def self.connect_account
-    @DB = Sequel.connect(@@account_connection_params)
-    @DB
-  end
+
 
   def self.connect_shard
     @DB = Sequel.connect(@@shard_connection_params)
