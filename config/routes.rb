@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users ,:controllers =>{:registrations => "user/registrations", :confirmations => "user/confirmations" }
+  devise_for :users ,:controllers =>{:registrations => "user/registrations", :confirmations => "user/confirmations",:passwords => "user/passwords" }
   root 'welcome#index'
   get 'confirmed' , to: 'welcome#confirmed'
   get 'unconfirmed', to: 'welcome#unconfirmed'
