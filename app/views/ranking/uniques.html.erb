@@ -1,0 +1,7 @@
+<ol type="1">
+  <% @ranking.each do |row| %>
+<%if row[:points]> 0 %>
+ <li> <%= row[:charname16] %> has killed <%= pluralize(row[:points],"Unique") %></li>
+<%end %>
+<% end %>
+</ol>
