@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
   skip_before_action :authenticate_user! , only: [:index,:unconfirmed , :confirmed]
   before_action :require_admin , only: [:admin]
   def index
-    @a = Category.last
+    @a = Category.find("4")
     @announcements = @a.articles.last
 
     @e= Category.find("3")
@@ -13,7 +13,7 @@ class WelcomeController < ApplicationController
     @maintenance = @m.articles.last
 
 
-    @u= Category.first
+    @u= Category.find("1")
     @updates = @u.articles.last
 
     @DB= SQL.connect_shard
