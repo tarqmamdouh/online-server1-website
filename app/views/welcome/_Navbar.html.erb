@@ -1,0 +1,869 @@
+<!--=========================-->
+<!--=        Navbar         =-->
+<!--=========================-->
+<header id="header" class="header-one">
+  <div class="top-menu">
+    <div class="container">
+      <div class="top-menu-wrap">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="top-menu-left">
+              <ul class="head-social-link">
+                <li><a href="https://www.facebook.com/ZOnline2018"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="https://discord.gg/cbpJ7fJ"><i class="fab fa-discord"></i></a></li>
+              </ul>
+              <!-- /.head-social-link -->
+            </div>
+            <!-- /.top-menu-left -->
+
+
+            <div class="header-text">
+              <span class="tour-title">Announcements</span>
+              <h4 class="ah-headline">
+                 <span class="ah-words-wrapper">
+                     <% @announcements.each do |article| %>
+                       <% if @announcements.first == article %>
+                        <b class="is-visible"><%= article.title %></b>
+                       <% else %>
+                        <b><%= article.title %></b>
+                       <% end %>
+                     <% end %>
+                 </span>
+              </h4>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+
+          <div class="col-md-4">
+            <% if user_signed_in? %>
+              <ul class="user-link nav justify-content-end">
+                <%#= link_to , users_path(@current_user), "test<span>*</span>".html_safe %>
+                <li><a href="#"><i class="fa fa-user"></i> <%= current_user.username %></a></li>
+                <li>
+                  <%= link_to destroy_user_session_path  do %>
+                  <i class="fa fa-sign-in"></i>logout
+                  <% end %>
+                </li>
+              </ul>
+
+            <% else %>
+              <ul class="user-link nav justify-content-end">-->
+                <li><a href="/users/sign_in"><i class="fa fa-user"></i>Login</a></li>
+                <li><a href="/users/sign_up"><i class="fa fa-sign-in"></i>Sign Up</a></li>
+              </ul>
+            <% end %>
+
+            <!-- if Logged in -->
+            <!-- -->
+
+            <!-- /.user-link -->
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.top-menu-wrap -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.top-menu -->
+
+  <div class="nav">
+    <div class="container">
+      <div class="nav-wrap">
+        <div id="site-logo">
+          <a href="www.z-sro.com">
+            <img src="assets/img/logo.png" alt="Site Logo" style="margin-bottom: 40%;">
+          </a>
+        </div>
+        <ul class="tim-nav text-right">
+          <li class="menu-item-has-children">
+            <a href="#">
+              Home
+              <span class="dot"></span>
+            </a>
+
+            <span class="dot"></span>
+
+            <ul class="sub-menu">
+              <li><a href="index-2.html">Home Default</a></li>
+              <li><a href="index-shooter.html">Home Shooter</a></li>
+              <li><a href="index-zoombie.html">Home Zoombie</a></li>
+              <li><a href="index-clan.html">Home Clan</a></li>
+              <li><a href="index-magazine.html">Home Magazine</a></li>
+              <li><a href="404.html">404 Page</a></li>
+            </ul>
+          </li>
+
+          <li class="menu-item-has-children">
+            <a href="#">
+              Page
+              <span class="dot"></span>
+            </a>
+            <div class="mega-menu-inner">
+              <ul class="sub-menu mega-menu clearfix">
+                <li>
+                  <h3>Overview</h3>
+                  <ul class="sub-menu">
+                    <li><a href="overview.html">Overview one</a></li>
+                    <li><a href="overview-zoombie.html">Overview Two</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h3>Game</h3>
+                  <ul class="sub-menu">
+                    <li><a href="game.html">Game one</a></li>
+                    <li><a href="game-zoombie.html">Game Two</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h3>Strategy</h3>
+                  <ul class="sub-menu">
+                    <li><a href="strategy.html">Strategy one</a></li>
+                    <li><a href="strategy-zoombie.html">Strategy Two</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h3>Community</h3>
+                  <ul class="sub-menu">
+                    <li><a href="community.html">Community one</a></li>
+                    <li><a href="community-zoombie.html">Community Two</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+
+              <div class="tab">
+
+                <ul class="tabs">
+                  <li><a href="#">Teams</a></li>
+                  <li><a href="#">Tournaments</a></li>
+                  <li><a href="#">Matches</a></li>
+                  <li><a href="#">Members</a></li>
+                </ul>
+                <!-- / tabs -->
+
+                <div class="tab_content">
+
+                  <div class="tabs_item">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="top-team">
+                          <a href="#"><img src="assets/media/team/1.jpg" alt="team"></a>
+                          <h3 class="game-team-name"><a href="#">Zombie island</a>
+                          </h3>
+                        </div>
+                        <!-- /.top-team -->
+                      </div>
+
+                      <div class="col-md-3">
+                        <div class="top-team">
+                          <a href="#"><img src="assets/media/team/2.jpg" alt="team"></a>
+                          <h3 class="game-team-name"><a href="#">Gems author</a>
+                          </h3>
+                        </div>
+                        <!-- /.top-team -->
+                      </div>
+
+                      <div class="col-md-3">
+                        <div class="top-team">
+                          <a href="#"><img src="assets/media/team/3.jpg" alt="team"></a>
+                          <h3 class="game-team-name"><a href="#">Hard Gamer</a>
+                          </h3>
+                        </div>
+                        <!-- /.top-team -->
+                      </div>
+
+                      <div class="col-md-3">
+                        <div class="top-team">
+                          <a href="#"><img src="assets/media/team/4.jpg" alt="team"></a>
+                          <h3 class="game-team-name"><a href="#">Speed Controller</a>
+                          </h3>
+                        </div>
+                        <!-- /.top-team -->
+                      </div>
+                    </div>
+                    <!-- /.row -->
+                  </div>
+                  <!-- / tabs_item -->
+
+                  <div class="tabs_item">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6">
+                        <div class="trurnament-inner wow fadeIn">
+                          <div class="torurmant clearfix">
+                            <div class="tgame game-item">
+                              <img src="assets/media/game/c1.jpg" alt="Game">
+                              <h4>Game Pagla</h4>
+                            </div>
+
+                            <div class="game-item vs">
+                              <h4>Vs</h4>
+                            </div>
+
+                            <div class="tgame game-item">
+                              <img src="assets/media/game/c2.jpg" alt="Game">
+                              <h4>Game Pagla</h4>
+                            </div>
+                          </div>
+
+                          <div class="tournaments-details clearfix">
+                            <div class="tournamant-date">
+                              <div class="date">
+                                <h4>December<br> 10</h4>
+                              </div>
+
+                              <div class="date">
+                                <h4>Days<br> 20</h4>
+                              </div>
+
+                              <div class="date">
+                                <h4>Hour<br> 14.00</h4>
+                              </div>
+                            </div>
+
+                            <div class="view-details clearfix">
+                              <div class="details">
+                                <ul class="review">
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                </ul>
+
+                                <a href="#" class="blog-btn">Blog</a>
+                              </div>
+
+                              <div class="details float-right">
+                                <ul class="review">
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                </ul>
+
+                                <a href="#"><i class="fa fa-comments"></i> Comments</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.col-lg-3 col-md-6 -->
+
+                      <div class="col-lg-4 col-md-6">
+                        <div class="trurnament-inner wow fadeIn">
+                          <div class="torurmant clearfix">
+                            <div class="tgame game-item">
+                              <img src="assets/media/game/c1.jpg" alt="Game">
+                              <h4>Game Pagla</h4>
+                            </div>
+
+                            <div class="game-item vs">
+                              <h4>Vs</h4>
+                            </div>
+
+                            <div class="tgame game-item">
+                              <img src="assets/media/game/c2.jpg" alt="Game">
+                              <h4>Game Pagla</h4>
+                            </div>
+                          </div>
+
+                          <div class="tournaments-details clearfix">
+                            <div class="tournamant-date">
+                              <div class="date">
+                                <h4>December<br> 10</h4>
+                              </div>
+
+                              <div class="date">
+                                <h4>Days<br> 20</h4>
+                              </div>
+
+                              <div class="date">
+                                <h4>Hour<br> 14.00</h4>
+                              </div>
+                            </div>
+
+                            <div class="view-details clearfix">
+                              <div class="details">
+                                <ul class="review">
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                </ul>
+
+                                <a href="#" class="blog-btn">Blog</a>
+                              </div>
+
+                              <div class="details float-right">
+                                <ul class="review">
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                </ul>
+
+                                <a href="#"><i class="fa fa-comments"></i> Comments</a>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <!-- /.col-lg-4 col-md-6 -->
+
+                      <div class="col-lg-4 col-md-6">
+                        <div class="trurnament-inner wow fadeIn">
+                          <div class="torurmant clearfix">
+                            <div class="tgame game-item">
+                              <img src="assets/media/game/c1.jpg" alt="Game">
+                              <h4>Game Pagla</h4>
+                            </div>
+
+                            <div class="game-item vs">
+                              <h4>Vs</h4>
+                            </div>
+
+                            <div class="tgame game-item">
+                              <img src="assets/media/game/c2.jpg" alt="Game">
+                              <h4>Game Pagla</h4>
+                            </div>
+                          </div>
+
+                          <div class="tournaments-details clearfix">
+                            <div class="tournamant-date">
+                              <div class="date">
+                                <h4>December<br> 10</h4>
+                              </div>
+
+                              <div class="date">
+                                <h4>Days<br> 20</h4>
+                              </div>
+
+                              <div class="date">
+                                <h4>Hour<br> 14.00</h4>
+                              </div>
+                            </div>
+
+                            <div class="view-details clearfix">
+                              <div class="details">
+                                <ul class="review">
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                </ul>
+
+                                <a href="#" class="blog-btn">Blog</a>
+                              </div>
+
+                              <div class="details float-right">
+                                <ul class="review">
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                  <li><i class="fa fa-star-o"></i></li>
+                                </ul>
+
+                                <a href="#"><i class="fa fa-comments"></i> Comments</a>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <!-- /.col-lg-4 col-md-6 -->
+                    </div>
+                    <!-- /.row -->
+                  </div>
+                  <!-- / tabs_item -->
+
+                  <div class="tabs_item">
+                    <div class="torurmant clearfix wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.2s" data-bg-image="assets/media/torurmant/1.jpg" style="background-image: url(assets/media/torurmant/1.html); visibility: visible; animation-duration: 1000ms; animation-delay: 0.2s; animation-name: fadeIn;">
+                      <a href="#" class="link-btn">Strategy <i class="fa fa-angle-right"></i></a>
+
+                      <div class="torurmant-game">
+                        <img src="assets/media/torurmant/2.jpg" alt="Torurmant">
+                        <h3>Game Adict</h3>
+                      </div>
+                      <div class="torurmant-game text-center">
+                        <h4 class="vs-fire">VS<canvas width="50" height="50" class=" fireJqueryPlugin2Canvas1"></canvas></h4>
+                        <div class="countdown" data-count-year="2020" data-count-month="12" data-count-day="22"><span class="CountdownContent">325<span class="CountdownLabel"></span></span><span class="CountdownSeparator"></span><span class="CountdownContent">10 <span class="CountdownLabel"></span></span><span class="CountdownSeparator"></span>
+                          <span
+                            class="CountdownContent">57 <span class="CountdownLabel"></span></span><span class="CountdownSeparator"></span><span class="CountdownContent">19 <span class="CountdownLabel"></span></span>
+                        </div>
+
+                        <a href="#" class="tim-btn tim-btn-bg skew-hover">PARTICIPATE</a>
+                      </div>
+
+                      <div class="torurmant-game">
+                        <img src="assets/media/torurmant/3.jpg" alt="Torurmant">
+                        <h3>Clan Warrior</h3>
+                      </div>
+
+                      <div class="tags">
+                        <a href="#">Pcgames</a>
+                        <a href="#">XBox</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- / tabs_item -->
+
+                  <div class="tabs_item">
+                    <div class="row mb__30">
+                      <div class="col-md-6">
+                        <div class="top-user-details clearfix">
+                          <div class="top-user-status clearfix">
+                            <div class="left-side clearfix">
+                              <img class="user-pic" src="assets/media/game/44.jpg" alt="user">
+                              <div class="content">
+                                <h3 class="name">ASHarwood</h3>
+                                <p>Jhone Smith <img src="assets/media/game/us.gif" alt="flug"> California, United State</p>
+
+                                <div class="offline">
+                                  <h6>Currently Offline</h6>
+                                  <p>Last Online 9 hrs, 27 min ago</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="right-side clearfix">
+                              <div class="game-level">
+                                <h4>Level 13</h4>
+                                <div class="game-badges">
+                                  <h5>Badges 7</h5>
+                                  <img src="assets/media/game/6.png" alt="batch">
+                                  <img src="assets/media/game/7.png" alt="batch">
+                                  <img src="assets/media/game/8.png" alt="batch">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.col-md-6 -->
+
+                      <div class="col-md-6">
+                        <div class="top-user-details clearfix">
+                          <div class="top-user-status clearfix">
+                            <div class="left-side clearfix">
+                              <img class="user-pic" src="assets/media/game/44.jpg" alt="user">
+                              <div class="content">
+                                <h3 class="name">ASHarwood</h3>
+                                <p>Jhone Smith <img src="assets/media/game/us.gif" alt="flug"> California, United State</p>
+
+                                <div class="offline">
+                                  <h6>Currently Offline</h6>
+                                  <p>Last Online 9 hrs, 27 min ago</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="right-side clearfix">
+                              <div class="game-level">
+                                <h4>Level 13</h4>
+                                <div class="game-badges">
+                                  <h5>Badges 7</h5>
+                                  <img src="assets/media/game/6.png" alt="batch">
+                                  <img src="assets/media/game/7.png" alt="batch">
+                                  <img src="assets/media/game/8.png" alt="batch">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.col-md-6 -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                      <div class="col-md-2">
+                        <div class="top-author">
+                          <img src="assets/media/game/44.jpg" alt="author">
+                          <h3 class="game-author-name"><a href="#">Dead Zone</a>
+                          </h3>
+                          <p class="author-post-count">Threads: <span>371,481 •</span> </p>
+                        </div>
+                        <!-- /.top-author -->
+                      </div>
+
+                      <div class="col-md-2">
+                        <div class="top-author">
+                          <img src="assets/media/game/45.jpg" alt="author">
+                          <h3 class="game-author-name"><a href="#">Dead Zone</a>
+                          </h3>
+                          <p class="author-post-count">Threads: <span>371,481 •</span> </p>
+                        </div>
+                        <!-- /.top-author -->
+                      </div>
+
+                      <div class="col-md-2">
+                        <div class="top-author">
+                          <img src="assets/media/game/46.jpg" alt="author">
+                          <h3 class="game-author-name"><a href="#">Dead Zone</a>
+                          </h3>
+                          <p class="author-post-count">Threads: <span>371,481 •</span> </p>
+                        </div>
+                        <!-- /.top-author -->
+                      </div>
+
+                      <div class="col-md-2">
+                        <div class="top-author">
+                          <img src="assets/media/game/47.jpg" alt="author">
+                          <h3 class="game-author-name"><a href="#">Dead Zone</a>
+                          </h3>
+                          <p class="author-post-count">Threads: <span>371,481 •</span> </p>
+                        </div>
+                        <!-- /.top-author -->
+                      </div>
+
+                      <div class="col-md-2">
+                        <div class="top-author">
+                          <img src="assets/media/game/48.jpg" alt="author">
+                          <h3 class="game-author-name"><a href="#">Dead Zone</a>
+                          </h3>
+                          <p class="author-post-count">Threads: <span>371,481 •</span> </p>
+                        </div>
+                        <!-- /.top-author -->
+                      </div>
+
+                      <div class="col-md-2">
+                        <div class="top-author">
+                          <img src="assets/media/game/49.jpg" alt="author">
+                          <h3 class="game-author-name"><a href="#">Dead Zone</a>
+                          </h3>
+                          <p class="author-post-count">Threads: <span>371,481 •</span> </p>
+                        </div>
+                        <!-- /.top-author -->
+                      </div>
+                    </div>
+                    <!-- /.row -->
+                  </div>
+                  <!-- / tabs_item -->
+
+                </div>
+                <!-- / tab_content -->
+              </div>
+              <!-- / tab -->
+            </div>
+            <!-- /.mega-menu-inner -->
+          </li>
+
+          <li class="menu-item-has-children">
+            <a href="#">
+              Game
+              <span class="dot"></span>
+            </a>
+            <ul class="sub-menu">
+              <li><a href="game.html">Game One</a></li>
+              <li><a href="game-zoombie.html">Game Two</a></li>
+
+            </ul>
+          </li>
+
+          <li class="menu-item-has-children">
+            <a href="#">
+              Community
+              <span class="dot"></span>
+            </a>
+            <ul class="sub-menu">
+              <li><a href="community.html">Community One</a></li>
+              <li><a href="community-zoombie.html">Community Two</a></li>
+            </ul>
+
+          </li>
+
+          <li class="menu-item-has-children">
+            <a href="#">
+              Shortcode
+              <span class="dot"></span>
+            </a>
+            <div class="mega-menu-inner">
+              <ul class="sub-menu mega-menu clearfix">
+                <li>
+                  <h3>Element One</h3>
+                  <ul class="sub-menu">
+                    <li><a href="accordion-tab.html">Accordion &amp; Tab </a></li>
+                    <li><a href="beyond.html">Beyond</a></li>
+                    <li><a href="button.html">Button</a></li>
+                    <li><a href="behind-game.html">Behind Game</a></li>
+                    <li><a href="countup.html">Count Up</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h3>Element Two</h3>
+                  <ul class="sub-menu">
+                    <li><a href="download.html">Download</a></li>
+                    <li><a href="feature-game.html">Feature Game</a></li>
+                    <li><a href="focus-game.html">Focus &amp; Game</a></li>
+                    <li><a href="game-purchase.html">Game Purchase</a></li>
+                    <li><a href="newstabs.html">News Tab</a></li>
+
+
+
+                  </ul>
+                </li>
+
+                <li>
+                  <h3>Element Three</h3>
+                  <ul class="sub-menu">
+                    <li><a href="latest-game.html">Latest Game</a></li>
+                    <li><a href="logo-carousel.html">Logo &amp; Author</a></li>
+                    <li><a href="match.html">Match</a></li>
+                    <li><a href="moderator.html">Moderator</a></li>
+                    <li><a href="newsletter.html">Newsletter</a></li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h3>Element Four</h3>
+                  <ul class="sub-menu">
+                    <li><a href="shop-style.html">Shop</a></li>
+                    <li><a href="tips-tricks.html">Tips And Tricks</a></li>
+                    <li><a href="tournaments.html">Tournaments</a></li>
+                    <li><a href="video.html">Video Player</a></li>
+                    <li><a href="video-screenshort.html">Video &amp; Screenshort</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+            <!-- /.mega-menu-inner -->
+          </li>
+
+          <li class="menu-item-has-children">
+            <a href="#">
+              Store
+              <span class="dot"></span>
+            </a>
+
+            <ul class="sub-menu">
+              <li class="menu-item-has-children">
+                <a href="#">Shooter</a>
+                <ul class="sub-menu">
+                  <li><a href="store.html">Four Column</a></li>
+                  <li><a href="store-three-column-right.html">Three Column Right</a></li>
+                  <li><a href="store-three-column-left.html">Three Column Left</a></li>
+                </ul>
+              </li>
+
+              <li class="menu-item-has-children">
+                <a href="store-three-column-left.html">Zoombie</a>
+                <ul class="sub-menu">
+                  <li><a href="store-zoombie.html">Four Column</a></li>
+                  <li><a href="store-three-column-right-zoombie.html">Three Column Right</a></li>
+                  <li><a href="store-three-column-left-zoombie.html">Three Column Left</a></li>
+                </ul>
+              </li>
+
+              <li class="menu-item-has-children">
+                <a href="store-three-column-left.html">Clan</a>
+                <ul class="sub-menu">
+                  <li><a href="store.html">Four Column</a></li>
+                  <li><a href="store-three-column-right.html">Three Column Right</a></li>
+                  <li><a href="store-three-column-left.html">Three Column Left</a></li>
+                </ul>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="menu-item-has-children">
+            <a href="#">
+              Blog
+              <span class="dot"></span>
+            </a>
+
+            <ul class="sub-menu">
+              <li class="menu-item-has-children">
+                <a href="#">Shooter</a>
+                <ul class="sub-menu">
+                  <li><a href="blog-four-column.html">Four Column</a></li>
+                  <li><a href="blog-three-column.html">Three Column Right</a></li>
+                  <li><a href="blog-three-column-left.html">Three Column Left</a></li>
+                  <li><a href="blog-two-column-right.html">Two Column Right</a></li>
+                  <li><a href="blog-two-column-left.html">Two Column left</a></li>
+                  <li><a href="blog-masonry.html">Masonry</a></li>
+                  <li><a href="blog-single.html">Details Right Sidebar</a></li>
+                  <li><a href="blog-single-left.html">Details Left Sidebar</a></li>
+                  <li><a href="blog-single-fullwidth.html">Details Fullwidth</a></li>
+                </ul>
+              </li>
+
+              <li class="menu-item-has-children">
+                <a href="#">Zoombie</a>
+                <ul class="sub-menu">
+                  <li><a href="blog-four-column-zoombie.html">Four Column</a></li>
+                  <li><a href="blog-three-column-zoombie.html">Three Column Right</a></li>
+                  <li><a href="blog-three-column-left-zoombie.html">Three Column Left</a></li>
+                  <li><a href="blog-two-column-right-zoombie.html">Two Column Right</a></li>
+                  <li><a href="blog-two-column-left-zoombie.html">Two Column left</a></li>
+                  <li><a href="blog-masonry-zoombie.html">Masonry</a></li>
+                  <li><a href="blog-single.html">Details Right Sidebar</a></li>
+                  <li><a href="blog-single-left.html">Details Left Sidebar</a></li>
+                  <li><a href="blog-single-fullwidth.html">Details Fullwidth</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item search-btn">
+            <i class="fa fa-search"></i>
+          </li>
+        </ul>
+        <div class="top-search-form">
+          <form action="#" class="search-form">
+            <input type="text" name="search" placeholder="Search For Character ... ">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+      <!-- /.nav-wrap -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.nav -->
+</header>
+<!-- /#header -->
+
+<!--================================-->
+<!--=        Mobile Navbar         =-->
+<!--================================-->
+<header id="mobile-nav-wrap">
+  <div class="mob-header-inner d-flex justify-content-between">
+    <div id="mobile-logo" class="d-flex justify-content-start">
+      <a href="#"><img src="assets/img/logo.png" alt="Site Logo"></a>
+    </div>
+
+    <!-- if Not Logged in -->
+    <!--
+<ul class="user-link nav justify-content-end">
+<li><a href="#"><i class="fa fa-user"></i>Login</a></li>
+<li><a href="#"><i class="fa fa-sign-in"></i>Sign Up</a></li>
+</ul>
+-->
+    <!-- -->
+
+    <!-- if Logged in -->
+    <ul class="user-link nav justify-content-end">
+      <li><a href="#"><i class="fa fa-user"></i>GeeK</a></li>
+      <li><a href="#"><i class="fa fa-bell"></i>5</a></li>
+      <li><a href="#"><i class="fa fa-sign-in"></i>logout</a></li>
+
+    </ul>
+    <!-- -->
+
+
+    <div id="nav-toggle" class="nav-toggle hidden-md">
+      <div class="toggle-inner">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- /.mob-header-inner -->
+</header>
+<!-- /#mobile-header -->
+
+<div class="mobile-menu-inner">
+
+  <div class="close-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <nav id="accordian">
+    <ul class="accordion-menu">
+      <li>
+        <a href="#0" class="dropdownlink">Home</a>
+        <ul class="submenuItems">
+          <li><a href="index-2.html">Home Default</a></li>
+          <li><a href="index-shooter.html">Home Shooter</a></li>
+          <li><a href="index-zoombie.html">Home Zoombie</a></li>
+          <li><a href="index-clan.html">Home Clan</a></li>
+          <li><a href="index-magazine.html">Home Magazine</a></li>
+          <li><a href="404.html">404 Page</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#0" class="dropdownlink">Overview</a>
+        <ul class="submenuItems">
+          <li><a href="overview.html">Overview one</a></li>
+          <li><a href="overview-zoombie.html">Overview Two</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#0" class="dropdownlink">Game</a>
+        <ul class="submenuItems">
+          <li><a href="game.html">Game one</a></li>
+          <li><a href="game-zoombie.html">Game Two</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#0" class="dropdownlink">Strategy</a>
+        <ul class="submenuItems">
+          <li><a href="strategy.html">Strategy one</a></li>
+          <li><a href="strategy-zoombie.html">Strategy Two</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#0" class="dropdownlink">Community</a>
+        <ul class="submenuItems">
+          <li><a href="community.html">Community one</a></li>
+          <li><a href="community-zoombie.html">Community Two</a></li>
+        </ul>
+
+      </li>
+      <li>
+        <a href="#0" class="dropdownlink">Store</a>
+        <ul class="submenuItems">
+          <li><a href="store.html">Four Column</a></li>
+          <li><a href="store-three-column-right.html">Three Column Right</a></li>
+          <li><a href="store-three-column-left.html">Three Column Left</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#0" class="dropdownlink">Blog</a>
+        <ul class="submenuItems">
+          <li><a href="blog-four-column.html">Four Column</a></li>
+          <li><a href="blog-three-column.html">Three Column Right</a></li>
+          <li><a href="blog-three-column-left.html">Three Column Left</a></li>
+          <li><a href="blog-two-column-right.html">Two Column Right</a></li>
+          <li><a href="blog-two-column-left.html">Two Column left</a></li>
+          <li><a href="blog-masonry.html">Masonry</a></li>
+          <li><a href="blog-single.html">Details Right Sidebar</a></li>
+          <li><a href="blog-single-left.html">Details Left Sidebar</a></li>
+          <li><a href="blog-single-fullwidth.html">Details Fullwidth</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </nav>
+
+  <form action="#" id="moble-search">
+    <input type="text" placeholder="Search....">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  <!-- /#moble-search -->
+
+  <ul class="footer-social-link">
+    <li class="fb-bg"><a href="#"><i class="fa fa-facebook"></i></a></li>
+    <li class="in-bg"><a href="#"><i class="fa fa-instagram"></i></a></li>
+    <li class="tw-bg"><a href="#"><i class="fa fa-twitter"></i></a></li>
+    <li class="gp-bg"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+  </ul>
+</div>
+<!-- /.mobile-menu-inner -->

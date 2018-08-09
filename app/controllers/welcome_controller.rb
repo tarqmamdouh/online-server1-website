@@ -3,27 +3,26 @@ class WelcomeController < ApplicationController
   skip_before_action :authenticate_user! , only: [:index,:unconfirmed , :confirmed]
   before_action :require_admin , only: [:admin]
   def index
-    @a = Category.last
-    @announcements = @a.articles.last
+    @a = Category.find_by_name("Announcments")
+    @announcements = @a.articles.all.last(6)
 
-    @e= Category.find("3")
-    @events = @e.articles.last
+    @e= Category.find_by_name("Events")
+    @events = @e.articles.all.last(6)
 
-    @m=Category.find("2")
-    @maintenance = @m.articles.last
+    @m=Category.find_by_name("Maintanance")
+    @maintenance = @m.articles.all.last(6)
 
-
-    @u= Category.first
-    @updates = @u.articles.last
+    @u= Category.find_by_name("Updates")
+    @updates = @u.articles.all.last(6)
 
     @DB= SQL.connect_shard
     @DBB = SQL.connect_shardlog
     uniqevent = @DBB[:_LogEventUnique]
     @lastkill = uniqevent.select(:CharName16,:ObjectName,:EventTime).all.last(5)
    # @charid
-    #    @charname=
-      #  @uniquename= @lastkill[:ObjectName]
-      #          @killtime=
+   # @charname=
+   #  @uniquename= @lastkill[:ObjectName]
+   #          @killtime=
 
   end
   def confirmed
