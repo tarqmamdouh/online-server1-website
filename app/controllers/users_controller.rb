@@ -8,7 +8,21 @@ class UsersController < ApplicationController
       @DB= SQL.connect_shard
       character = @DB[:_Char]
       @info = character.where(:CharName16 => params[:charname]).all.last
+      guild = @DB[:_Guild]
+      @gname= guild.where(:id => @info[:guildid]).all.last
+      charjob = @DB[:_CharTrijob]
+      @jobname= charjob.where(:charid => @info[:charid]).all.last
+      if @jobname[:jobtype] == 1
+        @myjob = "Trader"
+      elsif @jobname[:jobtype] == 2
+        @myjob = "Thief"
+      elsif @jobname[:jobtype] == 3
+        @myjob = "Hunter"
+      else
+        @myjob = "Not Joined yet!!"
+      end
     end
+
   end
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
@@ -48,11 +62,12 @@ class UsersController < ApplicationController
     else
       @DB= SQL.connect_shard
       character = @DB[:_Char]
-      @chars = character.where(Sequel.like(:charname16, '%'+ params[:search_param]+'%')).all
+      @chars = character.where(Sequel.like(:charname16, '%'+ params[:search_param]+'%',case_insensitive: true)).all
       flash.now[:danger]="No characters match this search criteria" if @chars.blank?
     end
     respond_to do |format|
       format.js{render partial: 'users/resultchar'}
+
     end
   end
   private

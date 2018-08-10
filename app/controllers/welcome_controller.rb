@@ -15,6 +15,7 @@ class WelcomeController < ApplicationController
     @u= Category.find_by_name("Updates")
     @updates = @u.articles.all.last(6)
 
+
     @DB= SQL.connect_shard
     @DBB = SQL.connect_shardlog
     uniqevent = @DBB[:_LogEventUnique]

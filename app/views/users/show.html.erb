@@ -281,7 +281,7 @@ Additional Classes:
 
             <div class="nk-gap-2"></div>
 
-            <h1 class="nk-title display-4">GeeK</h1>
+            <h1 class="nk-title display-4"><%= @info[:charname16] %></h1>
 
             <div class="nk-gap-2"></div>
 
@@ -304,7 +304,7 @@ Additional Classes:
                     <div class="nk-counter-icon text-main-2">
                       <span class="ion-ios-heart" style="color: darkred"></span>
                     </div>
-                    <div class="nk-count">100800</div>
+                    <div class="nk-count"><%= @info[:hp] %></div>
                     <h3 class="nk-counter-title h3">Health</h3>
                   </div>
                   <!-- END: Counter 8 -->
@@ -323,7 +323,7 @@ Additional Classes:
                           <path d="m259.957,43.655c-38.229-35.915-89.823-49.669-138.289-41.264-0.95,0.165-1.624,1.012-1.567,1.975l.875,14.836c0.01,0.168-0.107,0.318-0.273,0.348-0.166,0.031-0.328-0.067-0.379-0.228l-4.511-14.337c-0.277-0.881-1.151-1.432-2.066-1.305-5.355,0.742-8.924,1.306-14.283,3.693-0.785,0.35-1.235,1.186-1.097,2.034l4.069,24.987c0.066,0.404-0.132,0.805-0.493,0.998-0.361,0.193-0.804,0.136-1.104-0.143l-20.075-18.659c-0.573-0.533-1.416-0.658-2.119-0.315-14.207,6.92-27.602,16.047-39.666,27.38-0.976,0.917-1.54,2.19-1.562,3.53-0.021,1.34 0.501,2.63 1.449,3.578l34.041,34.041c1.87,1.87 4.881,1.935 6.834,0.152 39.382-35.976 100.072-35.976 139.454,0 1.955,1.786 4.962,1.721 6.834-0.152l34.041-34.041c0.947-0.947 1.468-2.239 1.447-3.578-0.021-1.34-0.584-2.613-1.56-3.53z" fill="#db8c5a"/>
                         </g>
                       </svg>                                                </div>
-                    <div class="nk-count">90</div>
+                    <div class="nk-count"><%= @info[:curlevel] %></div>
                     <h3 class="nk-counter-title h3">Level</h3>
                   </div>
                   <!-- END: Counter 9 -->
@@ -338,7 +338,7 @@ Additional Classes:
                     <div class="nk-counter-icon text-main-2">
                       <span class="ion-waterdrop" style="color: #1b3b9e"></span>
                     </div>
-                    <div class="nk-count">2800</div>
+                    <div class="nk-count"><%= @info[:mp] %></div>
                     <h3 class="nk-counter-title h3">Mana</h3>
                   </div>
                   <!-- END: Counter 10 -->
@@ -388,7 +388,7 @@ Additional Classes:
                         </g>
                       </svg>
                     </div>
-                    <h3 style="padding-top: 40px; padding-bottom: 40px;">bababababababababababbababa</h3>
+                    <h3 style="padding-top: 40px; padding-bottom: 40px;"><%= @myjob %></h3>
                     <h3 class="nk-counter-title h3">Job</h3>
                   </div>
                   <!-- END: Counter 11 -->
@@ -437,7 +437,7 @@ Additional Classes:
                         </g>
                       </svg>
                     </div>
-                    <h3 style="padding-top: 40px; padding-bottom: 40px;">bababababababababababbababa</h3>
+                    <h3 style="padding-top: 40px; padding-bottom: 40px;"><%= @gname[:name] %></h3>
                     <h3 class="nk-counter-title h4">Guild</h3>
                   </div>
                   <!-- END: Counter 12 -->
@@ -501,8 +501,8 @@ Additional Classes:
                       </svg>
 
                     </div>
-                    <div class="nk-count" style="padding-top: 10px; padding-bottom: 5px;">589</div>
-                    <h3 class="nk-counter-title h4">Minutes of playing</h3>
+                    <div class="nk-counter-title h4" style="padding-top: 40px; padding-bottom: 75px;"><h3><%=time_ago_in_words(@info[:lastlogout]) %> ago</h3></div>
+                    <h3 class="nk-counter-title h4">Last logout</h3>
                   </div>
                   <!-- END: Counter 13 -->
 
