@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'confirmed' , to: 'welcome#confirmed'
   get 'unconfirmed', to: 'welcome#unconfirmed'
   get 'admin/pins', to: 'admin#pins'
-  #get 'admin/pins/add_pins', to: 'admin#add_pins'
+  put 'admin/pins', to: 'admin#add_pins'
   get 'admin', to: 'admin#index'
   get 'download' , to: 'welcome#download'
   get '/ranking/uniques',   to: 'ranking#uniques'

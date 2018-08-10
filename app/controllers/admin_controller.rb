@@ -3,23 +3,24 @@ class AdminController < ApplicationController
   def index
 
   end
-  def pins
-@sellers = User.where(seller: true)
 
- if @sellers.update(:pins =>((User.where(username: params[:username])).last.pins + params[:Npins]))
-else
-render 'admin/pins'
-# @newpins = @seller.pins + params[:Npins]
-# @x = @seller.update(:pins => @newpins)
-#@sellers.save
-end
+  def pins
+    @sellers = User.where(:seller => true)
+  end
+
+  def add_pins
+    @sellers = User.where(:seller => true)
+    @seller = User.find_by_username(params[:username])
+    new_pins = @seller.pins + params[:Npins].to_f
+    if @seller.update_attribute(:pins, new_pins)
+      flash[:success] = "Succefully Added"
+    else
+      render 'admin/pins'
+    end
   end
 
   private
   def require_admin
-
-
-
     if current_user.admin != true
       redirect_to root_path
     end

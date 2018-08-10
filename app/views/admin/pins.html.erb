@@ -1,6 +1,12 @@
 <h1>This pins page</h1>
-<%= form_for @sellers, :url => {:controller => :admin, action: :pins}  do |f| %>
+<%#= form_for @sellers do |f| %>
 
-  <%= f.collection_check_boxes :username, @sellers.all, :username, :name %>
-  <%= f.submit %>
+  <%#= f.collection_check_boxes :username, @sellers.all, :username, :name %>
+  <%#= f.submit %>
+<%# end %>
+
+<%= form_tag @seller, method: :put, url: [@seller, :add_pins] do |f| %>
+  <%= select_tag(:username, options_for_select( (@sellers.map {|seller| seller.username}) , params[:username] )) %>
+  <%= text_field_tag :Npins, params[:Npins], placeholder:"Enter the amount of points", autofocus: true %>
+  <%= button_tag  "Add Pins", type: :submit  %>
 <% end %>
