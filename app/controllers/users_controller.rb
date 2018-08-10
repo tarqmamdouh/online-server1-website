@@ -1,6 +1,6 @@
 require'SQL'
 class UsersController < ApplicationController
-  before_action :require_admin , only: [:mark_spam,:unmark_spam]
+  before_action :require_admin , only: [:mark_spam,:be_seller]
   def show
     if params[:charname].length > 17 || params[:charname].include?("-")|| params[:charname].include?("/")|| params[:charname].include?("\\")|| params[:charname].include?("'")|| params[:charname].include?("\"")
       redirect_to root_path
@@ -39,7 +39,21 @@ class UsersController < ApplicationController
       @user.update( :spam => true )
       flash[:danger] = "You marked this user as spam!"
     end
-    redirect_to
+    redirect_to "/users/"+@user.username
+  end
+
+  def be_seller
+    @user = User.find_by_username(params[:username])
+    if @user.seller?
+      @user.update(:seller => false)
+      flash[:danger] = "You unmarked this user as seller!"
+      @user.pins = 0
+      @user.save
+    else
+      @user.update( :seller => true )
+      flash[:success] = "You marked this user as seller!"
+    end
+    redirect_to "/users/"+@user.username
   end
   def search
     if params[:search_param].blank?
