@@ -1,0 +1,6 @@
+<h1>This pins page</h1>
+<%= form_for @sellers, :url => {:controller => :admin, action: :pins}  do |f| %>
+
+  <%= f.collection_check_boxes :username, @sellers.all, :username, :name %>
+  <%= f.submit %>
+<% end %>
