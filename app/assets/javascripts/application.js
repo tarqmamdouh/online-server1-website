@@ -20,4 +20,8 @@
 //= stub 'login'
 // = stub 'R1'
 // = stub 'R2'
+// = stub_tree ./vendor
+// = stub_tree ./channels
+// = stub_tree ./js
+// = stub_tree ./site-dependencies.js
 // = stub_tree ./home-depenencies

@@ -6,7 +6,7 @@ class User::ConfirmationsController < Devise::ConfirmationsController
       signed_in_root_path(resource)
     else
       #new_session_path(resource_name)
-      @DB = SQL.connect_atmaccount
+      @DB = SQL.connect_account
 
       #prepare sql paramaters
 

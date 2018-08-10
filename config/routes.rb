@@ -5,14 +5,16 @@ Rails.application.routes.draw do
   get 'unconfirmed', to: 'welcome#unconfirmed'
   get 'admin', to: 'welcome#admin'
   get 'download' , to: 'welcome#download'
- get '/ranking/uniques',   to: 'ranking#uniques'
+  get '/ranking/uniques',   to: 'ranking#uniques'
   match '/users',   to: 'users#index',   via: 'get'
   match '/Characters/:charname',     to: 'users#show',       via: 'get'
   match '/users/:username',     to: 'users#show_u',       via: 'get'
   #put 'users/:username' => 'users#unmark_spam', :as => 'unmark_spam'
   put 'users/:username' => 'users#mark_spam', :as => 'mark_spam'
   get 'search_users', to: 'users#search'
-get 'search_chars', to: 'users#search_char'
+  get 'search_chars', to: 'users#search_char'
+
+
   resources :articles do
     resources :comments
 

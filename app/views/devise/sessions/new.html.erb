@@ -29,7 +29,11 @@
 
         <div id="app-errors">
           <% flash.each do |key, value| %>
-            <h4 style=" color : #d50005"><%= value %></h4>
+            <% if key == "notice" %>
+              <h4 style=" color : #00962c"><%= value %></h4>
+            <% else %>
+              <h4 style=" color : #d50005"><%= value %></h4>
+            <% end %>
           <% end %>
         </div>
 
