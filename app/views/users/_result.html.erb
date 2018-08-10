@@ -13,6 +13,19 @@
             <td><strong>Username: </strong><%= user.username %></td>
             <td><strong>Name: </strong><%= user.name %></td>
             <td><strong>Email: </strong><%= user.email %></td>
+            <td><strong>type of user: </strong><%if user.admin?%>
+              admin
+                <% end %>
+              <%if user.spam?%>
+            spam
+                  <%end %>
+              <% if user.seller? %>
+            seller
+                <% end %>
+              <% if user.seller? != true && user.spam? != true && user.admin? != true %>
+            normal user
+            <% end %>
+            </td>
             <td><strong>profile: </strong><%= link_to "View Profile","/users/"+user.username,class:"btn btn-xs btn-success" %>
 
             </td>

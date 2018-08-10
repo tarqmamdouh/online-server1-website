@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_182805) do
+ActiveRecord::Schema.define(version: 2018_08_10_183805) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2018_08_03_182805) do
     t.boolean "admin", default: false
     t.string "name"
     t.boolean "spam", default: false
+    t.boolean "seller", default: false
+    t.float "pins"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

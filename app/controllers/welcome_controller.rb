@@ -1,7 +1,7 @@
 require "SQL"
 class WelcomeController < ApplicationController
   skip_before_action :authenticate_user! , only: [:index,:unconfirmed , :confirmed]
-  before_action :require_admin , only: [:admin]
+  before_action :require_admin , only: [:admin, :pins]
   def index
     @a = Category.find("4")
     @announcements = @a.articles.last
@@ -32,12 +32,11 @@ class WelcomeController < ApplicationController
   def unconfirmed
   end
 
-  def admin
 
-  end
   def download
 
   end
+
   private
   def require_admin
 
