@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
 
       flash[:success] = "Category was created successfully"
 
-      redirect_to categories_path
+      redirect_to '/news'
 
     else
 
@@ -32,7 +32,7 @@ class CategoriesController < ApplicationController
   end
   def show
 
-    @category = Category.find(params[:id])
+    @category = Category.find_by_name(params[:name])
 
     @category_articles = @category.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 5)
 
@@ -51,7 +51,7 @@ class CategoriesController < ApplicationController
 
       flash[:success] = "Category name was successfully updated"
 
-      redirect_to category_path(@category)
+      redirect_to "/news/"+@category.name
 
     else
 
@@ -71,7 +71,7 @@ class CategoriesController < ApplicationController
   def require_admin
     if current_user.admin != true
       flash[:danger]="You can view Categories only!!"
-      redirect_to categories_path 
+      redirect_to '/news'
     end
   end
 

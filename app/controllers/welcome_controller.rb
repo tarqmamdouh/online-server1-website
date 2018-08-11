@@ -3,17 +3,17 @@ class WelcomeController < ApplicationController
   skip_before_action :authenticate_user! , only: [:index,:unconfirmed , :confirmed]
   before_action :require_admin , only: [:admin, :pins]
   def index
-    @a = Category.find_by_name("Announcments")
-    @announcements = @a.articles.all.last(6)
+      @a = Category.find_by_name("Announcements")
+      @announcements = @a.articles.all.last(6)
 
-    @e= Category.find_by_name("Events")
-    @events = @e.articles.all.last(6)
+      @e= Category.find_by_name("Events")
+      @events = @e.articles.all.last(6)
 
-    @m=Category.find_by_name("Maintanance")
-    @maintenance = @m.articles.all.last(6)
+      @m=Category.find_by_name("Maintenance")
+      @maintenance = @m.articles.all.last(6)
 
-    @u= Category.find_by_name("Updates")
-    @updates = @u.articles.all.last(6)
+      @u= Category.find_by_name("Updates")
+      @updates = @u.articles.all.last(6)
 
 
     @DB= SQL.connect_shard
