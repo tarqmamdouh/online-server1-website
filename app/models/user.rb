@@ -16,6 +16,7 @@ class User < ApplicationRecord
 validates :name , presence: true
   validates_format_of :name, with: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/, :multiline => true
 
+
   attr_accessor :login
   def self.find_for_database_authentication warden_conditions
     conditions = warden_conditions.dup
