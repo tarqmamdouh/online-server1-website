@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'download' , to: 'welcome#download'
   get '/ranking/uniques',   to: 'ranking#uniques'
   match '/users',   to: 'users#index',   via: 'get'
-  match '/Characters/:charname',     to: 'users#show',       via: 'get'
+  match '/characters/:charname',     to: 'users#show',       via: 'get'
   match '/users/:username',     to: 'users#show_u',       via: 'get'
   #put 'users/:username' => 'users#unmark_spam', :as => 'unmark_spam'
   match '/news',   to: 'categories#index',   via: 'get'

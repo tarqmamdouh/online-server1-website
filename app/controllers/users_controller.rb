@@ -76,11 +76,11 @@ class UsersController < ApplicationController
     else
       @DB= SQL.connect_shard
       character = @DB[:_Char]
-      @chars = character.where(Sequel.like(:charname16, '%'+ params[:search_param]+'%',case_insensitive: true)).all
+      @chars = character.where(Sequel.like(:charname16, '%'+ params[:search_param]+'%',case_insensitive: true)).all.first(4)
       flash.now[:danger]="No characters match this search criteria" if @chars.blank?
     end
     respond_to do |format|
-      format.js{render partial: 'users/resultchar'}
+      format.js{render partial: 'users/result_char'}
 
     end
   end

@@ -1011,7 +1011,7 @@ ul, ol {
 .nav-wrap .tim-nav > li.menu-item-has-children .sub-menu li a {
     color: #fff;
     padding: 3px 0;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .nav-wrap .tim-nav > li.menu-item-has-children .sub-menu li a:hover, .nav-wrap .tim-nav > li.menu-item-has-children .sub-menu li a.current_page {

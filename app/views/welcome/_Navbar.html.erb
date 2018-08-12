@@ -77,8 +77,10 @@
         <ul class="tim-nav text-right">
 
           <li class="menu-item">
-            <%= link_to "Home", root_path %>
-            <span class="dot"></span>
+            <a href="/">
+              Home
+              <span class="dot"></span>
+            </a>
           </li>
 
           <li class="menu-item-has-children">
@@ -87,22 +89,24 @@
               <span class="dot"></span>
             </a>
             <ul class="sub-menu">
-              <li><a href="categories/1">Announcements</a></li>
-              <li><a href="categories/2">Events</a></li>
-              <li><a href="categories/3">Maintenance</a></li>
-              <li><a href="categories/4">Updates</a></li>
+              <li><a href="news/Announcements">Announcements</a></li>
+              <li><a href="news/Events">Events</a></li>
+              <li><a href="news/Maintenance">Maintenance</a></li>
+              <li><a href="news/Updates">Updates</a></li>
             </ul>
 
           </li>
 
           <li class="menu-item">
-            <%= link_to "Home", download_path %>
-            <span class="dot"></span>
+            <a href="download">
+              Download
+              <span class="dot"></span>
+            </a>
           </li>
 
           <li class="menu-item-has-children">
             <a href="#">
-              News
+              Rankings
               <span class="dot"></span>
             </a>
             <div class="mega-menu-inner">
@@ -110,21 +114,20 @@
 
                 <div class="tab_content">
 
-                  <div class="tabs_item">
 
                     <div class="row">
 
                       <div class="col-md-3">
-                        <div class="top-team">
-                          <a href="#"><img src="assets/media/team/1.jpg" alt="team"></a>
-                          <h3 class="game-team-name"><a href="#">Zombie island</a>
+                        <div class="top-team text-center">
+                          <a href="../ranking/uniques"><img src="assets/media/team/1.jpg" alt="team"></a>
+                          <h3 class="game-team-name"><a href="../ranking/uniques">Unique Ranking</a>
                           </h3>
                         </div>
                         <!-- /.top-team -->
                       </div>
 
                       <div class="col-md-3">
-                        <div class="top-team">
+                        <div class="top-team text-center">
                           <a href="#"><img src="assets/media/team/2.jpg" alt="team"></a>
                           <h3 class="game-team-name"><a href="#">Gems author</a>
                           </h3>
@@ -133,16 +136,16 @@
                       </div>
 
                       <div class="col-md-3">
-                        <div class="top-team">
+                        <div class="top-team text-center">
                           <a href="#"><img src="assets/media/team/3.jpg" alt="team"></a>
-                          <h3 class="game-team-name"><a href="#">Hard Gamer</a>
+                          <h3 class="game-team-name text-center"><a href="#">Hard Gamer</a>
                           </h3>
                         </div>
                         <!-- /.top-team -->
                       </div>
 
                       <div class="col-md-3">
-                        <div class="top-team">
+                        <div class="top-team text-center">
                           <a href="#"><img src="assets/media/team/4.jpg" alt="team"></a>
                           <h3 class="game-team-name"><a href="#">Speed Controller</a>
                           </h3>
@@ -159,84 +162,22 @@
                 <!-- / tab_content -->
               </div>
               <!-- / tab -->
-            </div>
             <!-- /.mega-menu-inner -->
           </li>
 
           <li class="menu-item-has-children">
             <a href="#">
-              Store
+              Support
               <span class="dot"></span>
             </a>
 
-            <ul class="sub-menu">
-              <li class="menu-item-has-children">
-                <a href="#">Shooter</a>
-                <ul class="sub-menu">
-                  <li><a href="store.html">Four Column</a></li>
-                  <li><a href="store-three-column-right.html">Three Column Right</a></li>
-                  <li><a href="store-three-column-left.html">Three Column Left</a></li>
-                </ul>
-              </li>
-
-              <li class="menu-item-has-children">
-                <a href="store-three-column-left.html">Zoombie</a>
-                <ul class="sub-menu">
-                  <li><a href="store-zoombie.html">Four Column</a></li>
-                  <li><a href="store-three-column-right-zoombie.html">Three Column Right</a></li>
-                  <li><a href="store-three-column-left-zoombie.html">Three Column Left</a></li>
-                </ul>
-              </li>
-
-              <li class="menu-item-has-children">
-                <a href="store-three-column-left.html">Clan</a>
-                <ul class="sub-menu">
-                  <li><a href="store.html">Four Column</a></li>
-                  <li><a href="store-three-column-right.html">Three Column Right</a></li>
-                  <li><a href="store-three-column-left.html">Three Column Left</a></li>
-                </ul>
-              </li>
-
+            <ul class="sub-menu text-center" style="font-size: 32px;">
+              <li><a href="#">Support center</a></li>
+              <li><a href="FAQ">Report Bug</a></li>
+              <li><a href="FAQ">FAQ</a></li>
+<!--              <li><a href="news/Updates">Updates</a></li>-->
             </ul>
-          </li>
 
-          <li class="menu-item-has-children">
-            <a href="#">
-              Blog
-              <span class="dot"></span>
-            </a>
-
-            <ul class="sub-menu">
-              <li class="menu-item-has-children">
-                <a href="#">Shooter</a>
-                <ul class="sub-menu">
-                  <li><a href="blog-four-column.html">Four Column</a></li>
-                  <li><a href="blog-three-column.html">Three Column Right</a></li>
-                  <li><a href="blog-three-column-left.html">Three Column Left</a></li>
-                  <li><a href="blog-two-column-right.html">Two Column Right</a></li>
-                  <li><a href="blog-two-column-left.html">Two Column left</a></li>
-                  <li><a href="blog-masonry.html">Masonry</a></li>
-                  <li><a href="blog-single.html">Details Right Sidebar</a></li>
-                  <li><a href="blog-single-left.html">Details Left Sidebar</a></li>
-                  <li><a href="blog-single-fullwidth.html">Details Fullwidth</a></li>
-                </ul>
-              </li>
-
-              <li class="menu-item-has-children">
-                <a href="#">Zoombie</a>
-                <ul class="sub-menu">
-                  <li><a href="blog-four-column-zoombie.html">Four Column</a></li>
-                  <li><a href="blog-three-column-zoombie.html">Three Column Right</a></li>
-                  <li><a href="blog-three-column-left-zoombie.html">Three Column Left</a></li>
-                  <li><a href="blog-two-column-right-zoombie.html">Two Column Right</a></li>
-                  <li><a href="blog-two-column-left-zoombie.html">Two Column left</a></li>
-                  <li><a href="blog-masonry-zoombie.html">Masonry</a></li>
-                  <li><a href="blog-single.html">Details Right Sidebar</a></li>
-                  <li><a href="blog-single-left.html">Details Left Sidebar</a></li>
-                  <li><a href="blog-single-fullwidth.html">Details Fullwidth</a></li>
-                </ul>
-              </li>
-            </ul>
           </li>
 
           <li class="nav-item search-btn">
@@ -245,10 +186,7 @@
 
         </ul>
         <div class="top-search-form">
-          <form action="#" class="search-form">
-            <input type="text" name="search" placeholder="Search For Character ... ">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
+          <%= render "users/searchchar" %>
         </div>
       </div>
       <!-- /.nav-wrap -->
@@ -268,23 +206,23 @@
       <a href="#"><img src="assets/img/logo.png" alt="Site Logo"></a>
     </div>
 
-    <!-- if Not Logged in -->
-    <!--
-<ul class="user-link nav justify-content-end">
-<li><a href="#"><i class="fa fa-user"></i>Login</a></li>
-<li><a href="#"><i class="fa fa-sign-in"></i>Sign Up</a></li>
-</ul>
--->
-    <!-- -->
+    <% if user_signed_in? %>
+      <ul class="user-link nav justify-content-end">
+        <%#= link_to , users_path(@current_user), "test<span>*</span>".html_safe %>
+        <li><a href="#"><i class="fa fa-user"></i> <%= current_user.username %></a></li>
+        <li>
+          <%= link_to destroy_user_session_path, :method => :delete  do %>
+            <i class="fa fa-sign-in"></i>logout
+          <% end %>
+        </li>
+      </ul>
 
-    <!-- if Logged in -->
-    <ul class="user-link nav justify-content-end">
-      <li><a href="#"><i class="fa fa-user"></i>GeeK</a></li>
-      <li><a href="#"><i class="fa fa-bell"></i>5</a></li>
-      <li><a href="#"><i class="fa fa-sign-in"></i>logout</a></li>
-
-    </ul>
-    <!-- -->
+    <% else %>
+      <ul class="user-link nav justify-content-end">
+        <li><a href="/users/sign_in"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="/users/sign_up"><i class="fa fa-sign-in"></i>Sign Up</a></li>
+      </ul>
+    <% end %>
 
 
     <div id="nav-toggle" class="nav-toggle hidden-md">
@@ -310,66 +248,37 @@
   <nav id="accordian">
     <ul class="accordion-menu">
       <li>
-        <a href="#0" class="dropdownlink">Home</a>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="#0" class="dropdownlink">News</a>
         <ul class="submenuItems">
-          <li><a href="index-2.html">Home Default</a></li>
-          <li><a href="index-shooter.html">Home Shooter</a></li>
-          <li><a href="index-zoombie.html">Home Zoombie</a></li>
-          <li><a href="index-clan.html">Home Clan</a></li>
-          <li><a href="index-magazine.html">Home Magazine</a></li>
-          <li><a href="404.html">404 Page</a></li>
+          <li><a href="news/Announcements">Announcements</a></li>
+          <li><a href="news/Events">Events</a></li>
+          <li><a href="news/Maintenance">Maintenance</a></li>
+          <li><a href="news/Updates">Updates</a></li>
         </ul>
       </li>
       <li>
-        <a href="#0" class="dropdownlink">Overview</a>
-        <ul class="submenuItems">
-          <li><a href="overview.html">Overview one</a></li>
-          <li><a href="overview-zoombie.html">Overview Two</a></li>
-        </ul>
+        <a href="download" >Download</a>
       </li>
+
       <li>
-        <a href="#0" class="dropdownlink">Game</a>
+        <a href="#0" class="dropdownlink">Rankings</a>
         <ul class="submenuItems">
-          <li><a href="game.html">Game one</a></li>
-          <li><a href="game-zoombie.html">Game Two</a></li>
+          <li><a href="news/Announcements">Announcements</a></li>
+          <li><a href="news/Events">Events</a></li>
+          <li><a href="news/Maintenance">Maintenance</a></li>
+          <li><a href="news/Updates">Updates</a></li>
         </ul>
       </li>
 
       <li>
-        <a href="#0" class="dropdownlink">Strategy</a>
+        <a href="#0" class="dropdownlink">Support</a>
         <ul class="submenuItems">
-          <li><a href="strategy.html">Strategy one</a></li>
-          <li><a href="strategy-zoombie.html">Strategy Two</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#0" class="dropdownlink">Community</a>
-        <ul class="submenuItems">
-          <li><a href="community.html">Community one</a></li>
-          <li><a href="community-zoombie.html">Community Two</a></li>
-        </ul>
-
-      </li>
-      <li>
-        <a href="#0" class="dropdownlink">Store</a>
-        <ul class="submenuItems">
-          <li><a href="store.html">Four Column</a></li>
-          <li><a href="store-three-column-right.html">Three Column Right</a></li>
-          <li><a href="store-three-column-left.html">Three Column Left</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#0" class="dropdownlink">Blog</a>
-        <ul class="submenuItems">
-          <li><a href="blog-four-column.html">Four Column</a></li>
-          <li><a href="blog-three-column.html">Three Column Right</a></li>
-          <li><a href="blog-three-column-left.html">Three Column Left</a></li>
-          <li><a href="blog-two-column-right.html">Two Column Right</a></li>
-          <li><a href="blog-two-column-left.html">Two Column left</a></li>
-          <li><a href="blog-masonry.html">Masonry</a></li>
-          <li><a href="blog-single.html">Details Right Sidebar</a></li>
-          <li><a href="blog-single-left.html">Details Left Sidebar</a></li>
-          <li><a href="blog-single-fullwidth.html">Details Fullwidth</a></li>
+          <li><a href="#">Support center</a></li>
+          <li><a href="#">Report Bug</a></li>
+          <li><a href="#">FAQ</a></li>
         </ul>
       </li>
 
@@ -377,16 +286,15 @@
   </nav>
 
   <form action="#" id="moble-search">
-    <input type="text" placeholder="Search....">
+    <input type="text" placeholder="Search for character ....">
     <button type="submit"><i class="fa fa-search"></i></button>
   </form>
   <!-- /#moble-search -->
 
   <ul class="footer-social-link">
     <li class="fb-bg"><a href="#"><i class="fa fa-facebook"></i></a></li>
-    <li class="in-bg"><a href="#"><i class="fa fa-instagram"></i></a></li>
-    <li class="tw-bg"><a href="#"><i class="fa fa-twitter"></i></a></li>
-    <li class="gp-bg"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+    <li class="in-bg"><a href="#"><i class="fa fa-youtube"></i></a></li>
+    <li class="tw-bg"><a href="#"><i class="fab fa-discord"></i></a></li>
   </ul>
 </div>
 <!-- /.mobile-menu-inner -->
