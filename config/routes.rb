@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   put 'users/:username/be_seller' => 'users#be_seller', :as => 'be_seller'
   get 'search_users', to: 'users#search'
   get 'search_chars', to: 'users#search_char'
+  get '/user/preferences' , to: 'users#preferences'
+  put '/user/preferences' , to: 'users#withdraw_silk'
 
 
   resources :articles do
