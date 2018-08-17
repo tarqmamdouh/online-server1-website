@@ -1,0 +1,11 @@
+<%= render 'layouts/adminNavbar'%>
+
+<h1 align = "center">Listing all tickets</h1>
+  <%= link_to "new ticket", new_ticket_path %>
+<div align="center">
+  <%= will_paginate %>
+</div>
+<%= render 'ticket', obj: @tickets%>
+<div align="center">
+  <%= will_paginate %>
+</div>
