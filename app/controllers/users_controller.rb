@@ -1,6 +1,6 @@
 require'SQL'
 class UsersController < ApplicationController
-  before_action :require_admin , only: [:mark_spam,:be_seller]
+  before_action :require_admin , only: [:mark_spam,:be_seller,:mark_supp]
   before_action :require_seller , only: [:withdraw_silk]
   def show
     if params[:charname].length > 17 || params[:charname].include?("-")|| params[:charname].include?("/")|| params[:charname].include?("\\")|| params[:charname].include?("'")|| params[:charname].include?("\"")
@@ -53,6 +53,17 @@ class UsersController < ApplicationController
     else
       @user.update( :seller => true )
       flash[:success] = "You marked this user as seller!"
+    end
+    redirect_to "/users/"+@user.username
+  end
+  def mark_supp
+    @user = User.find_by_username(params[:username])
+    if @user.support?
+      @user.update(:support => false)
+      flash[:danger] = "You unmarked this user as supporter!"
+    else
+      @user.update( :support => true )
+      flash[:success] = "You marked this user as supporter!"
     end
     redirect_to "/users/"+@user.username
   end

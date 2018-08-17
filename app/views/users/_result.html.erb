@@ -22,6 +22,9 @@
               <% if user.seller? %>
             seller
                 <% end %>
+              <% if user.support? %>
+                support
+              <% end %>
               <% if user.seller? != true && user.spam? != true && user.admin? != true %>
             normal user
             <% end %>
