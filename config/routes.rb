@@ -21,9 +21,10 @@ Rails.application.routes.draw do
   get 'search_chars', to: 'users#search_char'
   get '/user/preferences' , to: 'users#preferences'
   put '/user/preferences' , to: 'users#withdraw_silk'
+ put 'tickets/:id/close_ticket' => 'tickets#close_ticket', :as => 'close_ticket'
 
   resources :tickets do
-    resources :comments
+    resources :tcomments
   end
   resources :articles do
     resources :comments

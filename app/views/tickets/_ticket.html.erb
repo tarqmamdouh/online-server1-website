@@ -1,0 +1,24 @@
+<% obj.each do |ticket|%>
+  <div class = "row">
+    <div class = "col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class= "article-title"?>
+
+          <%=link_to ticket.subject, ticket_path(ticket) %>
+        </div>
+
+        <div class="article-body">
+          <%= truncate(ticket.content,length: 100) %>
+          <div class="article-meta-details">
+            <small>Created by: <%= ticket.user.username if ticket.user %>,
+              <%= time_ago_in_words(ticket.created_at)%> ago
+            </small>
+          </div>
+        </div>
+
+        <h2>This Ticket has <%= pluralize(ticket.tcomments.count,"Comment") %></h2>
+
+      </div>
+    </div>
+  </div>
+<% end %>
