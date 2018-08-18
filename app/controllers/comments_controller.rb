@@ -12,7 +12,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to article_path(@article)
     else
-      render 'new'
+      flash[:danger]= "You cant create empty comment!"
+      redirect_to article_path(@article)
     end
 
   end

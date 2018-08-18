@@ -1,7 +1,9 @@
+
 <%= render 'layouts/adminNavbar'%>
+
 <%if current_user.admin? || current_user.support? %>
   <% if @ticket.status? %>
-    <%= button_to "Close this ticket", {action: "close_ticket", id: @ticket.id }, method: :put,data: {confirm: "Are you sure you want to close this ticket??!"} %>
+    <%= button_to "Close this ticket", {action: "close_ticket"}, method: :put,data: {confirm: "Are you sure you want to close this ticket??!"} %>
 <%end %>
 <% end %>
 

@@ -1,9 +1,10 @@
-<%= form_for([@ticket,@ticket.tcomments.build]) do |f| %>
+<%= form_for([@ticket,@ticket.tcomments.build], html: { multipart: true }) do |f| %>
   <% if @ticket.status != true %>
-    <li><big>This ticket is closed!!!</big></li>
+    <li><h2>This ticket is closed!!!</h2></li>
 
   <%else %>
     <%= f.text_area :content %>
+    <%= f.file_field :image %>
     <%= f.submit "Create comment" %>
 
   <% end %>

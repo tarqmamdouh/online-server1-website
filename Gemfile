@@ -17,6 +17,7 @@ gem 'byebug'
 gem 'sequel'
 gem 'devise-encryptable'
 gem 'geocoder'
+gem "paperclip", "~> 6.0.0"
 
 
 # Use Puma as the app server

@@ -5,14 +5,15 @@ class TcommentsController < ApplicationController
   before_action :comment_deleter , only: [:destroy]
   before_action :require_not_closed , only: [:create,:destroy,:edit,:update]
   def create
-    @tcomment = @ticket.tcomments.create(params[:tcomment].permit(:content))
+    @tcomment = @ticket.tcomments.create(params[:tcomment].permit(:content, :image))
     @tcomment.user_id = current_user.id
     @tcomment.save
 
     if @tcomment.save
       redirect_to ticket_path(@ticket)
     else
-      render 'new'
+      flash[:danger]= "You cant create empty comment!"
+      redirect_to ticket_path(@ticket)
     end
 
   end
@@ -24,7 +25,7 @@ class TcommentsController < ApplicationController
 
   end
   def update
-    if @tcomment.update(params[:tcomment].permit(:content))
+    if @tcomment.update(params[:tcomment].permit(:content, :image))
       redirect_to ticket_path(@ticket)
     else
       render 'edit'
