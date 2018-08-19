@@ -1,5 +1,6 @@
 require'SQL'
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user! , only: [:search_char, :search]
   before_action :require_admin , only: [:mark_spam,:be_seller]
   before_action :require_seller , only: [:withdraw_silk]
   def show

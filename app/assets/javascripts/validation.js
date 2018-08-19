@@ -7,4 +7,13 @@ $(document).on('turbolinks:load', (function() {
         $.get($("#search_for_char").attr("action"),  $("#search_for_char").serialize(), null, "script");
         return false;
     });
+
 }));
+
+$(document).ready(function () {
+    setInterval(function () {
+
+        $('#server_time').load('/welcome/give_time');
+
+    }, 1000);
+});

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users ,:controllers =>{:registrations => "user/registrations", :confirmations => "user/confirmations",:passwords => "user/passwords" }
   root 'welcome#index'
+  get 'welcome/give_time', to: 'welcome#give_time'
   get 'confirmed' , to: 'welcome#confirmed'
   get 'unconfirmed', to: 'welcome#unconfirmed'
   get 'admin/pins', to: 'admin#pins'
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   get 'search_chars', to: 'users#search_char'
   get '/user/preferences' , to: 'users#preferences'
   put '/user/preferences' , to: 'users#withdraw_silk'
+
 
 
   resources :articles do

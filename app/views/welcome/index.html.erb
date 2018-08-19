@@ -1,12 +1,3 @@
-
-<%#= render 'layouts/adminNavbar'%>
-
-<!--<h1>Welcome to Z-sro</h1>-->
-<%#= link_to "Articles", articles_path %>
-<%#= link_to "Downloads", download_path %>
-
-<%#= render 'users/lookup' %>
-
 <!doctype html>
 
 <html>
@@ -149,6 +140,7 @@
                     <div id="ornaments">
                       <div id="moreornaments">
                         <div id="radialgradient">
+                          <a href="../download">
                           <div id="gloss">
                             <div id="inner">
                               <i class="fa fa-cloud-download"></i>
@@ -156,6 +148,7 @@
                             </div>
                             <div id="gradientbottom"></div>
                           </div>
+                          </a>
                         </div>
                         <div class="triangle top left bg"></div>
                         <div class="triangle middle left bg"></div>
@@ -304,61 +297,29 @@
 
                 <div class="tab-pane" id="gamer" role="tabpanel" aria-labelledby="gamer-tab">
                   <div class="letest-games">
-                    <!--<a href="#"><img src="https://cdn.iconscout.com/public/images/icon/premium/png-512/online-game-games-video-casino-gamer-33b5d5e46b1c6d0a-512x512.png" alt="thumb"></a> -->
                     <div class="game-time" style="padding-left: 50px;">
                       <p style="font-size: 48px;"><strong>   server time </strong></p>
-                      <h3 class="time" style="font-size: 28px;"> 15:00:04 PM </h3>
+                      <h3 class="time" id="server_time" style="font-size: 28px;"> <%= render :partial => 'shared/time_portion' %>
+                      </h3>
                     </div>
                   </div>
 
                   <!-- /.letest-games -->
                 </div>
 
-                <div class="tab-pane" id="professional" role="tabpanel" aria-labelledby="professional-tab">
-                  <div class="letest-games">
-                    <a href="#"><img src="assets/media/uniques/Uruchi.jpg" alt="thumb"></a>
-                    <div class="game-time">
-                      <h2 class="date" style="padding-left: 20px;"><strong class="time">GeeK</strong> has killed <strong class="time"> Urchi </strong></h2>
-                      <p class="date">20 minutes ago</p>
+                <% @lastkill.each do |row| %>
+                  <div class="tab-pane" id="professional" role="tabpanel" aria-labelledby="professional-tab">
+                    <div class="letest-games">
+                      <a href="#"><img src="assets/media/uniques/<%= (row[:objectname].to_s).delete(' ') + ".jpg"  %>" alt="thumb"></a>
+                      <div class="game-time">
+                        <h2 class="date" style="padding-left: 20px;"><strong class="time"><%= row[:charname16]%></strong> has killed <strong class="time"> <%= row[:objectname]%> </strong></h2>
+                        <p class="date"><%= time_ago_in_words(row[:eventtime]) %></p>
+                      </div>
                     </div>
                   </div>
+              <% end %>
                   <!-- /.letest-games -->
 
-                  <div class="letest-games">
-                    <a href="#"><img src="assets/media/uniques/CaptainIvy.jpg" alt="thumb"></a>
-                    <div class="game-time">
-                      <h2 class="date" style="padding-left: 20px;"><strong class="time">GeeK</strong> has killed <strong class="time"> Captain Ivy </strong></h2>
-                      <p class="date">30 minutes ago</p>
-                    </div>
-                  </div>
-                  <!-- /.letest-games -->
-
-                  <div class="letest-games">
-                    <a href="#"><img src="assets/media/uniques/Cerberus.jpg" alt="thumb"></a>
-                    <div class="game-time">
-                      <h2 class="date" style="padding-left: 20px;"><strong class="time">GeeK</strong> has killed <strong class="time"> Cerberus </strong></h2>
-                      <p class="date">40 minutes ago</p>
-                    </div>
-                  </div>
-                  <!-- /.letest-games -->
-                  <div class="letest-games">
-                    <a href="#"><img src="assets/media/uniques/DemonShaitan.jpg" alt="thumb"></a>
-                    <div class="game-time">
-                      <h2 class="date" style="padding-left: 20px;"><strong class="time">GeeK</strong> has killed <strong class="time"> Demon Shaitan </strong></h2>
-                      <p class="date">45 minutes ago</p>
-                    </div>
-                  </div>
-
-                  <!-- /.letest-games -->
-                  <div class="letest-games">
-                    <a href="#"><img src="assets/media/uniques/LordYarkan.jpg" alt="thumb"></a>
-                    <div class="game-time">
-                      <h2 class="date" style="padding-left: 20px;"><strong class="time">GeeK</strong> has killed <strong class="time"> Lord Yarkan </strong></h2>
-                      <p class="date">1 hour ago</p>
-                    </div>
-                  </div>
-
-                </div>
 
                 <div class="tab-pane" id="advancher" role="tabpanel" aria-labelledby="advancher-tab">
                   <div class="letest-games">

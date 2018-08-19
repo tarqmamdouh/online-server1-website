@@ -1,6 +1,6 @@
 require "SQL"
 class WelcomeController < ApplicationController
-  skip_before_action :authenticate_user! , only: [:index,:unconfirmed , :confirmed]
+  skip_before_action :authenticate_user! , only: [:index,:unconfirmed , :confirmed, :give_time, :download]
   before_action :require_admin , only: [:admin, :pins]
   def index
       @a = Category.find_by_name("Announcements")
@@ -19,13 +19,19 @@ class WelcomeController < ApplicationController
     @DB= SQL.connect_shard
     @DBB = SQL.connect_shardlog
     uniqevent = @DBB[:_LogEventUnique]
-    @lastkill = uniqevent.select(:CharName16,:ObjectName,:EventTime).all.last(5)
+    @lastkill = uniqevent.select(:CharName16,:ObjectName,:EventTime).all.last(6)
    # @charid
    # @charname=
    #  @uniquename= @lastkill[:ObjectName]
    #          @killtime=
 
   end
+
+  def give_time
+    @time = Time.now.strftime("%H:%M:%S ")
+    render :partial => 'shared/time_portion'
+  end
+
   def confirmed
   end
 
