@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/user/preferences' , to: 'users#preferences'
   put '/user/preferences' , to: 'users#withdraw_silk'
  put 'tickets/:id/close_ticket' => 'tickets#close_ticket', :as => 'close_ticket'
+  mount Attachinary::Engine => "/attachinary"
 
   resources :tickets do
     resources :tcomments

@@ -11,12 +11,16 @@ gem 'bootstrap-will_paginate','1.0.0'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
-gem 'jquery-rails'
+gem "jquery-rails"
 gem 'tiny_tds'
 gem 'byebug'
 gem 'sequel'
 gem 'devise-encryptable'
 gem 'geocoder'
+gem "attachinary"
+gem "jquery-fileupload-rails"
+gem 'cloudinary'
+gem 'simple_form'
 
 
 # Use Puma as the app server
