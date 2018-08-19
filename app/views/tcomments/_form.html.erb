@@ -4,7 +4,8 @@
 
   <%else %>
     <%= f.text_area :content %>
-    <%= f.file_field :photo, as: :attachinary %>
+    <%= f.file_field :photo, as: :attachinary,onchange: "validateFiles(this);",
+                     data: { max_file_size: 2.megabytes} %>
     <%= f.submit "Create comment" %>
   <% end %>
 <% end %>

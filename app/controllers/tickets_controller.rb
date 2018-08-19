@@ -40,7 +40,7 @@ class TicketsController < ApplicationController
 
   def article_params
 
-    params.require(:ticket).permit(:subject, :content)
+    params.require(:ticket).permit(:subject, :content, :image)
 
   end
   def require_admin
