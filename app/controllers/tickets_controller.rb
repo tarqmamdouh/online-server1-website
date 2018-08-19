@@ -44,7 +44,7 @@ class TicketsController < ApplicationController
 
   end
   def require_admin
-    if current_user.admin || current_user.support != true
+    if current_user.admin? != true || current_user.support? != true
       redirect_to root_path
     end
   end
