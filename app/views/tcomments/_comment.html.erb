@@ -1,0 +1,18 @@
+<h2>This Ticket has <%= pluralize(@tcomments.count, "Comment") %></h2>
+
+<% @tcomments.each do |comment| %>
+  <p><b><%= link_to comment.user.username,"/users/"+comment.user.username%></b></p>
+  <p><%= comment.content %>
+    <small><%if comment.updated_at != comment.created_at %> (Edited)
+      <%end %></small></p>
+  <p><small> <%=time_ago_in_words(comment.created_at)%> ago</small></p>
+  <% if current_user.spam? != true %>
+    <% if current_user == comment.user || current_user.admin? %>
+      <%= link_to "Delete comment", [comment.ticket , comment], method: :delete,data: {confirm: "Are you sure you want to delete the comment?"} %>
+    <% end %>
+    <% if current_user == comment.user %>
+      <%= link_to "Edit comment", edit_ticket_tcomment_path(comment.ticket, comment) %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= render 'tcomments/form' %>

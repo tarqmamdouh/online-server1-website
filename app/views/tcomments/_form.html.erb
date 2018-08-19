@@ -1,0 +1,10 @@
+<%= form_for([@ticket,@ticket.tcomments.build]) do |f| %>
+  <% if @ticket.status != true %>
+    <li><big>This ticket is closed!!!</big></li>
+
+  <%else %>
+    <%= f.text_area :content %>
+    <%= f.submit "Create comment" %>
+
+  <% end %>
+<% end %>

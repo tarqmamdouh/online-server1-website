@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :articles
+  has_many :tickets
   has_many :comments, dependent: :destroy
   attr_accessor :terms_of_service
   validates :terms_of_service, :acceptance => true
