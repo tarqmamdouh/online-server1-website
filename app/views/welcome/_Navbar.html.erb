@@ -39,7 +39,12 @@
             <% if user_signed_in? %>
               <ul class="user-link nav justify-content-end">
                 <%#= link_to , users_path(@current_user), "test<span>*</span>".html_safe %>
-                <li><a href="#"><i class="fa fa-user"></i> <%= current_user.username %></a></li>
+                <li><a href="<%= user_preferences_path %>"><i class="fa fa-user"></i> <%= current_user.username %></a></li>
+
+                <% if current_user.seller? %>
+                  <li><a href="#"><i class="fas fa-dollar-sign"></i> <%= current_user.pins %></a></li>
+                <% end %>
+
                 <li>
                   <%= link_to destroy_user_session_path, :method => :delete  do %>
                   <i class="fa fa-sign-in"></i>logout
@@ -49,8 +54,8 @@
 
             <% else %>
               <ul class="user-link nav justify-content-end">
-                <li><a href="/users/sign_in"><i class="fa fa-user"></i>Login</a></li>
-                <li><a href="/users/sign_up"><i class="fa fa-sign-in"></i>Sign Up</a></li>
+                <li><a href="../users/sign_in"><i class="fa fa-user"></i>Login</a></li>
+                <li><a href="../users/sign_up"><i class="fa fa-sign-in"></i>Sign Up</a></li>
               </ul>
             <% end %>
 
@@ -71,7 +76,7 @@
       <div class="nav-wrap">
         <div id="site-logo">
           <a href="www.z-sro.com">
-            <img src="assets/img/logo.png" alt="Site Logo" style="margin-bottom: 40%;">
+            <img src="../assets/img/logo.png" alt="Site Logo" style="margin-bottom: 40%;">
           </a>
         </div>
         <ul class="tim-nav text-right">
@@ -84,21 +89,23 @@
           </li>
 
           <li class="menu-item-has-children">
+
             <a href="#">
               News
               <span class="dot"></span>
             </a>
+
             <ul class="sub-menu">
-              <li><a href="news/Announcements">Announcements</a></li>
-              <li><a href="news/Events">Events</a></li>
-              <li><a href="news/Maintenance">Maintenance</a></li>
-              <li><a href="news/Updates">Updates</a></li>
+              <li><a href="../news/Announcements" target="_blank">Announcements</a></li>
+              <li><a href="../news/Events" target="_blank">Events</a></li>
+              <li><a href="../news/Maintenance" target="_blank">Maintenance</a></li>
+              <li><a href="../news/Updates" target="_blank">Updates</a></li>
             </ul>
 
           </li>
 
           <li class="menu-item">
-            <a href="download">
+            <a href="../download" target="_blank">
               Download
               <span class="dot"></span>
             </a>
@@ -119,7 +126,7 @@
 
                       <div class="col-md-3">
                         <div class="top-team text-center">
-                          <a href="../ranking/uniques"><img src="assets/media/team/1.jpg" alt="team"></a>
+                          <a href="../ranking/uniques" target="_blank"><img src="../assets/media/team/1.jpg" alt="team"></a>
                           <h3 class="game-team-name"><a href="../ranking/uniques">Unique Ranking</a>
                           </h3>
                         </div>
@@ -128,7 +135,7 @@
 
                       <div class="col-md-3">
                         <div class="top-team text-center">
-                          <a href="#"><img src="assets/media/team/2.jpg" alt="team"></a>
+                          <a href="#"><img src="../assets/media/team/2.jpg" alt="team"></a>
                           <h3 class="game-team-name"><a href="#">Gems author</a>
                           </h3>
                         </div>
@@ -137,7 +144,7 @@
 
                       <div class="col-md-3">
                         <div class="top-team text-center">
-                          <a href="#"><img src="assets/media/team/3.jpg" alt="team"></a>
+                          <a href="#"><img src="../assets/media/team/3.jpg" alt="team"></a>
                           <h3 class="game-team-name text-center"><a href="#">Hard Gamer</a>
                           </h3>
                         </div>
@@ -146,7 +153,7 @@
 
                       <div class="col-md-3">
                         <div class="top-team text-center">
-                          <a href="#"><img src="assets/media/team/4.jpg" alt="team"></a>
+                          <a href="#"><img src="../assets/media/team/4.jpg" alt="team"></a>
                           <h3 class="game-team-name"><a href="#">Speed Controller</a>
                           </h3>
                         </div>
@@ -203,24 +210,30 @@
 <header id="mobile-nav-wrap">
   <div class="mob-header-inner d-flex justify-content-between">
     <div id="mobile-logo" class="d-flex justify-content-start">
-      <a href="#"><img src="assets/img/logo.png" alt="Site Logo"></a>
+      <a href="#"><img src="../assets/img/logo.png" alt="Site Logo"></a>
     </div>
 
     <% if user_signed_in? %>
       <ul class="user-link nav justify-content-end">
         <%#= link_to , users_path(@current_user), "test<span>*</span>".html_safe %>
         <li><a href="#"><i class="fa fa-user"></i> <%= current_user.username %></a></li>
+
+        <% if current_user.seller? %>
+          <li><a href="#"><i class="fas fa-dollar-sign"></i> <%= current_user.pins %></a></li>
+        <% end %>
+
         <li>
           <%= link_to destroy_user_session_path, :method => :delete  do %>
             <i class="fa fa-sign-in"></i>logout
           <% end %>
         </li>
+
       </ul>
 
     <% else %>
       <ul class="user-link nav justify-content-end">
-        <li><a href="/users/sign_in"><i class="fa fa-user"></i>Login</a></li>
-        <li><a href="/users/sign_up"><i class="fa fa-sign-in"></i>Sign Up</a></li>
+        <li><a href="../users/sign_in"><i class="fa fa-user"></i>Login</a></li>
+        <li><a href="../users/sign_up"><i class="fa fa-sign-in"></i>Sign Up</a></li>
       </ul>
     <% end %>
 
@@ -253,23 +266,23 @@
       <li>
         <a href="#0" class="dropdownlink">News</a>
         <ul class="submenuItems">
-          <li><a href="news/Announcements">Announcements</a></li>
-          <li><a href="news/Events">Events</a></li>
-          <li><a href="news/Maintenance">Maintenance</a></li>
-          <li><a href="news/Updates">Updates</a></li>
+          <li><a href="../news/Announcements">Announcements</a></li>
+          <li><a href="../news/Events">Events</a></li>
+          <li><a href="../news/Maintenance">Maintenance</a></li>
+          <li><a href="../news/Updates">Updates</a></li>
         </ul>
       </li>
       <li>
-        <a href="download" >Download</a>
+        <a href="../download" >Download</a>
       </li>
 
       <li>
         <a href="#0" class="dropdownlink">Rankings</a>
         <ul class="submenuItems">
-          <li><a href="news/Announcements">Announcements</a></li>
-          <li><a href="news/Events">Events</a></li>
-          <li><a href="news/Maintenance">Maintenance</a></li>
-          <li><a href="news/Updates">Updates</a></li>
+          <li><a href="../news/Announcements">Announcements</a></li>
+          <li><a href="../news/Events">Events</a></li>
+          <li><a href="../news/Maintenance">Maintenance</a></li>
+          <li><a href="../news/Updates">Updates</a></li>
         </ul>
       </li>
 
