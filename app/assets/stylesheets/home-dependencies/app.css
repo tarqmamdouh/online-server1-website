@@ -4753,7 +4753,7 @@ ul, ol {
     height: 580px;
 }
 
-.nav-links {
+.pagination {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -4761,13 +4761,13 @@ ul, ol {
     margin-top: 70px;
 }
 
-.nav-links li {
+.pagination li {
     display: inline-block;
     text-align: center;
     margin-right: 10px;
 }
 
-.nav-links li a {
+.pagination li a {
     display: block;
     height: 30px;
     width: 30px;
@@ -4777,16 +4777,16 @@ ul, ol {
     border-radius: 4px;
 }
 
-.nav-links li a:hover, .nav-links li a.active {
+.pagination li a:hover, .pagination li a.active{
     background: #fd0e0e;
 }
 
-.nav-links li:nth-child(2) {
+.pagination li:nth-child(2) {
     position: absolute;
     bottom: -40px;
 }
 
-.nav-links li:nth-child(4) {
+.pagination li:nth-child(4) {
     position: absolute;
     top: -40px;
     left: 43px;
@@ -9331,19 +9331,19 @@ select.orderby {
 }
 
 .footer-social-link li.fb-bg {
-    background-image: url("media/footer/2.png");
+    background-image: url("../media/footer/2.png");
 }
 
 .footer-social-link li.in-bg {
-    background-image: url("media/footer/5.png");
+    background-image: url("../media/footer/5.png");
 }
 
 .footer-social-link li.tw-bg {
-    background-image: url("media/footer/3.png");
+    background-image: url("../media/footer/3.png");
 }
 
 .footer-social-link li.gp-bg {
-    background-image: url("media/footer/5.png");
+    background-image: url("../media/footer/5.png");
 }
 
 .footer-social-link li:hover {

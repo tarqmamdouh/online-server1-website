@@ -32,11 +32,15 @@ class CategoriesController < ApplicationController
   end
   def show
 
+    @a = Category.find_by_name("Announcements")
+    @announcements = @a.articles.all.last(3)
+
     @category = Category.find_by_name(params[:name])
 
-    @category_articles = @category.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 5)
+    @category_articles = @category.articles.order('updated_at DESC').paginate(page: params[:page], per_page: 9)
 
   end
+
   def edit
 
     @category = Category.find(params[:id])

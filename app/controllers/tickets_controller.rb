@@ -26,7 +26,7 @@ class TicketsController < ApplicationController
     @tcomments = Tcomment.where(ticket_id: @ticket)
   end
   def close_ticket
-    @ticket = Ticket.find_by(params[:id])
+    @ticket = Ticket.find(params[:id])
     if @ticket.status?
       @ticket.update(:status => false)
       flash[:notice] = "You closed this ticket!"

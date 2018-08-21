@@ -4,16 +4,16 @@ class WelcomeController < ApplicationController
   before_action :require_admin , only: [:admin, :pins]
   def index
       @a = Category.find_by_name("Announcements")
-      @announcements = @a.articles.all.last(6)
+      @announcements = @a.articles.all.last(3)
 
       @e= Category.find_by_name("Events")
-      @events = @e.articles.all.last(6)
+      @events = @e.articles.all.last(3)
 
       @m=Category.find_by_name("Maintenance")
-      @maintenance = @m.articles.all.last(6)
+      @maintenance = @m.articles.all.last(3)
 
       @u= Category.find_by_name("Updates")
-      @updates = @u.articles.all.last(6)
+      @updates = @u.articles.all.last(3)
 
 
     @DB= SQL.connect_shard
@@ -40,6 +40,8 @@ class WelcomeController < ApplicationController
 
 
   def download
+    @a = Category.find_by_name("Announcements")
+    @announcements = @a.articles.all.last(3)
 
   end
 

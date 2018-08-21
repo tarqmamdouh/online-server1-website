@@ -1,25 +1,198 @@
-<h1 align="center"><%= "Category: " + @category.name %></h1>
+<!doctype html>
 
-<div align="center">
+<html>
 
-  <% if current_user.admin? %>
 
-    <div class="row">
+<head>
+  <!-- Meta Data -->
+  <%= javascript_include_tag "validation.js" %>
 
-      <span class="badge"><%= link_to "Edit Category Name", edit_category_path(@category) %></span>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Z Online | <%= @category.name %></title>
+
+  <!-- Fav Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/media/Z_ICO.ico">
+  <meta name="theme-color" content="#3d0e03">
+
+  <!-- Dependency Styles -->
+  <link rel="stylesheet" href="../assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="../assets/dependencies/swiper/swiper.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/wow/css/animate.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/magnific-popup/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/woocommerce.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/app.css" type="text/css">
+
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
+
+
+</head>
+
+<body class="blog-grid-three-column bgb" data-style="default">
+<!--
+<div id="loader-wrapper">
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div> -->
+<div id="loader-wrapper">
+  <div class='loader'></div>
+</div>
+
+<div class="switch-top">
+  <p>Back To Top</p>
+  <a href="#main_content" data-type="section-switch" class="return-to-top">
+    <i class="fa fa-angle-double-up"></i>
+  </a>
+</div>
+
+<div id="main_content">
+
+
+  <%= render "welcome/Navbar" %>
+
+
+  <!--=========================-->
+  <!--=        Banner         =-->
+  <!--=========================-->
+  <section id="page-header" data-bg-image="../assets/media/background/15.jpg">
+    <div class="container">
+      <div class="page-title-wrap">
+        <div class="page-title-inner">
+          <h1><%= @category.name %></h1>
+          <h3>Game News</h3>
+          <span class="delemitter" data-bg-image="../assets/media/banner/s1.png"></span>
+        </div>
+        <!-- /.page-title-inner -->
+      </div>
+      <!-- /.page-title-wrap -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#page-header -->
+
+  <!--========================================-->
+  <!--=        Z ONLINE NEWS                  =-->
+  <!--========================================-->
+  <section class="blog-masonry pt__50">
+    <div class="container">
+
+      <div class="row" style="min-height: 600px">
+
+        <% @category_articles.each do |article| %>
+
+          <div class="col-lg-4">
+            <div class="clan-blog-post">
+              <div class="feature-image">
+                <a href="<%= article_path(article) %>">
+                  <% if article.timage.present? %>
+                    <img src="<%= article.timage  %>" alt="thamb">
+                  <% else %>
+                    <img src="../assets/media/Default.png" alt="thamb">
+                  <% end %>
+                </a>
+              </div>
+
+              <div class="content">
+                <h3><a href="<%= article_path(article) %>"><%= article.title %></a></h3>
+
+                <ul class="meta meta-grey">
+                  <li><a href="#"><i class="fa fa-calendar"></i><%= article.updated_at %></a></li>
+                  <li><a href="#" class="date"><i class="fa fa-commenting-o"></i><%= pluralize(article.comments.count,"Comment") %></a></li>
+                </ul>
+
+                <p>
+                  <%= article.description[0...40] %> [...]
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-lg-4 -->
+        <% end %>
+
+      </div>
+
+
+      <nav class="navigation pagination float-right">
+        <ul class="nav-links" id="pagination">
+<!--          <li><a href="#"><i class="fa fa-angle-left"></i></a></li>-->
+<!--          <li><a href="#">1</a></li>-->
+<!--          <li><a href="#" class="active">2</a></li>-->
+<!--          <li><a href="#">3</a></li>-->
+<!--          <li><a href="#">4</a></li>-->
+<!--          <li><a href="#">...</a></li>-->
+<!--          <li><a href="#"><i class="fa fa-angle-right"></i></a></li>-->
+          <%= will_paginate @category_articles, :container => false, :previous_label => '<-', :next_label => '->' %>
+        </ul>
+        <script>
+            var ul = document.getElementById("pagination");
+            var items = ul.getElementsByTagName("li");
+            for (var i = 0; i < items.length; ++i) {
+                items[i].childNodes[0].classList.remove("active");
+                if (items[i].classList.contains("active"))
+                {
+                    items[i].childNodes[0].classList.add("active");
+                }
+            }
+        </script>
+      </nav>
+
+      <%#= will_paginate @category_articles, class: "navigation pagination float-right" %>
+      <div class="clearfix"></div>
+      <div class="row" style="min-height: 100px ;">
+      </div>
 
     </div>
-
-  <% end %>
-
-  <%= will_paginate @category_articles %>
-
+    <!-- /.container -->
+  </section>
+  <!-- /.blog-masonry -->
+  <%= render "welcome/Footer" %>
 </div>
+<!-- /#site -->
 
-<%= render 'articles/article', obj: @category_articles %>
+<!-- Dependency Scripts -->
+<script src="../assets/dependencies/jquery/jquery.min.js"></script>
+<script src="../assets/dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/dependencies/swiper/js/swiper.min.js"></script>
+<script src="../assets/dependencies/swiperRunner/swiperRunner.min.js"></script>
+<script src="../assets/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+<script src="../assets/dependencies/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/dependencies/jquery-animated-headlines/js/jquery.animatedheadline.min.js"></script>
+<script src="../assets/dependencies/jquery.countdown/jquery.countdown.min.js"></script>
+<script src="../assets/dependencies/countUp.js/js/countUp.min.js"></script>
+<script src="../assets/dependencies/jquery.appear.bas2k/jquery.appear.js"></script>
+<script src="../assets/dependencies/jquery.ripples/jquery.ripples.js"></script>
+<script src="../assets/dependencies/wow/js/wow.min.js"></script>
 
-<div align="center">
+<!-- Site Scripts -->
+<script src="../assets/home-dependencies/app.js"></script>
 
-  <%= will_paginate @category_articles %>
+</body>
 
-</div>
+</html>

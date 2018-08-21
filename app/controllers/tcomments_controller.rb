@@ -5,7 +5,7 @@ class TcommentsController < ApplicationController
   before_action :comment_deleter , only: [:destroy]
   before_action :require_not_closed , only: [:create,:destroy,:edit,:update]
   def create
-    @tcomment = @ticket.tcomments.create(params[:tcomment].permit(:content))
+    @tcomment = @ticket.tcomments.create(params[:tcomment].permit(:content, :photo))
     @tcomment.user_id = current_user.id
     @tcomment.save
 

@@ -1,1 +1,174 @@
-<h1>Download page</h1>
+<!doctype html>
+
+<html>
+
+
+<head>
+  <%= javascript_include_tag "validation.js" %>
+
+  <!-- Meta Data -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Z Online | Download </title>
+
+  <!-- Fav Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/media/Z_ICO.ico">
+  <meta name="theme-color" content="#3d0e03">
+
+  <!-- Dependency Styles -->
+  <link rel="stylesheet" href="../assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="../assets/dependencies/swiper/swiper.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/wow/css/animate.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/magnific-popup/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/woocommerce.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/app.css" type="text/css">
+
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
+
+
+</head>
+
+<body class="blog-grid-four" data-bg-image="media/blog/57.jpg" data-style="default">
+<!--
+<div id="loader-wrapper">
+<div class="loader">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div> -->
+<div id="loader-wrapper">
+  <div class='loader'></div>
+</div>
+
+<div class="switch-top">
+  <p>Back To Top</p>
+  <a href="#main_content" data-type="section-switch" class="return-to-top">
+    <i class="fa fa-angle-double-up"></i>
+  </a>
+</div>
+
+<div id="main_content">
+
+  <%= render 'welcome/Navbar' %>
+
+  <!--=========================-->
+  <!--=        Banner         =-->
+  <!--=========================-->
+  <section id="page-header" data-bg-image="../assets/media/background/z6.jpg">
+    <div class="container">
+      <div class="page-title-wrap">
+        <div class="page-title-inner">
+          <h1>Game Download</h1>
+          <span class="delemitter" data-bg-image="media/banner/s1.png"></span>
+        </div>
+        <!-- /.page-title-inner -->
+      </div>
+      <!-- /.page-title-wrap -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#page-header -->
+
+
+  <!--============================================-->
+  <!--=        Game Download Zoombie Two         =-->
+  <!--============================================-->
+  <section id="game-download-three" class="section-padding" data-parallax="image" data-bg-image="../assets/media/background/z3.jpg">
+    <div class="container">
+      <div class="download-inner d-inner-two text-center">
+        <h2 class="title">
+          <strong style= "color: #f68b1f ">Z</strong> Online<br>
+          <span>Play it, Love it</span>
+        </h2>
+
+        <h3 style="line-height: 2">
+          Enjoy the new era of MMORPG, We are offering a great, new, and awesome experience you will ever had.
+          above that <strong> It's FREE TO PLAY </strong>
+        </h3>
+
+        <div id="D-btn" style="width: 50%;">
+          <div id="border1">
+            <div id="ornaments">
+              <div id="moreornaments">
+                <div id="radialgradient">
+                  <div id="gloss">
+                    <div id="inner">
+                      <i class="fa fa-cloud-download"></i>
+                      Download Now
+                    </div>
+                    <div id="gradientbottom"></div>
+                  </div>
+                </div>
+                <div class="triangle top left bg"></div>
+                <div class="triangle middle left bg"></div>
+                <div class="triangle middle left"></div>
+                <div class="triangle top left"></div>
+                <div class="triangle bottom left bg"></div>
+                <div class="triangle bottom left"></div>
+                <div class="triangle top right bg"></div>
+                <div class="triangle top right"></div>
+                <div class="triangle middle right bg"></div>
+                <div class="triangle middle right"></div>
+                <div class="triangle bottom right bg"></div>
+                <div class="triangle bottom right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#game-download-three -->
+  <%= render 'welcome/Footer' %>
+</div>
+<!-- /#site -->
+
+<!-- Dependency Scripts -->
+<script src="../assets/dependencies/jquery/jquery.min.js"></script>
+<script src="../assets/dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/dependencies/swiper/js/swiper.min.js"></script>
+<script src="../assets/dependencies/swiperRunner/swiperRunner.min.js"></script>
+<script src="../assets/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+<script src="../assets/dependencies/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/dependencies/jquery-animated-headlines/js/jquery.animatedheadline.min.js"></script>
+<script src="../assets/dependencies/jquery.countdown/jquery.countdown.min.js"></script>
+<script src="../assets/dependencies/countUp.js/js/countUp.min.js"></script>
+<script src="../assets/dependencies/jquery.appear.bas2k/jquery.appear.js"></script>
+<script src="../assets/dependencies/jquery.ripples/jquery.ripples.js"></script>
+<script src="../assets/dependencies/wow/js/wow.min.js"></script>
+
+<!-- Site Scripts -->
+<script src="../assets/home-dependencies/app.js"></script>
+
+
+</body>
+
+
+<!-- Mirrored from themeim.com/demo/gameisland/download.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Jun 2018 07:51:03 GMT -->
+</html>

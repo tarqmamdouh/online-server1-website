@@ -1,7 +1,215 @@
-<ol type="1">
-  <% @ranking.each do |row| %>
-<%if row[:points]> 0 %>
- <li> <%= row[:charname16] %> has killed <%= pluralize(row[:points],"Unique") %></li>
-<%end %>
-<% end %>
-</ol>
+<!doctype html>
+
+<html>
+
+<head>
+  <%= javascript_include_tag "validation.js" %>
+
+  <!-- Meta Data -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Z Online | Download </title>
+
+  <!-- Fav Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/media/Z_ICO.ico">
+  <meta name="theme-color" content="#3d0e03">
+
+  <!-- Dependency Styles -->
+  <link rel="stylesheet" href="../assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="../assets/dependencies/swiper/swiper.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/wow/css/animate.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/magnific-popup/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/woocommerce.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/app.css" type="text/css">
+
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
+
+
+</head>
+
+<body class="bgb" data-style="default">
+<!--
+<div id="loader-wrapper">
+<div class="loader">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div> -->
+<div id="loader-wrapper">
+  <div class='loader'></div>
+</div>
+
+<div class="switch-top">
+  <p>Back To Top</p>
+  <a href="#main_content" data-type="section-switch" class="return-to-top">
+    <i class="fa fa-angle-double-up"></i>
+  </a>
+</div>
+
+<div id="main_content">
+
+  <%= render "welcome/Navbar" %>
+
+  <!--=========================-->
+  <!--=        Banner         =-->
+  <!--=========================-->
+  <section id="page-header" data-bg-image="../assets/media/background/z6.jpg">
+    <div class="container">
+      <div class="page-title-wrap">
+        <div class="page-title-inner">
+          <h1>Unique Ranking</h1>
+          <span class="delemitter" data-bg-image="..assets/media/banner/s1.png"></span>
+        </div>
+        <!-- /.page-title-inner -->
+      </div>
+      <!-- /.page-title-wrap -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#page-header -->
+
+  <!--========================================-->
+  <!--=        Blog Grid Four Column         =-->
+  <!--========================================-->
+  <section id="latest-news-clan" class="mt__50">
+    <div class="container">
+      <div class="games-bg">
+        <div class="games-title">
+          <h3>Top Unique Hunters</h3>
+        </div>
+
+        <div class="games-inner">
+
+          <% @ranking.each_with_index do |row, i| %>
+
+            <% if row == @ranking.first %>
+              <div class="top-games-item clearfix">
+                <div class="game-user">
+                  <a href="../characters/<%= row[:charname16] %>" class="uthumb"><img src="../assets/media/ranks/1.png" alt="Thumb"></a>
+                  <div class="content">
+                    <h3 style=" margin-top: 12px;"><a href="../characters/<%= row[:charname16] %>" style="font-size: 20px;"><%= row[:charname16] %></a></h3>
+                  </div>
+                </div>
+
+                <div class="match">
+                  <h3 style="font-size: 22px;">Points</h3>
+                  <h4 style="font-size: 20px;"><%= row[:points] %></h4>
+                </div>
+
+              </div>
+              <!-- /.top-games-item -->
+            <% elsif row == @ranking.second %>
+              <div class="top-games-item clearfix">
+                <div class="game-user">
+                  <a href="../characters/<%= row[:charname16] %>" class="uthumb"><img src="../assets/media/ranks/2.png" alt="Thumb"></a>
+                  <div class="content">
+                    <h3 style=" margin-top: 12px;"><a href="../characters/<%= row[:charname16] %>" style="font-size: 20px;"><%= row[:charname16] %></a></h3>
+                  </div>
+                </div>
+
+                <div class="match">
+                  <h3 style="font-size: 22px;">Points</h3>
+                  <h4 style="font-size: 20px;"><%= row[:points] %></h4>
+                </div>
+
+              </div>
+              <!-- /.games-inner -->
+            <% elsif row == @ranking.third %>
+              <div class="top-games-item clearfix">
+                <div class="game-user">
+                  <a href="../characters/<%= row[:charname16] %>" class="uthumb"><img src="../assets/media/ranks/3.png" alt="Thumb"></a>
+                  <div class="content">
+                    <h3 style=" margin-top: 12px;"><a href="../characters/<%= row[:charname16] %>" style="font-size: 20px;"><%= row[:charname16] %></a></h3>
+                  </div>
+                </div>
+
+                <div class="match">
+                  <h3 style="font-size: 22px;">Points</h3>
+                  <h4 style="font-size: 20px;"><%= row[:points] %></h4>
+                </div>
+
+              </div>
+              <!-- /.games-inner -->
+            <% else %>
+              <div class="top-games-item clearfix">
+                <div class="game-user">
+                  <a href="../characters/<%= row[:charname16] %>" class="uthumb" style="font-size: 60px; margin-left: 12px;margin-top: 7px; overflow: visible;"> <%= i+1 %> </a>
+                  <div class="content">
+                    <h3 style=" margin-top: 12px;"><a href="#" style="font-size: 20px;"><%= row[:charname16] %></a></h3>
+                  </div>
+                </div>
+
+                <div class="match">
+                  <h3 style="font-size: 22px;">Points</h3>
+                  <h4 style="font-size: 20px;"><%= row[:points] %></h4>
+                </div>
+
+              </div>
+              <!-- /.games-inner -->
+            <% end %>
+          <% end %>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="row" style="height: 100px">
+      </div>
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#latest-news -->
+
+  <%= render "welcome/Footer" %>
+
+</div>
+<!-- /#site -->
+
+<!-- Dependency Scripts -->
+<script src="../assets/dependencies/jquery/jquery.min.js"></script>
+<script src="../assets/dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/dependencies/swiper/js/swiper.min.js"></script>
+<script src="../assets/dependencies/swiperRunner/swiperRunner.min.js"></script>
+<script src="../assets/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+<script src="../assets/dependencies/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/dependencies/jquery-animated-headlines/js/jquery.animatedheadline.min.js"></script>
+<script src="../assets/dependencies/jquery.countdown/jquery.countdown.min.js"></script>
+<script src="../assets/dependencies/countUp.js/js/countUp.min.js"></script>
+<script src="../assets/dependencies/jquery.appear.bas2k/jquery.appear.js"></script>
+<script src="../assets/dependencies/jquery.ripples/jquery.ripples.js"></script>
+<script src="../assets/dependencies/wow/js/wow.min.js"></script>
+
+<!-- Site Scripts -->
+<script src="../assets/home-dependencies/app.js"></script>
+
+</body>
+
+
+</html>

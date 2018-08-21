@@ -1,43 +1,14 @@
 <!doctype html>
 
 <html>
+<!-- Meta Data -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Z Online</title>
 
-<head>
-  <%= javascript_include_tag "validation.js" %>
-  <!-- Meta Data -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Z Online</title>
+<%= render "welcome/head" %>
 
-  <!-- Fav Icon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/fav-icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/fav-icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/fav-icons/favicon-16x16.png">
-  <meta name="theme-color" content="#3d0e03">
-
-  <!-- Dependency Styles -->
-  <link rel="stylesheet" href="assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
-
-
-
-
-  <!-- Site Stylesheet -->
-  <link rel="stylesheet" href="assets/dependencies/swiper/swiper.min.css" type="text/css">
-  <link rel="stylesheet" href="assets/dependencies/wow/css/animate.css" type="text/css">
-  <link rel="stylesheet" href="assets/dependencies/magnific-popup/magnific-popup.css" type="text/css">
-  <link rel="stylesheet" href="assets/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css" type="text/css">
-  <link rel="stylesheet" href="assets/home-dependencies/woocommerce.css" type="text/css">
-  <link rel="stylesheet" href="assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
-  <link rel="stylesheet" href="assets/home-dependencies/app.css" type="text/css">
-
-  <!-- Google Web Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
-
-</head>
 
 <body id="home-version-1" class="home-version-1" data-style="default">
 <!--
@@ -141,13 +112,13 @@
                       <div id="moreornaments">
                         <div id="radialgradient">
                           <a href="../download">
-                          <div id="gloss">
-                            <div id="inner">
-                              <i class="fa fa-cloud-download"></i>
-                              Download Now
+                            <div id="gloss">
+                              <div id="inner">
+                                <i class="fa fa-cloud-download"></i>
+                                Download Now
+                              </div>
+                              <div id="gradientbottom"></div>
                             </div>
-                            <div id="gradientbottom"></div>
-                          </div>
                           </a>
                         </div>
                         <div class="triangle top left bg"></div>
@@ -317,8 +288,8 @@
                       </div>
                     </div>
                   </div>
-              <% end %>
-                  <!-- /.letest-games -->
+                <% end %>
+                <!-- /.letest-games -->
 
 
                 <div class="tab-pane" id="advancher" role="tabpanel" aria-labelledby="advancher-tab">
@@ -403,123 +374,42 @@
 
 
         <div class="tab-content">
+
           <div class="tab-pane active show" id="all3" role="tabpanel" aria-labelledby="all3_tab">
 
             <div class="clan-blog-post-wrap">
               <div class="row">
-                <div class="col-lg-4">
-                  <div class="clan-blog-post">
-                    <div class="feature-image">
-                      <a href="blog-single.html">
-                        <img src="assets/media/blog/c6.jpg" alt="thamb">
-                      </a>
-                    </div>
 
-                    <div class="content">
-                      <h3><a href="blog-single.html">Play it, Love it!</a></h3>
+                <% @announcements.each do |article| %>
 
-                      <ul class="meta meta-grey">
-                        <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                        <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                      </ul>
-
-                      <p>
-                        Cap 90, ninth degree. Experience totally new beloved features, areas, endless wars, events, models, in-game windows & the art of game-play. [...]
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.col-lg-4 -->
-
-                <div class="col-lg-4">
-                  <div class="clan-blog-post-list">
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c2.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c3.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c4.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="game-video-item">
+                  <div class="col-lg-4">
+                    <div class="clan-blog-post">
                       <div class="feature-image">
-                        <a href="#"><img src="assets/media/video/c2.jpg" alt="thumb"></a>
-                        <a href="https://www.youtube.com/watch?v=0I8GmbDU7c4" class="video-play-btn bdr"><i class="fa fa-angle-right"></i></a>
+                        <a href="<%= article_path(article) %>">
+                          <% if article.timage.present? %>
+                            <img src="<%= article.timage  %>" alt="thamb">
+                          <% else %>
+                            <img src="assets/media/Default.png" alt="thamb">
+                          <% end %>
+                        </a>
+                      </div>
+
+                      <div class="content">
+                        <h3><a href="<%= article_path(article) %>"><%= article.title %></a></h3>
+
+                        <ul class="meta meta-grey">
+                          <li><a href="#"><i class="fa fa-calendar"></i><%= article.updated_at %></a></li>
+                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i><%= pluralize(article.comments.count,"Comment") %></a></li>
+                        </ul>
+
+                        <p>
+                          <%= article.description[0...40] %> [...]
+                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
-                <!-- /.col-lg-4 -->
-
-                <div class="col-lg-4">
-                  <div class="clan-blog-post">
-                    <div class="feature-image">
-                      <a href="blog-single.html">
-                        <img src="assets/media/blog/c5.jpg" alt="thamb">
-                      </a>
-                    </div>
-
-                    <div class="content">
-                      <h3><a href="#">ALIQUAM SCELERISQUE LUCTUS NISL</a></h3>
-
-                      <ul class="meta meta-grey">
-                        <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                        <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                      </ul>
-
-                      <p>
-                        Sed commodo, libero ut dignissim imperdiet, lorem nibh bibendum nisi, vel blandit est eros sit amet elit. Mauris nec arcu vel tellus aliquam congue. Mauris fermentum sem ut tortor ultricies dictum [...]
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.col-lg-4 -->
+                  <!-- /.col-lg-4 -->
+                <% end %>
 
               </div>
               <!-- /.row -->
@@ -527,7 +417,7 @@
                 <div class="col-lg-4">
                 </div>
                 <div class="col-lg-4 text-center" style="padding-top: 5%;">
-                  <a href="#" class="cart-btn mb__10"><i class="fa fa-newspaper"></i>See all posts</a>
+                  <a href="../news/Announcements" class="cart-btn mb__10"><i class="fa fa-newspaper"></i>See all posts</a>
                 </div>
                 <div class="col-lg-4">
                 </div>
@@ -541,130 +431,51 @@
 
           <div class="tab-pane" id="gamer3" role="tabpanel" aria-labelledby="gamer3-tab">
             <div class="clan-blog-post-wrap">
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="clan-blog-post">
-                    <div class="feature-image">
-                      <a href="blog-single.html">
-                        <img src="assets/media/blog/c1.jpg" alt="thamb">
-                      </a>
-                    </div>
 
-                    <div class="content">
-                      <h3><a href="blog-single.html">ALIQUAM SCELERISQUE LUCTUS NISL</a></h3>
+              <div class="clan-blog-post-wrap">
+                <div class="row">
 
-                      <ul class="meta meta-grey">
-                        <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                        <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                      </ul>
+                  <% @events.each do |article| %>
 
-                      <p>
-                        Sed commodo, libero ut dignissim imperdiet, lorem nibh bibendum nisi, vel blandit est eros sit amet elit. Mauris nec arcu vel tellus aliquam congue. Mauris fermentum sem ut tortor ultricies dictum [...]
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.col-lg-4 -->
-
-                <div class="col-lg-4">
-                  <div class="clan-blog-post-list">
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c2.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
+                    <div class="col-lg-4">
+                      <div class="clan-blog-post">
+                        <div class="feature-image">
+                          <a href="<%= article_path(article) %>">
+                            <% if article.timage.present? %>
+                              <img src="<%= article.timage  %>" alt="thamb">
+                            <% else %>
+                              <img src="assets/media/Default.png" alt="thamb">
+                            <% end %>
                           </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
+                        </div>
+
+                        <div class="content">
+                          <h3><a href="<%= article_path(article) %>"><%= article.title %></a></h3>
+
+                          <ul class="meta meta-grey">
+                            <li><a href="#"><i class="fa fa-calendar"></i><%= article.updated_at %></a></li>
+                            <li><a href="#" class="date"><i class="fa fa-commenting-o"></i><%= pluralize(article.comments.count,"Comment") %></a></li>
+                          </ul>
+
+                          <p>
+                            <%= article.description[0...40] %> [...]
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <!-- /.clan-blog-list -->
+                    <!-- /.col-lg-4 -->
+                  <% end %>
 
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c3.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c4.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="game-video-item">
-                      <div class="feature-image">
-                        <a href="#"><img src="assets/media/video/c2.jpg" alt="thumb"></a>
-                        <a href="https://www.youtube.com/watch?v=0I8GmbDU7c4" class="video-play-btn bdr"><i class="fa fa-angle-right"></i></a>
-                      </div>
-                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                  <div class="col-lg-4">
                   </div>
-                </div>
-                <!-- /.col-lg-4 -->
-
-                <div class="col-lg-4">
-                  <div class="clan-blog-post">
-                    <div class="feature-image">
-                      <a href="blog-single.html">
-                        <img src="assets/media/blog/c5.jpg" alt="thamb">
-                      </a>
-                    </div>
-
-                    <div class="content">
-                      <h3><a href="#">ALIQUAM SCELERISQUE LUCTUS NISL</a></h3>
-
-                      <ul class="meta meta-grey">
-                        <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                        <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                      </ul>
-
-                      <p>
-                        Sed commodo, libero ut dignissim imperdiet, lorem nibh bibendum nisi, vel blandit est eros sit amet elit. Mauris nec arcu vel tellus aliquam congue. Mauris fermentum sem ut tortor ultricies dictum [...]
-                      </p>
-                    </div>
+                  <div class="col-lg-4 text-center" style="padding-top: 5%;">
+                    <a href="../news/Events" class="cart-btn mb__10"><i class="fa fa-newspaper"></i>See all posts</a>
                   </div>
-                </div>
-                <!-- /.col-lg-4 -->
-
-              </div>
-              <!-- /.row -->
-              <div class="row">
-                <div class="col-lg-4">
-                </div>
-                <div class="col-lg-4 text-center" style="padding-top: 5%;">
-                  <a href="#" class="cart-btn mb__10"><i class="fa fa-newspaper"></i>See all posts</a>
-                </div>
-                <div class="col-lg-4">
+                  <div class="col-lg-4">
+                  </div>
                 </div>
               </div>
             </div>
@@ -676,119 +487,37 @@
           <div class="tab-pane" id="professional3" role="tabpanel" aria-labelledby="professional3-tab">
             <div class="clan-blog-post-wrap">
               <div class="row">
-                <div class="col-lg-4">
-                  <div class="clan-blog-post">
-                    <div class="feature-image">
-                      <a href="blog-single.html">
-                        <img src="assets/media/blog/c1.jpg" alt="thamb">
-                      </a>
-                    </div>
 
-                    <div class="content">
-                      <h3><a href="blog-single.html">ALIQUAM SCELERISQUE LUCTUS NISL</a></h3>
+                <% @maintenance.each do |article| %>
 
-                      <ul class="meta meta-grey">
-                        <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                        <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                      </ul>
-
-                      <p>
-                        Sed commodo, libero ut dignissim imperdiet, lorem nibh bibendum nisi, vel blandit est eros sit amet elit. Mauris nec arcu vel tellus aliquam congue. Mauris fermentum sem ut tortor ultricies dictum [...]
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.col-lg-4 -->
-
-                <div class="col-lg-4">
-                  <div class="clan-blog-post-list">
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c2.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c3.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c4.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="game-video-item">
+                  <div class="col-lg-4">
+                    <div class="clan-blog-post">
                       <div class="feature-image">
-                        <a href="#"><img src="assets/media/video/c2.jpg" alt="thumb"></a>
-                        <a href="https://www.youtube.com/watch?v=0I8GmbDU7c4" class="video-play-btn bdr"><i class="fa fa-angle-right"></i></a>
+                        <a href="<%= article_path(article) %>">
+                          <% if article.timage.present? %>
+                            <img src="<%= article.timage  %>" alt="thamb">
+                          <% else %>
+                            <img src="assets/media/Default.png" alt="thamb">
+                          <% end %>
+                        </a>
+                      </div>
+
+                      <div class="content">
+                        <h3><a href="<%= article_path(article) %>"><%= article.title %></a></h3>
+
+                        <ul class="meta meta-grey">
+                          <li><a href="#"><i class="fa fa-calendar"></i><%= article.updated_at %></a></li>
+                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i><%= pluralize(article.comments.count,"Comment") %></a></li>
+                        </ul>
+
+                        <p>
+                          <%= article.description[0...40] %> [...]
+                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
-                <!-- /.col-lg-4 -->
-
-                <div class="col-lg-4">
-                  <div class="clan-blog-post">
-                    <div class="feature-image">
-                      <a href="blog-single.html">
-                        <img src="assets/media/blog/c5.jpg" alt="thamb">
-                      </a>
-                    </div>
-
-                    <div class="content">
-                      <h3><a href="#">ALIQUAM SCELERISQUE LUCTUS NISL</a></h3>
-
-                      <ul class="meta meta-grey">
-                        <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                        <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                      </ul>
-
-                      <p>
-                        Sed commodo, libero ut dignissim imperdiet, lorem nibh bibendum nisi, vel blandit est eros sit amet elit. Mauris nec arcu vel tellus aliquam congue. Mauris fermentum sem ut tortor ultricies dictum [...]
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.col-lg-4 -->
+                  <!-- /.col-lg-4 -->
+                <% end %>
 
               </div>
               <!-- /.row -->
@@ -796,133 +525,50 @@
                 <div class="col-lg-4">
                 </div>
                 <div class="col-lg-4 text-center" style="padding-top: 5%;">
-                  <a href="#" class="cart-btn mb__10"><i class="fa fa-newspaper"></i>See all posts</a>
+                  <a href="../news/Maintenance" class="cart-btn mb__10"><i class="fa fa-newspaper"></i>See all posts</a>
                 </div>
                 <div class="col-lg-4">
                 </div>
               </div>
+              <!-- /.games-bg -->
             </div>
-
-            <!-- /.games-bg -->
           </div>
           <!-- /.tab-pane -->
 
           <div class="tab-pane" id="advancher3" role="tabpanel" aria-labelledby="advancher3-tab">
             <div class="clan-blog-post-wrap">
               <div class="row">
-                <div class="col-lg-4">
-                  <div class="clan-blog-post">
-                    <div class="feature-image">
-                      <a href="blog-single.html">
-                        <img src="assets/media/blog/c1.jpg" alt="thamb">
-                      </a>
-                    </div>
 
-                    <div class="content">
-                      <h3><a href="blog-single.html">ALIQUAM SCELERISQUE LUCTUS NISL</a></h3>
+                <% @updates.each do |article| %>
 
-                      <ul class="meta meta-grey">
-                        <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                        <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                      </ul>
-
-                      <p>
-                        Sed commodo, libero ut dignissim imperdiet, lorem nibh bibendum nisi, vel blandit est eros sit amet elit. Mauris nec arcu vel tellus aliquam congue. Mauris fermentum sem ut tortor ultricies dictum [...]
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.col-lg-4 -->
-
-                <div class="col-lg-4">
-                  <div class="clan-blog-post-list">
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c2.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c3.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="clan-blog-list clearfix">
-                      <a href="blog-single.html" class="float-left"><img src="assets/media/blog/c4.jpg" alt="thumb"></a>
-
-                      <div class="content">
-                        <h4>
-                          <a href="blog-single.html">
-                            MORBI VEL IPSUM VEL AUGUE MATTIS
-                            ULTRICIES NON ET MAURIS
-                          </a>
-                        </h4>
-                        <ul class="meta meta-grey">
-                          <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <!-- /.clan-blog-list -->
-
-                    <div class="game-video-item">
+                  <div class="col-lg-4">
+                    <div class="clan-blog-post">
                       <div class="feature-image">
-                        <a href="#"><img src="assets/media/video/c2.jpg" alt="thumb"></a>
-                        <a href="https://www.youtube.com/watch?v=0I8GmbDU7c4" class="video-play-btn bdr"><i class="fa fa-angle-right"></i></a>
+                        <a href="<%= article_path(article) %>">
+                          <% if article.timage.present? %>
+                            <img src="<%= article.timage  %>" alt="thamb">
+                          <% else %>
+                            <img src="assets/media/Default.png" alt="thamb">
+                          <% end %>
+                        </a>
+                      </div>
+
+                      <div class="content">
+                        <h3><a href="<%= article_path(article) %>"><%= article.title %></a></h3>
+
+                        <ul class="meta meta-grey">
+                          <li><a href="#"><i class="fa fa-calendar"></i><%= article.updated_at %></a></li>
+                          <li><a href="#" class="date"><i class="fa fa-commenting-o"></i><%= pluralize(article.comments.count,"Comment") %></a></li>
+                        </ul>
+
+                        <p>
+                          <%= article.description[0...40] %> [...]
+                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
-                <!-- /.col-lg-4 -->
-
-                <div class="col-lg-4">
-                  <div class="clan-blog-post">
-                    <div class="feature-image">
-                      <a href="blog-single.html">
-                        <img src="assets/media/blog/c5.jpg" alt="thamb">
-                      </a>
-                    </div>
-
-                    <div class="content">
-                      <h3><a href="#">ALIQUAM SCELERISQUE LUCTUS NISL</a></h3>
-
-                      <ul class="meta meta-grey">
-                        <li><a href="#"><i class="fa fa-calendar"></i>Jan 22, 2018</a></li>
-                        <li><a href="#" class="date"><i class="fa fa-commenting-o"></i>4 Comments</a></li>
-                      </ul>
-
-                      <p>
-                        Sed commodo, libero ut dignissim imperdiet, lorem nibh bibendum nisi, vel blandit est eros sit amet elit. Mauris nec arcu vel tellus aliquam congue. Mauris fermentum sem ut tortor ultricies dictum [...]
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.col-lg-4 -->
+                  <!-- /.col-lg-4 -->
+                <% end %>
 
               </div>
               <!-- /.row -->
@@ -930,14 +576,13 @@
                 <div class="col-lg-4">
                 </div>
                 <div class="col-lg-4 text-center" style="padding-top: 5%;">
-                  <a href="#" class="cart-btn mb__10"><i class="fa fa-newspaper"></i>See all posts</a>
+                  <a href="../news/Updates" class="cart-btn mb__10"><i class="fa fa-newspaper"></i>See all posts</a>
                 </div>
                 <div class="col-lg-4">
                 </div>
               </div>
+              <!-- /.games-bg -->
             </div>
-
-            <!-- /.games-bg -->
 
           </div>
           <!-- /.tab-pane -->
@@ -1176,56 +821,7 @@
 
 
 
-  <!--=====================-->
-  <!--=        Footer       =-->
-  <!--================++=====-->
-  <footer id="footer-three" class="pr" data-bg-image="assets/media/background/45.jpg">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="row">
-          <div class="col-lg-3 col-sm-6 col-md-6">
-            <div class="footer-about">
-              <div class="content">
-                <p>
-                  Z Online is a fantasy MMORPG set in the 7th century AD, along the Silk Road between China and Europe. The game requires no periodic subscription fee, but players can purchase cosmetic items to have a cool look.
-                </p>
-              </div>
-
-              <ul class="footer-social-link">
-                <li class="fb-bg"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="in-bg"><a href="#"><i class="fa fa-youtube"></i></a></li>
-                <li class="tw-bg"><a href="#"><i class="fab fa-discord"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- /.col-lg-3 col-sm-6 col-md-6 -->
-
-          <div class="col-lg-3 col-sm-6 col-md-6">
-            <div class="footer-menu-inner">
-              <a  href="https://www.elitepvpers.com"><img src="https://chimpeon.com/images/elitepvpers_logo.png"></a>
-            </div>
-          </div>
-          <!-- /.col-lg-3 col-sm-6 col-md-6 -->
-
-          <div class="col-lg-3 col-sm-6 col-md-6">
-          </div>
-          <!-- /.col-lg-3 col-sm-6 col-md-6 -->
-
-          <div class="col-lg-3 col-sm-6 col-md-6">
-          </div>
-          <!-- /.col-lg-3 col-sm-6 col-md-6 -->
-        </div>
-        <!-- /.row -->
-
-        <div class="copy-right">
-          <p>Copyright 2018 <a href="www.z-sro.com" >Z Team</a> All Rights Reserved</p>
-        </div>
-      </div>
-      <!-- /.footer-inner -->
-    </div>
-    <!-- /.container -->
-  </footer>
-  <!-- /#footer-three -->
+  <%= render "welcome/Footer" %>
 
 
 </div>
