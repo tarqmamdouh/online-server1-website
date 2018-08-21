@@ -1,0 +1,22 @@
+<% obj.each do |bug|%>
+  <div class = "row">
+    <div class = "col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class= "article-title"?>
+
+          <%=link_to bug.title, bug_path(bug) %>
+        </div>
+
+        <div class="article-body">
+          <%= truncate(bug.details,length: 100) %>
+          <div class="article-meta-details">
+            <small>Created by: <%= bug.user.username if bug.user %>,
+              <%= time_ago_in_words(bug.created_at)%> ago
+            </small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>

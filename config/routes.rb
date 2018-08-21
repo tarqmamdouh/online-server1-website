@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   put '/user/preferences' , to: 'users#withdraw_silk'
  put 'tickets/:id/close_ticket' => 'tickets#close_ticket', :as => 'close_ticket'
   mount Attachinary::Engine => "/attachinary"
-
+  resources :bugs, except: [:destroy,:edit,:update]
   resources :tickets do
     resources :tcomments
   end

@@ -1,0 +1,11 @@
+<%= render 'layouts/adminNavbar'%>
+
+<h1 align = "center">Listing all reported bugs</h1>
+<%= link_to "new report bug", new_bug_path %>
+<div align="center">
+  <%= will_paginate %>
+</div>
+<%= render 'bug', obj: @bugs%>
+<div align="center">
+  <%= will_paginate %>
+</div>
