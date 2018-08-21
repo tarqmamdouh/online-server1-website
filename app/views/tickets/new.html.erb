@@ -1,6 +1,6 @@
 <% if @ticket.errors.any? %>
 
-  <h2 xmlns="http://www.w3.org/1999/html">The following errors prevented the article from getting created</h2>
+  <h2 xmlns="http://www.w3.org/1999/html">The following errors prevented the ticket from getting created</h2>
 
   <ul>
 
@@ -51,7 +51,12 @@
 
       </div>
 
+      <div class="col-sm-8">
 
+        <%= f.file_field :image, as: :attachinary,onchange: "validateFiles(this);",
+                         data: { max_file_size: 2.megabytes} %>
+
+      </div>
 
 
       <div class="form-group">

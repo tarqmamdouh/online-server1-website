@@ -24,7 +24,7 @@
             <%= link_to @ticket.user.username %>
           </li>
           <li><small>
-            <%= pluralize(@ticket.user.tickets.count, "ticket") if @ticket.user.tickets %>
+                <%= pluralize(@ticket.user.tickets.count, "ticket") if @ticket.user.tickets %>
           </small></li>
         </div>
       </div>
@@ -33,6 +33,9 @@
   <h4 class="center description"><strong>Content:</strong></h4>
   <hr>
   <%= simple_format(@ticket.content) %>
+  <% if @ticket.image.present? %>
+    <%= cl_image_tag @ticket.image.path, { size: '800x600', crop: :limit } %>
+  <% end %>
   <div class="article-actions">
 
     <%= link_to "View all tickets", tickets_path, class: "btn btn-xs btn-success" %>

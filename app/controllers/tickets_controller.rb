@@ -40,11 +40,11 @@ class TicketsController < ApplicationController
 
   def article_params
 
-    params.require(:ticket).permit(:subject, :content)
+    params.require(:ticket).permit(:subject, :content, :image)
 
   end
   def require_admin
-    if current_user.admin? != true || current_user.support? != true
+    if current_user.admin? != true && current_user.support? != true
       redirect_to root_path
     end
   end
