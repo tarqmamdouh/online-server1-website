@@ -1,0 +1,12 @@
+# This file contains the security access to the Datbase
+# Please Never Share it with any one .. 
+SQL_host: '213.136.73.43'
+SQL_username: 'sa'
+SQL_password: 'Zdb@ONLINE2018'
+SQL_port: '1433'
+SQL_account_db: 'SRO_X_ACCOUNT'
+SQL_shard_db: 'SRO_X_SHARD'
+SQL_shardlog_db: 'SRO_X_SHARDLOG'
+CLOUD_NAME: 'dxc2vebon'
+API_KEY: '965563495599163'
+API_SECRET : 'Zjo1UIoMsTFaTGbD6hSnusq3tdg'

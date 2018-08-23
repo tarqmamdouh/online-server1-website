@@ -1,5 +1,6 @@
 require'SQL'
 class PreferencesController < ApplicationController
+  before_action :require_seller , only: [:generate_code]
 
   def transfer_reward
     flash[:danger] = "Not impelemented yet"
@@ -58,6 +59,12 @@ class PreferencesController < ApplicationController
 
     redirect_to user_preferences_path
 
+  end
+
+  def require_seller
+    if current_user.seller != true
+      redirect_to root_path
+    end
   end
 
 end

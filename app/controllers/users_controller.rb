@@ -2,7 +2,6 @@ require'SQL'
 class UsersController < ApplicationController
   skip_before_action :authenticate_user! , only: [:search_char, :search]
   before_action :require_admin , only: [:mark_spam,:be_seller,:mark_supp]
-  before_action :require_seller , only: [:withdraw_silk]
 
   def show
     if params[:charname].length > 17 || params[:charname].include?("-")|| params[:charname].include?("/")|| params[:charname].include?("\\")|| params[:charname].include?("'")|| params[:charname].include?("\"")
@@ -123,24 +122,29 @@ class UsersController < ApplicationController
     if current_user.seller?
       @all_codes = acc[:_EPINS].where(:CreatorJID => game_user_id).all
     end
-  end
-
-  def withdraw_silk
-    @seller = current_user
-    @costpins = 0.1*(params[:Npins].to_f)
-    @userpins = @seller.pins
-    @usersilk = @seller.silk
-    if @costpins > @userpins || @costpins < 0
-      flash.now[:danger] = "You have entered wrong amount of silks!!"
-      redirect_to user_preferences_path
+    if current_user.support? || current_user.admin?
+      @tickets = Ticket.all
     else
-      @seller.silk = @usersilk + params[:Npins].to_i
-      @seller.pins = @userpins - @costpins
-      @seller.save
-      flash.now[:success] = "Silks successfully added!!"
-      redirect_to user_preferences_path
+      @tickets = current_user.tickets
     end
   end
+
+  # def withdraw_silk
+  #   @seller = current_user
+  #   @costpins = 0.1*(params[:Npins].to_f)
+  #   @userpins = @seller.pins
+  #   @usersilk = @seller.silk
+  #   if @costpins > @userpins || @costpins < 0
+  #     flash.now[:danger] = "You have entered wrong amount of silks!!"
+  #     redirect_to user_preferences_path
+  #   else
+  #     @seller.silk = @usersilk + params[:Npins].to_i
+  #     @seller.pins = @userpins - @costpins
+  #     @seller.save
+  #     flash.now[:success] = "Silks successfully added!!"
+  #     redirect_to user_preferences_path
+  #   end
+  # end
 
   def send_reset_password_mail
     current_user.send(:send_reset_password_instructions)
