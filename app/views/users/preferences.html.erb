@@ -306,24 +306,25 @@
                 <div class="col-lg-12 col-md-12">
                   <div style="padding-top: 2%;"></div>
                   <table style="width:100%;font-size: 24px;">
+
                     <tr>
                       <th style="color: floralwhite">Ticket #</th>
                       <th colspan="0"  style="color: floralwhite">Subject</th>
                       <th colspan="0"  style="color: floralwhite">Status</th>
                       <th colspan="0"  style="color: floralwhite"># of comments</th>
                     </tr>
-                    <tr>
-                      <td>Bill Gates</td>
-                      <td>55577854</td>
-                      <td style="color: darkred"><strong>Closed</strong></td>
-                      <td> 5 </td>
-                    </tr>
-                    <tr>
-                      <td>Bill Gates</td>
-                      <td>55577854</td>
-                      <td style="color: darkred"><strong>Closed</strong></td>
-                      <td> 5 </td>
-                    </tr>
+                    <% @tickets.each do |ticket| %>
+                      <tr>
+                        <td><a href="../tickets/<%= ticket.id %>"><%= ticket.id %></a></td>
+                        <td><%= ticket.subject %></td>
+                        <% if ticket.status? %>
+                          <td style="color: darkgreen"><strong>Opened</strong></td>
+                        <% else %>
+                          <td style="color: darkred"><strong>Closed</strong></td>
+                        <% end %>
+                        <td> <%= ticket.tcomments.count %> </td>
+                      </tr>
+                    <% end %>
 
                   </table>
                 </div>
