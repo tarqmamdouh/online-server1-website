@@ -1,13 +1,3 @@
-<%# if current_user.seller? %>
-<!--  Your pins: <%#= current_user.pins %>-->
-<!--  Your silks: <%#= current_user.silk %>-->
-<%#= form_tag @seller, method: :put, url: [@seller, :withdraw_silk] do |f| %>
-
-<%#= text_field_tag :Npins, params[:Npins], placeholder:"Enter the amount of silk you want to get", autofocus: true %>
-<%#= button_tag  "Add silks", type: :submit  %>
-<%# end %>
-<%# end %>
-
 <!doctype html>
 
 <html>
