@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user! , only: [:search_char, :search]
   before_action :require_admin , only: [:mark_spam,:be_seller,:mark_supp]
   before_action :require_seller , only: [:withdraw_silk]
-  
+
   def show
     if params[:charname].length > 17 || params[:charname].include?("-")|| params[:charname].include?("/")|| params[:charname].include?("\\")|| params[:charname].include?("'")|| params[:charname].include?("\"")
       redirect_to root_path
@@ -27,12 +27,15 @@ class UsersController < ApplicationController
     end
 
   end
+
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
   end
+
   def show_u
     @user = User.find_by_username(params[:username])
   end
+
   def mark_spam
     @user = User.find_by_username(params[:username])
     if @user.spam?
@@ -58,6 +61,7 @@ class UsersController < ApplicationController
     end
     redirect_to "/users/"+@user.username
   end
+
   def mark_supp
     @user = User.find_by_username(params[:username])
     if @user.support?
@@ -69,6 +73,7 @@ class UsersController < ApplicationController
     end
     redirect_to "/users/"+@user.username
   end
+
   def search
     if params[:search_param].blank?
       flash.now[:danger]="You have entered an empty search string"
@@ -81,6 +86,7 @@ class UsersController < ApplicationController
       format.js{render partial: 'users/result'}
     end
   end
+
   def search_char
     if params[:search_param].blank?
       flash.now[:danger]="You have entered an empty search string"
@@ -99,25 +105,48 @@ class UsersController < ApplicationController
     end
   end
 
-    def preferences
+  def preferences
+    @a = Category.find_by_name("Announcements")
+    @announcements = @a.articles.all.last(3).reverse
+    # connecting to database
+    acc = SQL.connect_account
+    shard = SQL.connect_shard
+    #loading characters
+    user_info = acc[:TB_User].where(:StrUserID => current_user.username).all.last
+    game_user_id = user_info[:jid]
+    characters = shard[:_User].where(:UserJID => game_user_id).all
+    @names = []
+    characters.each do |character|
+      char_name = shard[:_Char].where(:charid => character[:charid]).all.last
+      @names << char_name[:charname16]
+    end
+    if current_user.seller?
+      @all_codes = acc[:_EPINS].where(:CreatorJID => game_user_id).all
+    end
+  end
 
+  def withdraw_silk
+    @seller = current_user
+    @costpins = 0.1*(params[:Npins].to_f)
+    @userpins = @seller.pins
+    @usersilk = @seller.silk
+    if @costpins > @userpins || @costpins < 0
+      flash.now[:danger] = "You have entered wrong amount of silks!!"
+      redirect_to user_preferences_path
+    else
+      @seller.silk = @usersilk + params[:Npins].to_i
+      @seller.pins = @userpins - @costpins
+      @seller.save
+      flash.now[:success] = "Silks successfully added!!"
+      redirect_to user_preferences_path
     end
-    def withdraw_silk
-      @seller = current_user
-      @costpins = 0.1*(params[:Npins].to_f)
-      @userpins = @seller.pins
-      @usersilk = @seller.silk
-      if @costpins > @userpins || @costpins < 0
-          flash.now[:danger] = "You have entered wrong amount of silks!!"
-          redirect_to user_preferences_path
-      else
-        @seller.silk = @usersilk + params[:Npins].to_i
-        @seller.pins = @userpins - @costpins
-        @seller.save
-        flash.now[:success] = "Silks successfully added!!"
-        redirect_to user_preferences_path
-      end
-    end
+  end
+
+  def send_reset_password_mail
+    current_user.send(:send_reset_password_instructions)
+    flash[:success] = "An email with reset password instructions has been sent, please check your Email in order to reset password"
+    redirect_to user_preferences_path
+  end
 
   private
   def require_admin
@@ -125,6 +154,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
+
   def require_seller
     if current_user.seller != true
       redirect_to root_path

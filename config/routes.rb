@@ -22,7 +22,11 @@ Rails.application.routes.draw do
   get 'search_chars', to: 'users#search_char'
   get '/user/preferences' , to: 'users#preferences'
   put '/user/preferences' , to: 'users#withdraw_silk'
- put 'tickets/:id/close_ticket' => 'tickets#close_ticket', :as => 'close_ticket'
+  get '/user/preferences/resetpassword' , to: 'users#send_reset_password_mail'
+  get '/user/preferences/transfer_reward' , to: 'preferences#transfer_reward'
+  get '/user/preferences/generate_code' , to: 'preferences#generate_code'
+  get '/user/preferences/charge_code' , to: 'preferences#charge_code'
+  put 'tickets/:id/close_ticket' => 'tickets#close_ticket', :as => 'close_ticket'
   mount Attachinary::Engine => "/attachinary"
 
   resources :tickets do

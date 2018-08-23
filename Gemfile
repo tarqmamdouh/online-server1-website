@@ -21,6 +21,7 @@ gem "attachinary"
 gem "jquery-fileupload-rails"
 gem 'cloudinary'
 gem 'simple_form'
+gem 'coupon_code'
 
 
 # Use Puma as the app server

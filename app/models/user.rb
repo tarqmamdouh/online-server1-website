@@ -48,4 +48,9 @@ validates :name , presence: true
     users.reject{|user| user.id == self.id}
   end
 
+  def self.reset_password_with
+    5.minute
+    # Determine the interval. Any time objects will do, say 1.hour
+  end
+
 end

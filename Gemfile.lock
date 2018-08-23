@@ -88,6 +88,7 @@ GEM
     coffee-script-source (1.12.2)
     commonjs (0.2.7)
     concurrent-ruby (1.0.5)
+    coupon_code (0.0.2)
     crass (1.0.4)
     devise (4.4.3)
       bcrypt (~> 3.0)
@@ -275,6 +276,7 @@ DEPENDENCIES
   chromedriver-helper
   cloudinary
   coffee-rails (~> 4.2)
+  coupon_code
   devise
   devise-bootstrap-views
   devise-encryptable
