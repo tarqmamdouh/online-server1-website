@@ -1,5 +1,6 @@
 require "SQL"
 class User::PasswordsController < Devise::PasswordsController
+  prepend_before_action :require_no_authentication, only: [:cancel]
   protected
   def after_resetting_password_path_for(resource)
     @DB = SQL.connect_account

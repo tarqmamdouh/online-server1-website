@@ -1,10 +1,13 @@
-<%= form_for([@article,@article.comments.build]) do |f| %>
+<%= form_for([@article,@article.comments.build], html: {class: "form-comments"}) do |f| %>
   <% if current_user.spam? %>
-    <li><big>You are marked spam!!!</big></li>
-
-    <%else %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
-
+    <h2><i class="fa-times-circle" style="padding-right: 10px;font-size: 48px;"></i> You cannot add comment please contact support </h2>
+  <%else %>
+    <%= f.text_area :content, cols: 30, rows:10, placeholder: "Type your Comments here..."%>
+    <button type="submit" class="tim-btn-bg brn float-right" data-disable-with="Create Comment" name="commit"><i class="fa fa-comments-o" style="padding-right: 10px;"></i> Submit</button>
+  <% end %>
 <% end %>
-<% end %>
+
+<!--<form action="#" class="form-comments">-->
+<!--  <textarea name="massage" cols="30" rows="10" placeholder="Type your Comments here..."></textarea>-->
+<!--  <button type="submit" class="tim-btn-bg brn float-right"><i class="fa fa-comments-o" style="padding-right: 10px;"></i> Submit</button>-->
+<!--</form>-->

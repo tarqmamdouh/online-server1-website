@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Z Online | Download </title>
+  <title> Z Online | Unique Ranking </title>
 
   <!-- Fav Icon -->
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/Z_ICO.ico">
@@ -155,12 +155,12 @@
 
               </div>
               <!-- /.games-inner -->
-            <% else %>
+            <% elsif row[:points] != 0 %>
               <div class="top-games-item clearfix">
                 <div class="game-user">
                   <a href="../characters/<%= row[:charname16] %>" class="uthumb" style="font-size: 60px; margin-left: 12px;margin-top: 7px; overflow: visible;"> <%= i+1 %> </a>
                   <div class="content">
-                    <h3 style=" margin-top: 12px;"><a href="#" style="font-size: 20px;"><%= row[:charname16] %></a></h3>
+                    <h3 style=" margin-top: 12px;"><a href="../characters/<%= row[:charname16]%>" style="font-size: 20px;"><%= row[:charname16] %></a></h3>
                   </div>
                 </div>
 

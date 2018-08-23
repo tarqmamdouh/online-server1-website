@@ -35,10 +35,12 @@ class ArticlesController < ApplicationController
     end
 
   def show
-@comments = Comment.where(article_id: @article)
+    @a = Category.find_by_name("Announcements")
+    @announcements = @a.articles.all.last(3)
+    @comments = Comment.where(article_id: @article)
   end
-  def destroy
 
+  def destroy
     @article.destroy
     flash[:danger]= "Article was successfully deleted"
     redirect_to articles_path

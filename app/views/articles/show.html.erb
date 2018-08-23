@@ -1,44 +1,191 @@
-<%= render 'layouts/adminNavbar'%>
+<%#= render 'layouts/adminNavbar'%>
 
-<h2 align="center">Title: <%= @article.title %> <small><%if @article.updated_at != @article.created_at %>
-    (Edited)
-  <% end %></small></h2>
+<!--<h2 align="center">Title: <%#= @article.title %> <small><%#if @article.updated_at != @article.created_at %>-->
+<!--    (Edited)-->
+<!--  <%# end %></small></h2>-->
 
 
 
-<div class="well col-xs-8 col-xs-offset-2">
-  <% if @article.user %>
-    <ul class="listing">
-      <div class="row center">
-        <div class="col-md-4 col-md-offset-4">
-          <li>Created by:</li>
-          <li class="article-title">
-            <%= link_to @article.user.username %>
-          </li>
-          <li><small>
-            <%= pluralize(@article.user.articles.count, "article") if @article.user.articles %>
-          </small></li>
-        </div>
-      </div>
-    </ul>
-  <% end %>
-  <h4 class="center description"><strong>Description:</strong></h4>
-  <hr>
-  <%= simple_format(@article.description) %>
-  <% if @article.categories.any? %>
-    <p>Categories: <%= render @article.categories%></p>
-  <% end %>
+<!--<div class="well col-xs-8 col-xs-offset-2">-->
+  <%# if @article.user %>
+<!--    <ul class="listing">-->
+<!--      <div class="row center">-->
+<!--        <div class="col-md-4 col-md-offset-4">-->
+<!--          <li>Created by:</li>-->
+<!--          <li class="article-title">-->
+            <%#= link_to @article.user.username %>
+<!--          </li>-->
+<!--          <li><small>-->
+            <%#= pluralize(@article.user.articles.count, "article") if @article.user.articles %>
+<!--          </small></li>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </ul>-->
+  <%# end %>
+<!--  <h4 class="center description"><strong>Description:</strong></h4>-->
+<!--  <hr>-->
+  <%#= simple_format(@article.description) %>
+  <%# if @article.categories.any? %>
+<!--    <p>Categories: <%#= render @article.categories%></p>-->
+  <%# end %>
 
-  <div class="article-actions">
-    <% if current_user.admin?  %>
-      <%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
-      <%= link_to "Delete this article", article_path(@article), method: :delete,
-                  data: { confirm: "Are you sure you want to delete the article?"},
-                  class: "btn btn-xs btn-danger" %>
-    <% end %>
-    <%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
-  </div>
+<!--  <div class="article-actions">-->
+    <%# if current_user.admin?  %>
+      <%#= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+
+<%#= link_to "Delete this article", article_path(@article), method: :delete,data: { confirm: "Are you sure you want to delete the article?"}, class: "btn btn-xs btn-danger" %>
+
+    <%# end %>
+    <%#= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
+<!--  </div>-->
   <%#comments %>
-  <%= render 'comments/comment'%>
+  <%#= render 'comments/comment'%>
+
+<!--</div>-->
+
+<!doctype html>
+
+<html>
+
+<head>
+  <%= javascript_include_tag "validation.js" %>
+
+  <!-- Meta Data -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Z Online - The best new PC MMORPG era. A stunning Online Multiplayer Game </title>
+
+  <!-- Fav Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/media/Z_ICO.ico">
+
+  <!-- Dependency Styles -->
+  <link rel="stylesheet" href="../assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="../assets/dependencies/swiper/swiper.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/wow/css/animate.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/magnific-popup/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/woocommerce.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/app.css" type="text/css">
+
+
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
+
+
+</head>
+
+<body class="blog-post-single" data-style="default">
+<!--
+<div id="loader-wrapper">
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div> -->
+<div id="loader-wrapper">
+  <div class='loader'></div>
+</div>
+
+<div class="switch-top">
+  <p>Back To Top</p>
+  <a href="#main_content" data-type="section-switch" class="return-to-top">
+    <i class="fa fa-angle-double-up"></i>
+  </a>
+</div>
+
+<div id="main_content">
+
+   <%= render "welcome/Navbar" %>
+
+  <!--=============================-->
+  <!--=        Blog Single        =-->
+  <!--=============================-->
+  <section class="single-post">
+    <div class="full-width">
+      <div class="blog-details">
+        <h2 class="blog-title"><%= @article.title %></h2>
+        <ul class="meta">
+          <li><strong><a><i class="fa fa-clock-o"></i><%= @article.created_at %></a></strong></li>
+          <li><strong><a><i class="fa fa-comments-o"></i> <%= @article.comments.count %> </a></strong></li>
+        </ul>
+
+<!--        <div class="feature-image">-->
+<!--          <div class="youtube-wrapper">-->
+<!--            <div class="youtube-poster" data-bg-image="media/video/12.jpg" style="background-image: url(_media/game/30.html);"></div>-->
+<!--            <!-- <iframe src="//player.vimeo.com/video/56585357" allowfullscreen=""></iframe> -->
+<!--            <iframe src="https://www.youtube.com/embed/KYniUCGPGLs" allowfullscreen=""></iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+
+
+        <div class="feature-image">
+          <img src="<%= @article.fimage %>">
+        </div>
+
+        <div style="padding-top: 40px;"></div>
+
+        <div style="font-size: 22px;line-height: 45px;">
+          <%= @article.description %>
+        </div>
+
+        <div style="padding-top: 40px;"></div>
+
+
+      </div>
+      <!-- /.blog-details -->
+
+      <%= render "comments/comment" %>
+
+      <!-- /.game-tips -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.single-post -->
+  <%= render "welcome/Footer" %>
 
 </div>
+<!-- /#site -->
+
+<!-- Dependency Scripts -->
+<script src="../assets/dependencies/jquery/jquery.min.js"></script>
+<script src="../assets/dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/dependencies/swiper/js/swiper.min.js"></script>
+<script src="../assets/dependencies/swiperRunner/swiperRunner.min.js"></script>
+<script src="../assets/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+<script src="../assets/dependencies/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/dependencies/jquery-animated-headlines/js/jquery.animatedheadline.min.js"></script>
+<script src="../assets/dependencies/jquery.countdown/jquery.countdown.min.js"></script>
+<script src="../assets/dependencies/countUp.js/js/countUp.min.js"></script>
+<script src="../assets/dependencies/jquery.appear.bas2k/jquery.appear.js"></script>
+<script src="../assets/dependencies/jquery.ripples/jquery.ripples.js"></script>
+<script src="../assets/dependencies/wow/js/wow.min.js"></script>
+
+<!-- Site Scripts -->
+<script src="../assets/home-dependencies/app.js"></script>
+
+</body>
+
+</html>
