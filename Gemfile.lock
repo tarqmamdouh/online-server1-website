@@ -310,7 +310,7 @@ DEPENDENCIES
   jquery-fileupload-rails
   jquery-rails
   listen (>= 3.0.5, < 3.2)
-  puma (~> 3.11)
+  puma
   rails (~> 5.2.0)
   selenium-webdriver
   sequel
