@@ -18,7 +18,7 @@
 !/tmp/.keep
 .idea/*
 #/config/local_env.yml
-
+/config/secrets.yml
 
 # Ignore uploaded files in development
 /storage/*
