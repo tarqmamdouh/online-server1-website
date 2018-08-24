@@ -1,5 +1,5 @@
 # Change these
-server '35.189.124.184', roles: [:web, :app, :db], primary: true
+server '35.242.177.24', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:tarqmamdouh/online-server1-website.git'
 set :application,     'ZOnline'
