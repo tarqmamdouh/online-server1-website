@@ -16,11 +16,10 @@ class User::ConfirmationsController < Devise::ConfirmationsController
       name = resource.name
       country = request.location.country
       ip = request.ip
-      address = request.location.address
       regtime = resource.updated_at.strftime("%Y-%m-%dT%H:%M:%S")
 
       if country.present?
-        @DB[:TB_User].insert(StrUserID: user_name, password: password, Email: email, Name: name, sec_primary: 3, sec_content: 3, regtime: regtime, Country: country, reg_ip: ip, address: address)
+        @DB[:TB_User].insert(StrUserID: user_name, password: password, Email: email, Name: name, sec_primary: 3, sec_content: 3, regtime: regtime, Country: country, reg_ip: ip)
       else
         @DB[:TB_User].insert(StrUserID: user_name, password: password, Email: email, Name: name, sec_primary: 3, sec_content: 3, regtime: regtime )
       end
