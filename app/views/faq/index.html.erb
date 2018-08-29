@@ -1,0 +1,13 @@
+<%= render 'layouts/adminNavbar'%>
+
+<h1 align = "center">Listing all requently asked question and its answer</h1>
+<% if current_user.admin? %>
+  <%= link_to "new FAQ", new_faq_path %>
+<% end %>
+<div align="center">
+  <%= will_paginate @faqs %>
+</div>
+<%= render 'faq', obj: @faqs%>
+<div align="center">
+  <%= will_paginate @faqs %>
+</div>

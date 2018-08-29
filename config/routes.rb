@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   put 'tickets/:id/close_ticket' => 'tickets#close_ticket', :as => 'close_ticket'
   mount Attachinary::Engine => "/attachinary"
   resources :bugs, except: [:destroy,:edit,:update]
+  resources :faq , except: [:show]
   resources :tickets do
     resources :tcomments
   end
