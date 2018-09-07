@@ -1,46 +1,332 @@
-<%= render 'layouts/adminNavbar'%>
-<%= javascript_include_tag 'Attachments' %>
-<%= javascript_include_tag 'init_attachinary' %>
+<!doctype html>
+
+<html>
+
+<head>
+  <%= javascript_include_tag "validation.js" %>
+  <%= javascript_include_tag 'Attachments' %>
+  <%= javascript_include_tag 'init_attachinary' %>
+
+  <!-- Meta Data -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Z Online | Download </title>
+
+  <!-- Fav Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/media/Z_ICO.ico">
+  <meta name="theme-color" content="#3d0e03">
+
+  <!-- Dependency Styles -->
+  <link rel="stylesheet" href="../assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
 
 
-<%if current_user.admin? || current_user.support? %>
-  <% if @ticket.status? %>
-    <%= button_to "Close this ticket", {action: "close_ticket", id: @ticket.id }, method: :put,data: {confirm: "Are you sure you want to close this ticket??!"} %>
-<%end %>
-<% end %>
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="../assets/dependencies/swiper/swiper.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/wow/css/animate.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/magnific-popup/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/woocommerce.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/app.css" type="text/css">
 
-<h2 align="center">Subject: <%= @ticket.subject%></h2>
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
 
 
+</head>
 
+<body class="bgb" data-style="default">
+<div id="loader-wrapper">
+  <div class='loader'></div>
+</div>
 
-<div class="well col-xs-8 col-xs-offset-2">
-  <% if @ticket.user %>
-    <ul class="listing">
-      <div class="row center">
-        <div class="col-md-4 col-md-offset-4">
-          <li>Created by:</li>
-          <li class="article-title">
-            <%= link_to @ticket.user.username %>
-          </li>
-          <li><small>
-                <%= pluralize(@ticket.user.tickets.count, "ticket") if @ticket.user.tickets %>
-          </small></li>
+<div class="switch-top">
+  <p>Back To Top</p>
+  <a href="#main_content" data-type="section-switch" class="return-to-top">
+    <i class="fa fa-angle-double-up"></i>
+  </a>
+</div>
+
+<div id="main_content">
+
+  <%= render "welcome/Navbar" %>
+
+  <!--=========================-->
+  <!--=        Banner         =-->
+  <!--=========================-->
+  <section id="page-header" data-bg-image="../assets/media/background/z6.jpg">
+    <div class="container">
+      <div class="page-title-wrap">
+        <div class="page-title-inner">
+          <h1>Ticket No. </h1>
+          <span class="delemitter" data-bg-image="../assets/media/banner/s1.png"></span>
         </div>
+        <!-- /.page-title-inner -->
       </div>
-    </ul>
-  <% end %>
-  <h4 class="center description"><strong>Content:</strong></h4>
-  <hr>
-  <%= simple_format(@ticket.content) %>
-  <% if @ticket.image.present? %>
-    <%= cl_image_tag @ticket.image.path, { size: '800x600', crop: :limit } %>
-  <% end %>
-  <div class="article-actions">
+      <!-- /.page-title-wrap -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#page-header -->
 
-    <%= link_to "View all tickets", tickets_path, class: "btn btn-xs btn-success" %>
-  </div>
-  <%#comments %>
-  <%= render 'tcomments/comment'%>
+
+  <!--=================================-->
+  <!--=        Col Two Action         =-->
+  <!--=================================-->
+  <section id="game-strategy" class="pb__30" data-bg-image="media/ticket/bg2.png" style="background-repeat: no-repeat;">
+    <div class="container-fluid" >
+      <div class="row">
+
+        <div class="col-lg-1 col-md-12"></div>
+
+        <div class="col-lg-8 col-md-12" style="min-height: 500px;" style="background-color: black;">
+
+
+
+
+          <div class="row" style="opacity: 0.9;border-bottom: 1px dotted grey;border-top: 1px dotted grey;border-right: 1px dotted grey">
+
+            <div class="col-lg-2 col-md-12" style="border-right: 1px solid grey;border-left: 1px solid grey;min-height: 500px;text-align: center;border-right-style: dotted;">
+              <img src="<% if @ticket.user.admin? %>
+                            ../assets/media/ticket/admin.jpg
+                        <% elsif @ticket.user.seller %>
+                            ../assets/media/ticket/player.jpg
+                        <% elsif @ticket.user.support? %>
+                            ../assets/media/ticket/supporter.jpg
+                        <% else %>
+                            ../assets/media/ticket/player.jpg
+                        <% end %>
+
+" style="padding-top: 30%;width: 60%;border-radius: 50%;" class="img-responsive center-block">
+
+              <div style="font-size: 20px;font-weight: 500; color: whitesmoke;padding-top: 10%;">
+                <strong style="color: greenyellow"> <%= @ticket.user.username %>  </strong>
+              </div>
+
+              <img src="<% if @ticket.user.admin? %>
+                            ../assets/media/ticket/administrator.png
+                        <% elsif @ticket.user.seller %>
+                            ../assets/media/ticket/seller.png
+                        <% elsif @ticket.user.support? %>
+                            ../assets/media/ticket/supporter.png
+                        <% else %>
+                        <% end %>
+
+" style="padding-top: 10%;width: 100%;" class="img-responsive center-block">
+
+
+            </div>
+
+            <div class="col-lg-10 col-md-12">
+
+              <div class="row" style="padding: 1%;border-bottom: 2px dotted grey;border-width: thin">
+                <h6> <i class="fa fa-calendar" style="padding-right: 10px;"></i> <%= @ticket.created_at.to_date %> </h6>
+              </div>
+
+              <div class="row" style="padding: 2%;color: white;font-size: 20px;font-weight: 600;">
+                <p>
+                  <%= @ticket.content %>
+                </p>
+              </div>
+
+              <% if @ticket.image.present? %>
+                <div class="row" style="padding: 2%;color: white;font-size: 20px;font-weight: 600;">
+                  <h4><strong> Attached Image :</strong> </h4>
+                </div>
+                <div class="row" style="padding: 2%;color: white;font-size: 20px;font-weight: 600;">
+                  <%= cl_image_tag @ticket.image.path, style: "max-height: 600px;max-width: 100%;" %>
+                </div>
+              <% end %>
+
+            </div>
+          </div>
+
+          <div style="padding-top: 5%"></div>
+
+          <% @tcomments.each do |comment| %>
+            <div class="row" style="opacity: 0.9;border-bottom: 1px dotted grey;border-top: 1px dotted grey;border-right: 1px dotted grey">
+
+              <div class="col-lg-2 col-md-12" style="border-right: 1px solid grey;border-left: 1px solid grey;min-height: 500px;text-align: center;border-right-style: dotted;">
+                <img src="<% if comment.user.admin? %>
+                            ../assets/media/ticket/admin.jpg
+                        <% elsif comment.user.seller %>
+                            ../assets/media/ticket/player.jpg
+                        <% elsif comment.user.support? %>
+                            ../assets/media/ticket/supporter.jpg
+                        <% else %>
+                            ../assets/media/ticket/player.jpg
+                        <% end %>
+
+" style="padding-top: 30%;width: 60%;border-radius: 50%;" class="img-responsive center-block">
+
+                <div style="font-size: 20px;font-weight: 500; color: whitesmoke;padding-top: 10%;">
+                  <strong style="color: greenyellow"> <%= comment.user.username %>  </strong>
+                </div>
+
+                <img src="<% if comment.user.admin? %>
+                            ../assets/media/ticket/administrator.png
+                        <% elsif comment.user.seller %>
+                            ../assets/media/ticket/seller.png
+                        <% elsif comment.user.support? %>
+                            ../assets/media/ticket/supporter.png
+                        <% else %>
+                        <% end %>
+
+" style="padding-top: 10%;width: 100%;" class="img-responsive center-block">
+
+
+              </div>
+
+              <div class="col-lg-10 col-md-12">
+
+                <div class="row" style="padding: 1%;border-bottom: 2px dotted grey;border-width: thin">
+                  <h6> <i class="fa fa-calendar" style="padding-right: 10px;"></i> <%= comment.created_at.to_date %> </h6>
+                </div>
+
+                <div class="row" style="padding: 2%;color: white;font-size: 20px;font-weight: 600;">
+                  <p>
+                    <%= comment.content %>
+                  </p>
+                </div>
+
+                <% if comment.photo.present? %>
+
+                  <div class="row" style="padding: 2%;color: white;font-size: 20px;font-weight: 600;">
+                    <h4><strong> Attached Image :</strong> </h4>
+                  </div>
+
+                  <div class="row" style="padding: 2%;color: white;font-size: 20px;font-weight: 600;">
+                    <%= cl_image_tag comment.photo.path, style: "max-height: 600px;max-width: 100%;" %>
+                  </div>
+
+                <% end %>
+
+              </div>
+            </div>
+
+            <div style="padding-top: 5%"></div>
+
+          <% end %>
+
+          <% if @ticket.status? %>
+
+          <div class="blog-comments-inner clearfix">
+
+            <div class="comments-wrap">
+              <h3 class="title">Replay to ticket</h3>
+            </div>
+            <!-- /.comments -->
+
+            <div id="app-errors">
+              <% if @ticket.errors.any? %>
+                <% @ticket.errors.full_messages.each do |msg| %>
+                  <h4 style=" color : #d50005"><%= msg %></h4>
+                <% end %>
+              <% end %>
+            </div>
+
+            <div class="comments-form">
+
+                <%= form_for([@ticket,@ticket.tcomments.build], html: {class: "form-comments"}) do |f| %>
+
+                  <%= f.text_area :content, cols: "30", rows: "10", placeholder: "Type your Comments here..." %>
+                  <div class="comments-wrap">
+                    <h3 class="title">Attach photo (If needed)</h3>
+                  </div>
+
+                  <%= f.file_field :photo, as: :attachinary,onchange: "validateFiles(this);",
+                                   data: { max_file_size: 2.megabytes} %>
+                  <div style="padding-top: 5%"></div>
+                  <button type="submit" class="tim-btn-bg brn float-right" data-disable-with="Create Comment" name="commit"><i class="fa fa-comments-o" style="padding-right: 10px;"></i> Submit</button>
+
+                <% end %>
+
+                </div>
+
+              </div>
+
+          <% end %>
+
+
+        </div>
+        <!-- /.col-md-8 -->
+
+        <div class="col-lg-2 col-md-12">
+          <ul class="tim-tab-nav-two nav" role="tablist" style="width: 100%;">
+            <li class="nav-item" style="width: 100%;">
+              <a class="nav-link active show" id="most_viewed_tab" data-toggle="tab" role="tab" aria-controls="most_viewed" aria-selected="true" style=" background-color: #1f004d;font-size: 28px;font-weight: 800;color: floralwhite">Ticket Info</a>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="myTabContent" style="width: 100%;">
+            <div class="tab-pane active show" id="most_viewed" role="tabpanel" aria-labelledby="most_viewed_tab" style="background-color: #1f004d;">
+              <div style="font-size: 20px;font-weight: 500; color: whitesmoke;padding-top: 10%;padding-left: 5%">
+                <strong><i class="fa fa-ticket"  style="padding-right: 5px;"></i> Ticket NO. : <%= @ticket.id %> </strong>
+              </div>
+              <div style="font-size: 20px;font-weight: 500; color: whitesmoke;padding-top: 10%;padding-left: 5%">
+                <i class="fa fa-user"  style="padding-right: 5px;"></i> User Name : <%= @ticket.user.username %>
+              </div>
+              <div style="font-size: 20px;font-weight: 500; color: whitesmoke;padding-top: 10%;padding-left: 5%">
+                <i class="fa fa-clock-o"  style="padding-right: 5px;"></i> Started : <%= time_ago_in_words(@ticket.created_at) %>
+              </div>
+              <div style="font-size: 20px;font-weight: 500; color: whitesmoke;padding-top: 10%;padding-left: 5%">
+                <i class="fa fa-info-circle" style="padding-right: 5px;"></i> Status :
+                <% if @ticket.status? %>
+                  <strong style="color: darkgreen"> opened  </strong>
+                <% else %>
+                  <strong style="color: darkred"> closed </strong>
+                <% end %>
+              </div>
+              <div style="font-size: 20px;font-weight: 500; color: whitesmoke;padding-top: 10%;padding-left: 5%">
+                <i class="fa fa-comment-o" style="padding-right: 5px;" ></i> Comments : <%= @ticket.tcomments.count %>
+              </div>
+              <div style="padding-top: 10%;"></div>
+            </div>
+          </div>
+          <!-- /.tab-content -->
+          <%if current_user.admin? || current_user.support? %>
+            <% if @ticket.status? %>
+              <div style="padding-top: 10%"></div>
+              <%= button_to "Close this ticket", {action: "close_ticket", id: @ticket.id }, method: :put,data: {confirm: "Are you sure you want to close this ticket??!"}, class: "cart-btn mb__10", style: "background-color: red;width: 100%;" %>
+            <%end %>
+          <% end %>
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#hame-strategy -->
+  <%= render "welcome/Footer" %>
 
 </div>
+<!-- /#site -->
+
+<!-- Dependency Scripts -->
+<script src="../assets/dependencies/jquery/jquery.min.js"></script>
+<script src="../assets/dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/dependencies/swiper/js/swiper.min.js"></script>
+<script src="../assets/dependencies/swiperRunner/swiperRunner.min.js"></script>
+<script src="../assets/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+<script src="../assets/dependencies/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/dependencies/jquery-animated-headlines/js/jquery.animatedheadline.min.js"></script>
+<script src="../assets/dependencies/jquery.countdown/jquery.countdown.min.js"></script>
+<script src="../assets/dependencies/countUp.js/js/countUp.min.js"></script>
+<script src="../assets/dependencies/jquery.appear.bas2k/jquery.appear.js"></script>
+<script src="../assets/dependencies/jquery.ripples/jquery.ripples.js"></script>
+<script src="../assets/dependencies/wow/js/wow.min.js"></script>
+
+<!-- Site Scripts -->
+<script src="../assets/home-dependencies/app.js"></script>
+
+</body>
+
+
+</html>

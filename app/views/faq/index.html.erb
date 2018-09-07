@@ -1,13 +1,149 @@
-<%= render 'layouts/adminNavbar'%>
+<%#= render 'layouts/adminNavbar'%>
 
-<h1 align = "center">Listing all requently asked question and its answer</h1>
-<% if current_user.admin? %>
-  <%= link_to "new FAQ", new_faq_path %>
-<% end %>
-<div align="center">
-  <%= will_paginate @faqs %>
+<!--<h1 align = "center">Listing all requently asked question and its answer</h1>-->
+<%# if current_user.admin? %>
+  <%#= link_to "new FAQ", new_faq_path %>
+<%# end %>
+<!--<div align="center">-->
+  <%#= will_paginate @faqs %>
+<!--</div>-->
+<%#= render 'faq', obj: @faqs%>
+<!--<div align="center">-->
+  <%#= will_paginate @faqs %>
+<!--</div>-->
+<!doctype html>
+
+<html>
+
+
+<!-- Mirrored from themeim.com/demo/gameisland/accordion-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Jun 2018 07:51:03 GMT -->
+<head>
+  <%= javascript_include_tag "validation.js" %>
+
+  <!-- Meta Data -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Z Online | Report Bug </title>
+
+  <!-- Fav Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/media/Z_ICO.ico">
+  <meta name="theme-color" content="#3d0e03">
+
+  <!-- Dependency Styles -->
+  <link rel="stylesheet" href="../assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="../assets/dependencies/swiper/swiper.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/wow/css/animate.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/magnific-popup/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/woocommerce.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/app.css" type="text/css">
+
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
+
+</head>
+
+<body class="bgb" data-style="default">
+<div id="loader-wrapper">
+  <div class='loader'></div>
 </div>
-<%= render 'faq', obj: @faqs%>
-<div align="center">
-  <%= will_paginate @faqs %>
+
+<div class="switch-top">
+  <p>Back To Top</p>
+  <a href="#main_content" data-type="section-switch" class="return-to-top">
+    <i class="fa fa-angle-double-up"></i>
+  </a>
 </div>
+
+<div id="main_content">
+
+  <%= render "welcome/Navbar" %>
+
+  <!--=========================-->
+  <!--=        Banner         =-->
+  <!--=========================-->
+  <section id="page-header" data-bg-image="../assets/media/background/z6.jpg">
+    <div class="container">
+      <div class="page-title-wrap">
+        <div class="page-title-inner">
+          <h1>Accordian And Tab</h1>
+          <span class="delemitter" data-bg-image="../assets/media/banner/s1.png"></span>
+        </div>
+        <!-- /.page-title-inner -->
+      </div>
+      <!-- /.page-title-wrap -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#page-header -->
+
+  <!--========================================-->
+  <!--=        Blog Grid Four Column         =-->
+  <!--========================================-->
+  <section id="faq" data-bg-image="../assets/media/ticket/faq.png">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2 style="font-weight: 700">Frequently Asked & questions</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="faq">
+            <div class="panel-group" id="accordion-two">
+              <% @faqs.each do |faq| %>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="panel-title"><a data-toggle="collapse" class="panel-toggle" data-parent="#accordion-two" href="#collapse<%= faq.id %>"><%= faq.question %></a></div>
+                  </div>
+                  <div id="collapse<%= faq.id %>" class="panel-collapse collapse">
+                    <div class="panel-body"> <%= faq.answer %></div>
+                  </div>
+                </div>
+            <% end %>
+            </div>
+          </div>
+          <!-- /.choose -->
+        </div>
+        <!-- /.col-md-6 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.style-one -->
+  <%= render "welcome/Footer" %>
+
+</div>
+<!-- /#site -->
+
+<!-- Dependency Scripts -->
+<script src="../assets/dependencies/jquery/jquery.min.js"></script>
+<script src="../assets/dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/dependencies/swiper/js/swiper.min.js"></script>
+<script src="../assets/dependencies/swiperRunner/swiperRunner.min.js"></script>
+<script src="../assets/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+<script src="../assets/dependencies/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/dependencies/jquery-animated-headlines/js/jquery.animatedheadline.min.js"></script>
+<script src="../assets/dependencies/jquery.countdown/jquery.countdown.min.js"></script>
+<script src="../assets/dependencies/countUp.js/js/countUp.min.js"></script>
+<script src="../assets/dependencies/jquery.appear.bas2k/jquery.appear.js"></script>
+<script src="../assets/dependencies/jquery.ripples/jquery.ripples.js"></script>
+<script src="../assets/dependencies/wow/js/wow.min.js"></script>
+
+<!-- Site Scripts -->
+<script src="../assets/home-dependencies/app.js"></script>
+
+</body>
+
+
+<!-- Mirrored from themeim.com/demo/gameisland/accordion-tab.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Jun 2018 07:51:03 GMT -->
+</html>

@@ -15,8 +15,7 @@ class TicketsController < ApplicationController
     @ticket.user = current_user
 
     if @ticket.save
-      flash[:notice] = "Ticket was successfully submitted"
-      redirect_to ticket_path(@ticket)
+      render "success"
     else
       render 'new'
     end
@@ -25,6 +24,7 @@ class TicketsController < ApplicationController
   def show
     @tcomments = Tcomment.where(ticket_id: @ticket)
   end
+
   def close_ticket
     @ticket = Ticket.find(params[:id])
     if @ticket.status?

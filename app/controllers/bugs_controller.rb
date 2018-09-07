@@ -15,8 +15,7 @@ class BugsController < ApplicationController
     @bug.user = current_user
 
     if @bug.save
-      flash[:notice] = "Your bug report sent successfully!!"
-      redirect_to root_path
+      render "success"
     else
       render 'new'
     end

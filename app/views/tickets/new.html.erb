@@ -1,82 +1,174 @@
-<% if @ticket.errors.any? %>
 
-  <h2 xmlns="http://www.w3.org/1999/html">The following errors prevented the ticket from getting created</h2>
+<!doctype html>
 
-  <ul>
+<html>
 
-    <% @ticket.errors.full_messages.each do |msg| %>
 
-      <li><%= msg %></li>
+<head>
+  <%= javascript_include_tag "validation.js" %>
 
-    <% end %>
+  <!-- Meta Data -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Z Online | Download </title>
 
-  </ul>
+  <!-- Fav Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/media/Z_ICO.ico">
+  <meta name="theme-color" content="#3d0e03">
 
-<% end %>
-<div class='row'>
+  <!-- Dependency Styles -->
+  <link rel="stylesheet" href="../assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
 
-  <div class='col-xs-12'>
 
-    <%= form_for(@ticket, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="../assets/dependencies/swiper/swiper.min.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/wow/css/animate.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/magnific-popup/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/woocommerce.css" type="text/css">
+  <link rel="stylesheet" href="../assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="../assets/home-dependencies/app.css" type="text/css">
 
-      <div class="form-group">
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
 
-        <div class="control-label col-sm-2">
 
-          <%= f.label :subject %>
+</head>
+
+<body class="bgb" data-style="default">
+<div id="loader-wrapper">
+  <div class='loader'></div>
+</div>
+
+<div class="switch-top">
+  <p>Back To Top</p>
+  <a href="#main_content" data-type="section-switch" class="return-to-top">
+    <i class="fa fa-angle-double-up"></i>
+  </a>
+</div>
+
+<div id="main_content">
+
+  <%= render "welcome/Navbar" %>
+
+  <!--=========================-->
+  <!--=        Banner         =-->
+  <!--=========================-->
+  <section id="page-header" data-bg-image="../assets/media/background/z6.jpg">
+    <div class="container">
+      <div class="page-title-wrap">
+        <div class="page-title-inner">
+          <h1>Submit Ticket</h1>
+          <span class="delemitter" data-bg-image="../assets/media/banner/s1.png"></span>
+        </div>
+        <!-- /.page-title-inner -->
+      </div>
+      <!-- /.page-title-wrap -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#page-header -->
+
+
+  <!--=================================-->
+  <!--=        Col Two Action         =-->
+  <!--=================================-->
+  <section id="game-strategy" class="pb__30" data-bg-image="../assets/media/ticket/bg3.png" style="background-repeat: no-repeat;">
+    <div class="container-fluid" >
+      <div class="section-title">
+        <div style="padding-top: 5%"></div>
+        <h3 class="sub-title wow fadeInUp" data-wow-duration="1000ms" style="visibility: visible; animation-duration: 1000ms; animation-name: fadeInUp;"></h3>
+        <h2 class="title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 1000ms; animation-delay: 0.3s; animation-name: fadeInUp;">Contact  us </h2>
+        <div class="section-content wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1000ms; animation-delay: 0.5s; animation-name: fadeInUp;">
+          <div style="padding-top: 2%"></div>
+
+          <p style="font-size: 20px;line-height: 30px;">
+            If you have any problems, inquiry about Z world do not hesitate to submit your ticket. <br>
+            We are more than happy to help you, also you could have a look into <strong><a href="../FAQ"> FAQ </a></strong> before submitting your ticket.
+          </p>
+        </div>
+      </div>
+      <!-- /.title -->
+      <div class="row" style="width: 100%;">
+        <div class="col-lg-3 col-md-12">
+          <img src="../assets/media/ticket/char2.png" style="width: 100%;-webkit-transform: scaleX(-1);transform: scaleX(-1);">
 
         </div>
+        <div class="col-lg-6 col-md-12">
+          <style>
+            .footer-newsletter textarea {
+              display: block;
+              padding: 10px 15px;
+              background: transparent;
+              border: 1px solid #fff3;
+              border-radius: 4px;
+              margin-bottom: 20px;
+              width: 100%;
+              font-size: 16px;
+              outline: 0;
+              color: #fff;
+            }
+          </style>
 
-        <div class="col-sm-8">
+          <div id="app-errors">
+            <% if @ticket.errors.any? %>
+              <% @ticket.errors.full_messages.each do |msg| %>
+                <h4 style=" color : #d50005"><%= msg %></h4>
+              <% end %>
+            <% end %>
+          </div>
 
-          <%= f.text_field :subject, class: "form-control", placeholder: "Subject of Ticket", autofocus: true %>
+          <%= form_for(@ticket, :html => {class: "footer-newsletter", role: "form"}) do |f| %>
+            <%= f.text_field :subject, class: "form-control", placeholder: "Subject of Ticket" , style: "background-color: black"%>
+            <%= f.text_area :content, rows: 15,  class: "form-control", style: "width: 100%;background-color: black;"  , placeholder: "Briefly describe your problem .." %>
+            <%= f.file_field :image, as: :attachinary,onchange: "validateFiles(this);",
+                             data: { max_file_size: 2.megabytes} %>
+            <div style="padding-top: 2%;"></div>
 
+            <%= f.submit class: 'tim-btn-bg brn' %>
+
+          <% end %>
         </div>
-
+        <div class="col-lg-3 col-md-12">
+          <img src="../assets/media/ticket/char2.png" style="width: 100%;">
+        </div>
       </div>
 
-      <div class="form-group">
-
-        <div class="control-label col-sm-2">
-
-          <%= f.label :content %>
-
-        </div>
-
-        <div class="col-sm-8">
-
-          <%= f.text_area :content, rows: 10, class: "form-control", placeholder: "Body of your ticket" %>
-
-        </div>
-
-      </div>
-
-      <div class="col-sm-8">
-
-        <%= f.file_field :image, as: :attachinary,onchange: "validateFiles(this);",
-                         data: { max_file_size: 2.megabytes} %>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <div class="col-sm-offset-2 col-sm-10">
-
-          <%= f.submit class: 'btn btn-primary btn-lg' %>
-
-        </div>
-
-      </div>
-
-    <% end %>
-
-    <div class="col-xs-4 col-xs-offset-4">
-
-      [ <%= link_to "Cancel request and return to home", root_path %> ]
+      <!-- /.row -->
 
     </div>
-
-  </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#hame-strategy -->
+  <%= render 'welcome/Footer' %>
 
 </div>
+<!-- /#site -->
+
+<!-- Dependency Scripts -->
+<script src="../assets/dependencies/jquery/jquery.min.js"></script>
+<script src="../assets/dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/dependencies/swiper/js/swiper.min.js"></script>
+<script src="../assets/dependencies/swiperRunner/swiperRunner.min.js"></script>
+<script src="../assets/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+<script src="../assets/dependencies/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/dependencies/jquery-animated-headlines/js/jquery.animatedheadline.min.js"></script>
+<script src="../assets/dependencies/jquery.countdown/jquery.countdown.min.js"></script>
+<script src="../assets/dependencies/countUp.js/js/countUp.min.js"></script>
+<script src="../assets/dependencies/jquery.appear.bas2k/jquery.appear.js"></script>
+<script src="../assets/dependencies/jquery.ripples/jquery.ripples.js"></script>
+<script src="../assets/dependencies/wow/js/wow.min.js"></script>
+
+<!-- Site Scripts -->
+<script src="../assets/home-dependencies/app.js"></script>
+
+
+</body>
+
+</html>

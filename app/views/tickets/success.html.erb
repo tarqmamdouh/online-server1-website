@@ -2,6 +2,7 @@
 
 <html>
 
+
 <head>
   <%= javascript_include_tag "validation.js" %>
 
@@ -9,12 +10,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Z Online - The best new PC MMORPG era. A stunning Online Multiplayer Game </title>
+  <title> Z Online | Download </title>
 
   <!-- Fav Icon -->
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/Z_ICO.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/Z_ICO.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/media/Z_ICO.ico">
+  <meta name="theme-color" content="#3d0e03">
 
   <!-- Dependency Styles -->
   <link rel="stylesheet" href="../assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
@@ -32,34 +34,13 @@
   <link rel="stylesheet" href="../assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
   <link rel="stylesheet" href="../assets/home-dependencies/app.css" type="text/css">
 
-
   <!-- Google Web Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
 
 
 </head>
 
-<body class="blog-post-single" data-style="default">
-<!--
-<div id="loader-wrapper">
-  <div class="loader">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div> -->
+<body class="bgb" data-style="default">
 <div id="loader-wrapper">
   <div class='loader'></div>
 </div>
@@ -73,52 +54,65 @@
 
 <div id="main_content">
 
-   <%= render "welcome/Navbar" %>
+  <%= render "welcome/Navbar" %>
 
-  <!--=============================-->
-  <!--=        Blog Single        =-->
-  <!--=============================-->
-  <section class="single-post">
-    <div class="full-width">
-      <div class="blog-details">
-        <h2 class="blog-title"><%= @article.title %></h2>
-        <ul class="meta">
-          <li><strong><a><i class="fa fa-clock-o"></i><%= @article.created_at %></a></strong></li>
-          <li><strong><a><i class="fa fa-comments-o"></i> <%= @article.comments.count %> </a></strong></li>
-        </ul>
-
-<!--        <div class="feature-image">-->
-<!--          <div class="youtube-wrapper">-->
-<!--            <div class="youtube-poster" data-bg-image="media/video/12.jpg" style="background-image: url(_media/game/30.html);"></div>-->
-<!--            <!-- <iframe src="//player.vimeo.com/video/56585357" allowfullscreen=""></iframe> -->
-<!--            <iframe src="https://www.youtube.com/embed/KYniUCGPGLs" allowfullscreen=""></iframe>-->
-<!--          </div>-->
-<!--        </div>-->
-
-
-        <div class="feature-image">
-          <img src="<%= @article.fimage %>">
+  <!--=========================-->
+  <!--=        Banner         =-->
+  <!--=========================-->
+  <section id="page-header" data-bg-image="../assets/media/background/z6.jpg">
+    <div class="container">
+      <div class="page-title-wrap">
+        <div class="page-title-inner">
+          <h1>Submit Ticket</h1>
+          <span class="delemitter" data-bg-image="../assets/media/banner/s1.png"></span>
         </div>
-
-        <div style="padding-top: 40px;"></div>
-
-        <div style="font-size: 22px;line-height: 45px;">
-          <%= @article.description %>
-        </div>
-
-        <div style="padding-top: 40px;"></div>
-
-
+        <!-- /.page-title-inner -->
       </div>
-      <!-- /.blog-details -->
-
-      <%= render "comments/comment" %>
-
-      <!-- /.game-tips -->
+      <!-- /.page-title-wrap -->
     </div>
     <!-- /.container -->
   </section>
-  <!-- /.single-post -->
+  <!-- /#page-header -->
+
+
+  <!--=================================-->
+  <!--=        Col Two Action         =-->
+  <!--=================================-->
+  <section id="game-strategy" class="pb__30" data-bg-image="../assets/media/ticket/bg3.png" style="background-repeat: no-repeat;min-height: 700px;">
+    <div class="container-fluid" >
+      <div style="height: 150px;"></div>
+
+      <div class="row"  style="width: 100%;">
+        <div class="col-lg-5 col-md-12">
+        </div>
+        <div class="col-lg-2  col-md-12">
+          <img src="../assets/media/ticket/s-char.png" width="100%">
+        </div>
+
+        <div class="col-lg-5  col-md-12">
+        </div>
+      </div>
+
+      <div class="row" style="width: 100%;">
+        <div class="col-lg-4 col-md-12">
+        </div>
+
+        <div class="col-lg-4  col-md-12">
+          <img src="../assets/media/ticket/ticket-success.png" width="100%">
+          <h2 style="color: snow;font-weight: 700"> to access your ticket click on your username and go to tickets tab</h2>
+        </div>
+
+        <div class="col-lg-4  col-md-12">
+        </div>
+      </div>
+
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#hame-strategy -->
+
   <%= render "welcome/Footer" %>
 
 </div>
@@ -140,6 +134,7 @@
 
 <!-- Site Scripts -->
 <script src="../assets/home-dependencies/app.js"></script>
+
 
 </body>
 
