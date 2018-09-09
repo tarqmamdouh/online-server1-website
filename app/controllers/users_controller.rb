@@ -21,10 +21,111 @@ class UsersController < ApplicationController
       elsif @jobname[:jobtype] == 3
         @myjob = "Hunter"
       else
-        @myjob = "Not Joined yet!!"
+        @myjob = "Not Joined yet"
       end
-    end
 
+      inventory = @DB[:_Inventory].where(:charid => @info[:charid])
+      # 0: EQUIP_SLOT_HELM
+      # 1: EQUIP_SLOT_MAIL,
+      # 2: EQUIP_SLOT_SHOULDERGUARD,
+      # 3: EQUIP_SLOT_GAUNTLET,
+      # 4: EQUIP_SLOT_PANTS,
+      # 5: EQUIP_SLOT_BOOTS,
+      # 6: EQUIP_SLOT_WEAPON,
+      # 7: EQUIP_SLOT_SHIELD or ARROW,
+      # 9: EQUIP_SLOT_EARRING,
+      # 10: EQUIP_SLOT_NECKLACE,
+      # 11: EQUIP_SLOT_L_RING,
+      # 12: EQUIP_SLOT_R_RING,
+
+      #-----------------------------------------------------------------------------
+      @weapon = inventory.where(:slot => 6).all.last
+      @weapon_id = @weapon[:itemid]
+      @weapon_stats = @DB[:_Items].where(:id64 => @weapon[:itemid]).all.last
+      @weapon = @DB[:_RefObjCommon].where(:id => @weapon_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @shield = inventory.where(:slot => 7).all.last
+      @shield_id = @shield[:itemid]
+      @shield_stats = @DB[:_Items].where(:id64 => @shield[:itemid]).all.last
+      @shield = @DB[:_RefObjCommon].where(:id => @shield_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+
+      #-----------------------------------------------------------------------------
+      @helm = inventory.where(:slot => 0).all.last
+      @helm_id = @helm[:itemid]
+      @helm_stats = @DB[:_Items].where(:id64 => @helm[:itemid]).all.last
+      @helm = @DB[:_RefObjCommon].where(:id => @helm_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+
+      #-----------------------------------------------------------------------------
+      @mail = inventory.where(:slot => 1).all.last
+      @mail_id = @mail[:itemid]
+      @mail_stats = @DB[:_Items].where(:id64 => @mail[:itemid]).all.last
+      @mail = @DB[:_RefObjCommon].where(:id => @mail_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @shoulder = inventory.where(:slot => 2).all.last
+      @shoulder_id = @shoulder[:itemid]
+      @shoulder_stats = @DB[:_Items].where(:id64 => @shoulder[:itemid]).all.last
+      @shoulder = @DB[:_RefObjCommon].where(:id => @shoulder_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @gauntlet = inventory.where(:slot => 3).all.last
+      @gauntlet_id = @gauntlet[:itemid]
+      @gauntlet_stats = @DB[:_Items].where(:id64 => @gauntlet[:itemid]).all.last
+      @gauntlet = @DB[:_RefObjCommon].where(:id => @gauntlet_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @pants = inventory.where(:slot => 4).all.last
+      @pants_id = @pants[:itemid]
+      @pants_stats = @DB[:_Items].where(:id64 => @pants[:itemid]).all.last
+      @pants = @DB[:_RefObjCommon].where(:id => @pants_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @boots = inventory.where(:slot => 5).all.last
+      @boots_id = @boots[:itemid]
+      @boots_stats = @DB[:_Items].where(:id64 => @boots[:itemid]).all.last
+      @boots = @DB[:_RefObjCommon].where(:id => @boots_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+
+      #-----------------------------------------------------------------------------
+      @earring = inventory.where(:slot => 9).all.last
+      @earring_id = @earring[:itemid]
+      @earring_stats = @DB[:_Items].where(:id64 => @earring[:itemid]).all.last
+      @earring = @DB[:_RefObjCommon].where(:id => @earring_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @necklace = inventory.where(:slot => 10).all.last
+      @necklace_id = @necklace[:itemid]
+      @necklace_stats = @DB[:_Items].where(:id64 => @necklace[:itemid]).all.last
+      @necklace = @DB[:_RefObjCommon].where(:id => @necklace_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @lring = inventory.where(:slot => 11).all.last
+      @lring_id = @lring[:itemid]
+      @lring_stats = @DB[:_Items].where(:id64 => @lring[:itemid]).all.last
+      @lring = @DB[:_RefObjCommon].where(:id => @lring_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @rring = inventory.where(:slot => 12).all.last
+      @rring_id = @rring[:itemid]
+      @rring_stats = @DB[:_Items].where(:id64 => @rring[:itemid]).all.last
+      @rring = @DB[:_RefObjCommon].where(:id => @rring_stats[:refitemid]).all.last
+      #-----------------------------------------------------------------------------
+
+    end
   end
 
   def index

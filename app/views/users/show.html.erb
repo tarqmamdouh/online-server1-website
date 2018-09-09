@@ -140,20 +140,10 @@ Additional Classes:
       <div class="nk-nav-table">
         <div class="nk-nav-row">
 
-          <a href="index.html" class="nk-nav-logo">
+          <a href="<%= root_path %>" class="nk-nav-logo">
             <img src="../assets/profile/logo.png" alt="" width="100%">
           </a>
 
-          <ul class="nk-nav-icons">
-
-            <li>
-              <a href="#" class="nk-search-toggle no-link-effect">
-                <span class="nk-icon-search"></span>
-              </a>
-            </li>
-
-
-          </ul>
         </div>
         <!--
 START: Navigation
@@ -528,40 +518,40 @@ Additional Classes:
 
 
 
-  <!-- START: Honors -->
-  <div class="nk-box text-center text-white bg-dark-1">
-    <div class="nk-gap-4"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 text-md-left">
-          <h2 class="nk-title"> DOES <strong>GeeK</strong> DESERVE YOUR HONOR ?</h2>
-          <h3 class="nk-sub-title mb-0 text-white op-7" >If you see that GeeK is a great player give the character your honor of the month !</h3>
-        </div>
-        <div class="col-md-2 text-md-right">
-          <div class="nk-gap-2 d-md-none"></div>
-          <img class="shadowfilter" src="../assets/profile/H1.png"/>
-          <h4 class="nk-sub-title text-white op-9" style="padding-top: 20px; padding-bottom: 20px;">Cooperative Player</h4>
-        </div>
-        <div class="col-md-2 text-md-right">
-          <div class="nk-gap-2 d-md-none"></div>
-          <img class="shadowfilter" src="../assets/profile/H2.png"/>
-          <h4 class="nk-sub-title text-white op-9" style="padding-top: 27px; padding-bottom: 20px;"> Great Supporter</h4>
-        </div>
-        <div class="col-md-2 text-md-right">
-          <div class="nk-gap-2 d-md-none"></div>
-          <img class="shadowfilter" src="../assets/profile/H3.png"/>
-          <h4 class="nk-sub-title text-white op-9" style="padding-top: 27px; padding-bottom: 20px;"> Great Fighter</h4>
-        </div>
-        <div class="col-md-2 text-md-right">
-          <div class="nk-gap-2 d-md-none"></div>
-          <img class="shadowfilter" src="../assets/profile/H4.png"/>
-          <h4 class="nk-sub-title text-white op-9" style="padding-top: 35px; padding-bottom: 20px;"> Wise Player</h4>
-        </div>
-      </div>
-    </div>
-    <div class="nk-gap-4"></div>
-  </div>
-  <!-- END: Honors -->
+  <!--  <!-- START: Honors -->
+  <!--  <div class="nk-box text-center text-white bg-dark-1">-->
+  <!--    <div class="nk-gap-4"></div>-->
+  <!--    <div class="container">-->
+  <!--      <div class="row">-->
+  <!--        <div class="col-md-4 text-md-left">-->
+  <!--          <h2 class="nk-title"> DOES <strong>GeeK</strong> DESERVE YOUR HONOR ?</h2>-->
+  <!--          <h3 class="nk-sub-title mb-0 text-white op-7" >If you see that GeeK is a great player give the character your honor of the month !</h3>-->
+  <!--        </div>-->
+  <!--        <div class="col-md-2 text-md-right">-->
+  <!--          <div class="nk-gap-2 d-md-none"></div>-->
+  <!--          <img class="shadowfilter" src="../assets/profile/H1.png"/>-->
+  <!--          <h4 class="nk-sub-title text-white op-9" style="padding-top: 20px; padding-bottom: 20px;">Cooperative Player</h4>-->
+  <!--        </div>-->
+  <!--        <div class="col-md-2 text-md-right">-->
+  <!--          <div class="nk-gap-2 d-md-none"></div>-->
+  <!--          <img class="shadowfilter" src="../assets/profile/H2.png"/>-->
+  <!--          <h4 class="nk-sub-title text-white op-9" style="padding-top: 27px; padding-bottom: 20px;"> Great Supporter</h4>-->
+  <!--        </div>-->
+  <!--        <div class="col-md-2 text-md-right">-->
+  <!--          <div class="nk-gap-2 d-md-none"></div>-->
+  <!--          <img class="shadowfilter" src="../assets/profile/H3.png"/>-->
+  <!--          <h4 class="nk-sub-title text-white op-9" style="padding-top: 27px; padding-bottom: 20px;"> Great Fighter</h4>-->
+  <!--        </div>-->
+  <!--        <div class="col-md-2 text-md-right">-->
+  <!--          <div class="nk-gap-2 d-md-none"></div>-->
+  <!--          <img class="shadowfilter" src="../assets/profile/H4.png"/>-->
+  <!--          <h4 class="nk-sub-title text-white op-9" style="padding-top: 35px; padding-bottom: 20px;"> Wise Player</h4>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--    <div class="nk-gap-4"></div>-->
+  <!--  </div>-->
+  <!--  <!-- END: Honors -->
 
 
   <!-- START: Honors Not Logged in -->
@@ -627,7 +617,7 @@ Additional Classes:
     <div class="row">
       <div class="col-lg-3 ">
         <!-- Get Char skin -->
-        <img src="../assets/profile/chars/1921.gif" width="80%"/>
+        <img src="../assets/profile/chars_full/<%= @info[:refobjid] %>.png" style=""/>
         <!-- -->
       </div>
       <div class="col-lg-4 bg-color" style="opacity: 0.9;">
@@ -669,72 +659,148 @@ Additional Classes:
         </div>
 
       </div>
+
       <div class="col-lg-4 offset-lg-1 bg-color" style="opacity: 0.9;">
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_weapon.PNG" width="100%" />
+            <img src="
+            <% if @weapon_id.zero? %>
+            ../assets/profile/equipment/equip_slot_weapon.PNG
+            <% else %>
+            ..\assets\profile\<%= @weapon[:assocfileicon128].chomp('.ddj') %>.PNG
+            <% end %>
+
+            " width="100%" />
+
           </div>
           <div class="col-lg-3 offset-md-3">
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_shield.PNG" width="100%" />
+            <img src="
+             <% if @shield_id.zero? %>
+            ../assets/profile/equipment/equip_slot_shield.PNG
+             <% else %>
+            ..\assets\profile\<%= @shield[:assocfileicon128].chomp('.ddj') %>.PNG
+            <% end %>
+
+            " width="100%" />
           </div>
         </div>
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_helm.PNG" width="100%" />
+            <img src="<% if @helm_id.zero? %>
+            ../assets/profile/equipment/equip_slot_helm.PNG
+            <% else %>
+            ..\assets\profile\<%= @helm[:assocfileicon128].chomp('.ddj') %>.PNG
+            <% end %>
+
+" width="100%" />
           </div>
           <div class="col-lg-3 offset-md-3">
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_shoulderguard.PNG" width="100%" />
+            <img src="
+              <% if @shoulder_id.zero? %>
+                ../assets/profile/equipment/equip_slot_shoulderguard.PNG
+              <% else %>
+                ..\assets\profile\<%= @shoulder[:assocfileicon128].chomp('.ddj') %>.PNG
+            <% end %>
+                  " width="100%" />
           </div>
         </div>
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_mail.PNG" width="100%" />
+            <img src="<% if @mail_id.zero? %>
+            ../assets/profile/equipment/equip_slot_mail.PNG
+            <% else %>
+                ..\assets\profile\<%= @mail[:assocfileicon128].chomp('.ddj') %>.PNG
+            <% end %>
+
+            " width="100%" />
           </div>
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_gauntlet.PNG" width="100%" />
+            <img src="
+            <% if @gauntlet_id.zero? %>
+            ../assets/profile/equipment/equip_slot_gauntlet.PNG
+            <% else %>
+                ..\assets\profile\<%= @gauntlet[:assocfileicon128].chomp('.ddj') %>.PNG
+            <% end %>
+            " width="100%" />
 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_pants.PNG" width="100%" />
+            <img src="
+            <% if @pants_id.zero? %>
+            ../assets/profile/equipment/equip_slot_pants.PNG
+            <% else %>
+                ..\assets\profile\<%= @pants[:assocfileicon128].chomp('.ddj') %>.PNG
+            <% end %>
+            " width="100%" />
           </div>
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_boots.PNG" width="100%" />
+            <img src="
+             <% if @boots_id.zero? %>
+            ../assets/profile/equipment/equip_slot_boots.PNG
+             <% else %>
+                ..\assets\profile\<%= @boots[:assocfileicon128].chomp('.ddj') %>.PNG
+            <% end %>
+            " width="100%" />
 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_earring.PNG" width="100%" />
+            <img src="
+             <% if @earring_id.zero? %>
+            ../assets/profile/equipment/equip_slot_earring.PNG
+             <% else %>
+                ..\assets\profile\<%= @earring[:assocfileicon128].chomp('.ddj') %>.PNG
+             <% end %>
+            " width="100%" />
           </div>
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_necklace.PNG" width="100%" />
+            <img src="
+             <% if @necklace_id.zero? %>
+            ../assets/profile/equipment/equip_slot_necklace.PNG
+             <% else %>
+                ..\assets\profile\<%= @necklace[:assocfileicon128].chomp('.ddj') %>.PNG
+             <% end %>
+            " width="100%" />
 
           </div>
         </div>
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_l_ring.PNG" width="100%" />
+            <img src="
+              <% if @lring_id.zero? %>
+            ../assets/profile/equipment/equip_slot_l_ring.PNG
+              <% else %>
+                ..\assets\profile\<%= @lring[:assocfileicon128].chomp('.ddj') %>.PNG
+             <% end %>
+            " width="100%" />
           </div>
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <img src="../assets/profile/equipment/equip_slot_r_ring.PNG" width="100%" />
+            <img src="
+              <% if @rring_id.zero? %>
+            ../assets/profile/equipment/equip_slot_r_ring.PNG
+              <% else %>
+                ..\assets\profile\<%= @rring[:assocfileicon128].chomp('.ddj') %>.PNG
+             <% end %>
+            " width="100%" />
 
           </div>
         </div>
@@ -747,7 +813,11 @@ Additional Classes:
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-6"></div>
-            <img src="../assets/profile/equipment/equip_slot_specialdress.PNG" width="100%" />
+            <img src="
+
+            ../assets/profile/equipment/equip_slot_specialdress.PNG
+
+            " width="100%" />
 
             <div class="nk-gap-2"></div>
           </div>
@@ -1089,26 +1159,6 @@ START: Side Buttons
 
 
 
-<!--
-START: Search
-
-Additional Classes:
-.nk-search-light
--->
-<div class="nk-search">
-  <div class="container">
-    <form action="#">
-      <fieldset class="form-group nk-search-field">
-        <input type="text" class="form-control" id="searchInput" placeholder="Search..." name="s">
-        <label for="searchInput"><i class="ion-ios-search"></i></label>
-      </fieldset>
-    </form>
-  </div>
-</div>
-<!-- END: Search -->
-
-
-
 
 <!-- START: Scripts -->
 
@@ -1190,5 +1240,4 @@ Additional Classes:
 
 </body>
 
-<!-- Mirrored from www.ullrs-bane.org/index-game-promo.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Jun 2018 18:27:18 GMT -->
 </html>

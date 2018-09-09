@@ -3608,6 +3608,7 @@ img.rounded {
 
  -------------------------------------------------------------------*/
 .nk-cookie-alert {
+    visibility: hidden;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -3619,6 +3620,7 @@ img.rounded {
 }
 
 .nk-cookie-alert .nk-cookie-alert-close {
+    visibility: hidden;
     float: right;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -3653,12 +3655,12 @@ img.rounded {
 
 .nk-page-border .nk-page-border-t {
     top: 0;
-    background-image: url("../images/border-top.png");
+    background-image: url("../profile/border-top.png");
 }
 
 .nk-page-border .nk-page-border-b {
     bottom: 0;
-    background-image: url("../images/border-bottom.png");
+    background-image: url("../profile/border-bottom.png");
 }
 
 .nk-page-border .nk-page-border-r,
@@ -3670,12 +3672,12 @@ img.rounded {
 
 .nk-page-border .nk-page-border-r {
     right: 0;
-    background-image: url("../images/border-right.png");
+    background-image: url("../profile/border-right.png");
 }
 
 .nk-page-border .nk-page-border-l {
     left: 0;
-    background-image: url("../images/border-left.png");
+    background-image: url("../profile/border-left.png");
 }
 
 @media (max-width: 575px) {
@@ -4558,7 +4560,7 @@ img.rounded {
     right: 0;
     bottom: 0;
     left: 0;
-    cursor: url("../images/cursor-nav-close.png") 24 24, pointer;
+    cursor: url("../profile/cursor-nav-close.png") 24 24, pointer;
     background-color: #0e0e0e;
     opacity: 0;
     z-index: 1001;
@@ -7749,7 +7751,7 @@ body.nk-body-overflow .nk-share-buttons {
 
 .flickity-enabled.is-draggable .flickity-viewport,
 .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
-    cursor: url("../images/cursor-drag.png") 24 24, pointer;
+    cursor: url("../profile/cursor-drag.png") 24 24, pointer;
 }
 
 /* Style 1 */
