@@ -277,9 +277,9 @@
 
                   <!-- /.letest-games -->
                 </div>
-
+                <div class="tab-pane" id="professional" role="tabpanel" aria-labelledby="professional-tab">
                 <% @lastkill.each do |row| %>
-                  <div class="tab-pane" id="professional" role="tabpanel" aria-labelledby="professional-tab">
+
                     <div class="letest-games">
                       <a href="#"><img src="assets/media/uniques/<%= (row[:objectname].to_s).delete(' ') + ".jpg"  %>" alt="thumb"></a>
                       <div class="game-time">
@@ -287,8 +287,9 @@
                         <p class="date"><%= time_ago_in_words(row[:eventtime]) %></p>
                       </div>
                     </div>
-                  </div>
+
                 <% end %>
+                </div>
                 <!-- /.letest-games -->
 
 
