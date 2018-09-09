@@ -18,8 +18,8 @@ class WelcomeController < ApplicationController
 
     @DB= SQL.connect_shard
     @DBB = SQL.connect_shardlog
-    uniqevent = @DBB[:_LogEventUnique]
-    @lastkill = uniqevent.select(:CharName16,:ObjectName,:EventTime).all.last(6)
+    uniqevent = @DBB[:_LogEventUnique].all.last(6).reverse
+    @lastkill = uniqevent
    # @charid
    # @charname=
    #  @uniquename= @lastkill[:ObjectName]
