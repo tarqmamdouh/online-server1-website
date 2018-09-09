@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
   before_action :set_ticket , only: [:show]
-  before_action :require_admin , only: [:close_ticket]
+  before_action :require_admin , only: [:close_ticket , :index]
+  before_action :auth_to_show , only: [:show]
   def index
     @tickets = Ticket.order('created_at DESC').paginate(page: params[:page], per_page: 5)
   end
@@ -47,5 +48,12 @@ class TicketsController < ApplicationController
     if current_user.admin? != true && current_user.support? != true
       redirect_to root_path
     end
+  end
+  def auth_to_show
+    if current_user != @ticket.user && current_user.admin? != true && current_user.support? != true
+      flash[:danger] = "invalid ticket"
+      redirect_to user_preferences_path
+    end
+
   end
 end
