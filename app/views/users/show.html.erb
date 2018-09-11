@@ -730,6 +730,8 @@ Additional Classes:
             <% end %>
             " width="100%" />
 
+            <span class='equ-tooltip'></span>
+
           </div>
         </div>
         <div class="row">
@@ -1235,7 +1237,11 @@ START: Side Buttons
 <script src="../assets/js/godlike.min.js"></script>
 <script src="../assets/js/godlike-init.js"></script>
 <!-- END: Scripts -->
-
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 
 
 </body>

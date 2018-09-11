@@ -278,17 +278,18 @@
                   <!-- /.letest-games -->
                 </div>
                 <div class="tab-pane" id="professional" role="tabpanel" aria-labelledby="professional-tab">
-                <% @lastkill.each do |row| %>
+                <% @uniques.each_with_index do |row,i| %>
 
                     <div class="letest-games">
-                      <a href="#"><img src="assets/media/uniques/<%= (row[:objectname].to_s).delete(' ') + ".jpg"  %>" alt="thumb"></a>
+                      <a href="#"><img src="assets/media/uniques/<%= (row.to_s).delete(' ') + ".jpg"  %>" alt="thumb"></a>
                       <div class="game-time">
-                        <h2 class="date" style="padding-left: 20px;"><strong class="time"><%= row[:charname16]%></strong> has killed <strong class="time"> <%= row[:objectname]%> </strong></h2>
-                        <p class="date"><%= time_ago_in_words(row[:eventtime]) %></p>
+                        <h2 class="date" style="padding-left: 20px;"><strong class="time"><%= @killers[i] %></strong> has killed <strong class="time"> <%= @uniques[i] %> </strong></h2>
+                        <p class="date"><%= time_ago_in_words(@dates[i]) %></p>
                       </div>
                     </div>
 
                 <% end %>
+
                 </div>
                 <!-- /.letest-games -->
 
@@ -424,9 +425,7 @@
                 </div>
               </div>
             </div>
-
             <!-- /.games-bg -->
-
           </div>
           <!-- /.tab-pane -->
 

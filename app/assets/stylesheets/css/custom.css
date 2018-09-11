@@ -4,8 +4,32 @@
 	-webkit-transition: all 0.5s linear;
 	-o-transition: all 0.5s linear;
 	transition: all 0.5s linear;
-	
+
 }.shadowfilter:hover {
 	-webkit-filter: drop-shadow(0px 0px 8px rgba(0, 231, 255, 0.8));
     cursor: pointer;
+}
+
+
+.equ-tooltip {
+    background: #020c46;
+    opacity: 0.65;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    min-width: 250px;
+    max-width: 250px;
+    min-height:200px;
+
+    box-shadow:
+            0 0 0 10px 	hsl(231, 94%, 13%),
+            0 0 0 13px hsl(245, 35%, 15%),
+            0 0 0 9px hsl(243, 28%, 48%),
+            0 0 0 7px hsl(241, 27%, 36%),
+            0 0 0 15px hsl(243, 27%, 28%),
+            0 0 0 17px hsl(244, 16%, 35%),
+            0 0 0 20px hsl(0, 0%, 0%);
+
 }

@@ -19,11 +19,27 @@ class WelcomeController < ApplicationController
     @DB= SQL.connect_shard
     @DBB = SQL.connect_shardlog
     uniqevent = @DBB[:_LogEventUnique].all.last(6).reverse
-    @lastkill = uniqevent
+
+    @killers = []
+    @uniques = []
+    @dates = []
+    uniqevent.each do |row|
+      killer = @DB[:_Char].where(:charid => row[:charid])
+      unique = @DB[:_RefObjUnique].where(:objectid => row[:objectid])
+      @dates << row[:eventtime]
+
+      if row[:killtype] == 0
+        @killers << killer[:charname16]
+      else
+        @killers << killer[:nickname16]
+      end
+        @uniques << unique[:objectname128]
+    end
+
    # @charid
    # @charname=
-   #  @uniquename= @lastkill[:ObjectName]
-   #          @killtime=
+   # @uniquename= @lastkill[:ObjectName]
+   # @killtime=
 
   end
 
