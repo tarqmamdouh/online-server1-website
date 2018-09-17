@@ -14,15 +14,13 @@
 .equ-tooltip {
     background: #020c46;
     opacity: 0.65;
-    margin-left: 0px;
-    margin-top: 0px;
-    padding: 10px;
     position: absolute;
     z-index: 1000;
     min-width: 250px;
     max-width: 250px;
     min-height:200px;
-
+    margin-left:-315px;
+    margin-top:70px;
     box-shadow:
             0 0 0 10px 	hsl(231, 94%, 13%),
             0 0 0 13px hsl(245, 35%, 15%),

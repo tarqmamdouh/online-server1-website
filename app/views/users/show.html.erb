@@ -660,7 +660,7 @@ Additional Classes:
 
       </div>
 
-      <div class="col-lg-4 offset-lg-1 bg-color" style="opacity: 0.9;">
+      <div class="col-lg-4 offset-lg-1 bg-color" style="opacity: 0.9;z-index: 500;">
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
@@ -670,8 +670,7 @@ Additional Classes:
             <% else %>
             ..\assets\profile\<%= @weapon[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
-
-            " width="100%" />
+            " width="100%" data-toggle="tooltip" title=" <% if @weapon_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
 
           </div>
           <div class="col-lg-3 offset-md-3">
@@ -683,7 +682,7 @@ Additional Classes:
             ..\assets\profile\<%= @shield[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
 
-            " width="100%" />
+            " width="100%" data-toggle="tooltip" title=" <% if @shield_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" />
           </div>
         </div>
         <div class="row">
@@ -695,7 +694,7 @@ Additional Classes:
             ..\assets\profile\<%= @helm[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
 
-" width="100%" />
+" width="100%" data-toggle="tooltip" title=" <% if @helm_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" />
           </div>
           <div class="col-lg-3 offset-md-3">
             <div class="nk-gap-1"></div>
@@ -705,7 +704,7 @@ Additional Classes:
               <% else %>
                 ..\assets\profile\<%= @shoulder[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
-                  " width="100%" />
+                  " width="100%" data-toggle="tooltip" title=" <% if @shoulder_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" />
           </div>
         </div>
         <div class="row">
@@ -717,7 +716,7 @@ Additional Classes:
                 ..\assets\profile\<%= @mail[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
 
-            " width="100%" />
+            " width="100%" data-toggle="tooltip" title=" <% if @mail_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" />
           </div>
           <div class="col-lg-3 offset-md-3">
 
@@ -728,9 +727,7 @@ Additional Classes:
             <% else %>
                 ..\assets\profile\<%= @gauntlet[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
-            " width="100%" />
-
-            <span class='equ-tooltip'></span>
+            " width="100%" data-toggle="tooltip" title=" <% if @gauntlet_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
 
           </div>
         </div>
@@ -743,7 +740,7 @@ Additional Classes:
             <% else %>
                 ..\assets\profile\<%= @pants[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
-            " width="100%" />
+            " width="100%"  data-toggle="tooltip" title=" <% if @pants_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
           </div>
           <div class="col-lg-3 offset-md-3">
 
@@ -754,7 +751,7 @@ Additional Classes:
              <% else %>
                 ..\assets\profile\<%= @boots[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
-            " width="100%" />
+            " width="100%"  data-toggle="tooltip" title=" <% if @boots_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true"/>
 
           </div>
         </div>
@@ -767,7 +764,7 @@ Additional Classes:
              <% else %>
                 ..\assets\profile\<%= @earring[:assocfileicon128].chomp('.ddj') %>.PNG
              <% end %>
-            " width="100%" />
+            " width="100%"  data-toggle="tooltip" title=" <% if @earring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true"/>
           </div>
           <div class="col-lg-3 offset-md-3">
 
@@ -778,7 +775,7 @@ Additional Classes:
              <% else %>
                 ..\assets\profile\<%= @necklace[:assocfileicon128].chomp('.ddj') %>.PNG
              <% end %>
-            " width="100%" />
+            " width="100%"  data-toggle="tooltip" title=" <% if @necklace_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
 
           </div>
         </div>
@@ -791,7 +788,7 @@ Additional Classes:
               <% else %>
                 ..\assets\profile\<%= @lring[:assocfileicon128].chomp('.ddj') %>.PNG
              <% end %>
-            " width="100%" />
+            " width="100%"  data-toggle="tooltip" title=" <% if @lring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
           </div>
           <div class="col-lg-3 offset-md-3">
 
@@ -802,7 +799,7 @@ Additional Classes:
               <% else %>
                 ..\assets\profile\<%= @rring[:assocfileicon128].chomp('.ddj') %>.PNG
              <% end %>
-            " width="100%" />
+            " width="100%"  data-toggle="tooltip" title=" <% if @rring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
 
           </div>
         </div>
