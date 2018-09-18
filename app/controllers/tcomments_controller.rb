@@ -7,13 +7,13 @@ class TcommentsController < ApplicationController
   def create
     @tcomment = @ticket.tcomments.create(params[:tcomment].permit(:content, :photo))
     @tcomment.user_id = current_user.id
-    @tcomment.save
-
-    if @tcomment.save
-      redirect_to ticket_path(@ticket)
-    else
-      render 'new'
-    end
+if @tcomment.content.present? != true && @tcomment.photo.present? !=true
+  flash[:danger]= "You can't submit empty comment"
+  redirect_to ticket_path(@ticket)
+else
+  @tcomment.save
+  redirect_to ticket_path(@ticket)
+end
 
   end
   def destroy
