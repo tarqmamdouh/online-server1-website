@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get '/user/preferences/generate_code' , to: 'preferences#generate_code'
   get '/user/preferences/charge_code' , to: 'preferences#charge_code'
   put 'tickets/:id/close_ticket' => 'tickets#close_ticket', :as => 'close_ticket'
+  match '/guilds/:guildname',     to: 'guild#activity',       via: 'get'
   mount Attachinary::Engine => "/attachinary"
   resources :bugs, except: [:destroy,:edit,:update]
   resources :faq , except: [:show]
