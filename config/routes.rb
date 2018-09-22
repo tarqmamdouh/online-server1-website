@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   get '/user/preferences/charge_code' , to: 'preferences#charge_code'
   put 'tickets/:id/close_ticket' => 'tickets#close_ticket', :as => 'close_ticket'
   match '/guilds/:guildname',     to: 'guild#activity',       via: 'get'
+  match '/guilds/:guildname/members',     to: 'guild#members',       via: 'get'
+  match '/guilds/:guildname/manage',     to: 'guild#manage',       via: 'get'
+  put '/guilds/:guildname/manage', to: 'guild#update_guild'
+  put '/guilds/:guildname', to: 'guild#post_activity'
   mount Attachinary::Engine => "/attachinary"
   resources :bugs, except: [:destroy,:edit,:update]
   resources :faq , except: [:show]

@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title> <%= @guildname %> | Guild profile </title>
+
+  <!-- START: Styles -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700%7cMarcellus+SC" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../../assets/vendor/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- FontAwesome -->
+  <script defer src="../../assets/vendor/font-awesome/svg-with-js/js/fontawesome-all.min.js"></script>
+  <script defer src="../../assets/vendor/font-awesome/svg-with-js/js/fa-v4-shims.min.js"></script>
+
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="../../assets/vendor/ionicons/css/ionicons.min.css">
+
+  <!-- Revolution Slider -->
+  <link rel="stylesheet" href="../../assets/vendor/revolution/css/settings.css">
+  <link rel="stylesheet" href="../../assets/vendor/revolution/css/layers.css">
+  <link rel="stylesheet" href="../../assets/vendor/revolution/css/navigation.css">
+
+  <!-- Flickity -->
+  <link rel="stylesheet" href="../../assets/vendor/flickity/dist/flickity.min.css">
+
+  <!-- Photoswipe -->
+  <link rel="stylesheet" href="../../assets/vendor/photoswipe/dist/photoswipe.css">
+  <link rel="stylesheet" href="../../assets/vendor/photoswipe/dist/default-skin/default-skin.css">
+
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="../../assets/vendor/jquery-datetimepicker/build/jquery.datetimepicker.min.css">
+
+  <!-- Summernote -->
+  <link rel="stylesheet" href="../../assets/vendor/summernote/dist/summernote-bs4.css">
+
+  <!-- GODLIKE -->
+  <link rel="stylesheet" href="../../assets/css/godlike.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+
+  <!-- END: Styles -->
+
+  <!-- jQuery -->
+  <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
+
+
+</head>
+
+
+<!--
+Additional Classes:
+.nk-page-boxed
+-->
+<body>
+<!-- START: Page Preloader -->
+<div class="nk-preloader">
+  <!--
+Preloader animation
+data-close-./... data used for closing preloader
+data-open-./...  data used for opening preloader
+-->
+  <div class="nk-preloader-bg"
+       style="background-color: #000;"
+       data-close-frames="23"
+       data-close-speed="1.2"
+       data-close-sprites="../../assets/profile/preloader-bg.png"
+       data-open-frames="23"
+       data-open-speed="1.2"
+       data-open-sprites="../../assets/profile/preloader-bg-bw.png">
+  </div>
+
+  <div class="nk-preloader-content">
+    <div>
+      <img class="nk-img" src="../../assets/profile/logo.png" alt="Z Online" width="15%">
+      <div class="nk-preloader-animation"></div>
+    </div>
+  </div>
+
+  <div class="nk-preloader-skip">Skip</div>
+</div>
+<!-- END: Page Preloader -->
+
+
+<!--
+START: Page Background
+
+data-video attribute supports Youtube and Vimeo urls.
+also supported self hosted videos, example:
+data-video="mp4:./video/local-video.mp4,webm:./video/local-video.webm,ogv:./video/local-video.ogv"
+-->
+<div class="nk-page-background op-5" data-video="" style="background-image: url('https://visualcocaine.org/public/uploads/large/11504644165d8qxmsvf3lbyvthsxnvmunambjvmi9olyyddvjgkakcfsefb2gbwgimptvhuqysbizuv11hrkzhxrfttyhol9t9ncuvm4zpkudri.jpg');"></div>
+<!-- END: Page Background -->
+
+
+
+<!-- START: Page Border -->
+<div class="nk-page-border">
+  <div class="nk-page-border-t"></div>
+  <div class="nk-page-border-r"></div>
+  <div class="nk-page-border-b"></div>
+  <div class="nk-page-border-l"></div>
+</div>
+<!-- END: Page Border -->
+
+
+
+
+
+
+
+<!--
+Additional Classes:
+.nk-header-opaque
+-->
+<header class="nk-header nk-header-opaque">
+
+
+
+  <!--
+START: Top Contacts
+
+Additional Classes:
+.nk-contacts-top-light
+-->
+
+
+  <!--
+START: Navbar
+
+Additional Classes:
+.nk-navbar-sticky
+.nk-navbar-transparent
+.nk-navbar-autohide
+.nk-navbar-light
+.nk-navbar-no-link-effect
+-->
+
+</header>
+
+
+
+
+
+
+
+
+<!--
+START: Right Navbar
+
+Additional Classes:
+.nk-navbar-right-side
+.nk-navbar-left-side
+.nk-navbar-lg
+.nk-navbar-align-center
+.nk-navbar-align-right
+.nk-navbar-overlay-content
+.nk-navbar-light
+.nk-navbar-no-link-effect
+-->
+
+<nav class="nk-navbar nk-navbar-side nk-navbar-right-side nk-navbar-lg nk-navbar-align-center nk-navbar-overlay-content" id="nk-side">
+
+  <div class="nk-navbar-bg">
+    <div class="bg-image">
+      <img src="../../assets/images/bg-nav-side.jpg" alt="" class="jarallax-img">
+    </div>
+  </div>
+
+
+  <!--  <div class="nano">-->
+  <!--    <div class="nano-content">-->
+  <!--      <div class="nk-nav-table">-->
+
+  <!--        <div class="nk-nav-row">-->
+  <!--          <a href="index.html" class="nk-nav-logo">-->
+  <!--            <img src="../../assets/images/logo.svg" alt="" width="150">-->
+  <!--          </a>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+</nav>
+<!-- END: Right Navbar -->
+
+
+
+<!--
+START: Navbar Mobile
+
+Additional Classes:
+.nk-navbar-left-side
+.nk-navbar-right-side
+.nk-navbar-lg
+.nk-navbar-overlay-content
+.nk-navbar-light
+.nk-navbar-no-link-effect
+-->
+<div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-left-side nk-navbar-overlay-content d-lg-none">
+  <div class="nano">
+    <div class="nano-content">
+      <a href="index.html" class="nk-nav-logo">
+        <img src="../../assets/images/logo.svg" alt="" width="90">
+      </a>
+      <div class="nk-navbar-mobile-content">
+        <ul class="nk-nav">
+          <!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END: Navbar Mobile -->
+
+
+
+<div class="nk-main">
+
+
+  <!-- START: Header Title -->
+  <!--
+Additional Classes:
+.nk-header-title-sm
+.nk-header-title-md
+.nk-header-title-lg
+.nk-header-title-xl
+.nk-header-title-full
+.nk-header-title-parallax
+.nk-header-title-parallax-opacity
+.nk-header-title-boxed
+-->
+  <div class="nk-header-title nk-header-title-parallax nk-header-title-parallax-opacity">
+    <div class="bg-image op-9">
+      <img src="<%= @coverimage %>" alt="" class="jarallax-img">
+    </div>
+    <div class="nk-header-table">
+      <div class="nk-header-table-cell">
+        <div class="container">
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END: Header Title -->
+
+
+
+
+
+  <div class="container">
+    <div class="nk-social-profile nk-social-profile-container-offset">
+      <div class="row">
+        <div class="col-md-5 col-lg-3">
+          <div class="nk-social-profile-avatar">
+            <a href="#">
+              <img src="<%= @profileimage %>" alt="Game Lovers">
+            </a>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-9" style="background-color: black;opacity: 0.95">
+          <div class="nk-social-profile-info" >
+            <div class="nk-gap-2"></div>
+            <div class="nk-social-profile-info-last-seen"> Created <%= time_ago_in_words(@info[:foundationdate]) %> ago </div>
+            <h1 class="nk-social-profile-info-name"> <%= @guildname %> </h1>
+            <div class="nk-social-profile-info-username">Zee Guild</div>
+            <div class="nk-social-profile-info-description">
+              <%= @description if @description != "0" %>
+            </div>
+            <div class="nk-gap-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row vertical-gap">
+      <div class="col-lg-3">
+        <!--
+START: Sidebar
+
+Additional Classes:
+.nk-sidebar-left
+.nk-sidebar-right
+.nk-sidebar-sticky
+-->
+        <aside class="nk-sidebar nk-sidebar-left nk-sidebar-sticky">
+          <div class="nk-gap-2"></div>
+
+
+          <div class="nk-social-menu d-none d-lg-block"  style="font-weight: 800;font-size: 24px">
+            <ul>
+              <li class="">
+                <a href="../../guilds/<%= @guildname %>">
+                  <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                  Activity</a>
+              </li>
+              <li class="">
+                <a href="../../guilds/<%= @guildname %>/members">
+                  <i class="fa fa-users" aria-hidden="true"></i>
+                  Members </a>
+              </li>
+              <% if @admin != -1 %>
+                <li class="active">
+                  <a href="../../guilds/<%= @guildname %>/manage"><i class="fa fa-cog" aria-hidden="true"></i>
+                    Manage</a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+
+          <div class="nk-gap-4 d-none d-lg-block"></div>
+        </aside>
+        <!-- END: Sidebar -->
+      </div>
+      <div class="col-lg-9">
+        <div class="nk-gap-2 d-none d-lg-block"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="nk-social-container">
+          <div id="app-errors">
+            <% flash.each do |key, value| %>
+              <% if key == "notice" || key == "success" %>
+                <h5 style=" color : #00962c"><%= value %></h5>
+              <% else %>
+                <h5 style=" color : #d50005"><%= value %></h5>
+              <% end %>
+            <% end %>
+          </div>
+          <!-- START: Settings -->
+          <%= form_tag @setting,  method: :put, url: [@setting, :update_guild] do |f| %>
+            <h3> Description  </h3>
+            <div class="nk-gap-1"></div>
+            <textarea name="updated_description" id="updated_description" class="form-control" placeholder="Guild Description" rows="5"><%= @description %></textarea>
+
+            <div class="nk-gap-4"></div>
+            <h3> Profile Image link <h5> (for better apperance choose 300 X 300 Image )</h5> </h3>
+            <div class="nk-gap-1"></div>
+            <%= text_field_tag :plink, params[:plink], class: "form-control", placeholder: " Profile Image Link", rows: "5", value: @pimage %>
+            <div class="nk-gap-4"></div>
+            <h3> Cover Image link <h5> (for better apperance choose 1920 X 1080 Image )</h5> </h3>
+            <div class="nk-gap-1"></div>
+            <%= text_field_tag :clink, params[:clink], class: "form-control", placeholder: " Cover Image Link", rows: "5", value: @cimage %>
+            <div class="nk-gap-6"></div>
+            <%= button_tag  "Save Changes", class: "nk-btn link-effect-4 float-right", type: :submit  %>
+          <% end %>
+          <!-- END: Settings -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="nk-gap-4"></div>
+      </div>
+    </div>
+    <div class="nk-gap-4"></div>
+    <div class="nk-gap-3"></div>
+  </div>
+
+
+
+  <!-- START: Footer -->
+  <!--
+Additional Classes:
+.nk-footer-parallax
+.nk-footer-parallax-opacity
+-->
+  <footer class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
+    <img class="nk-footer-top-corner" src="../../assets/images/footer-corner.png" alt="">
+
+
+
+    <div class="container">
+      <div class="nk-gap-2"></div>
+      <div class="nk-footer-logos">
+        <a href="https://themeforest.net/user/_nk/portfolio?ref=_nK" target="_blank"><img class="nk-img" src="../../assets/profile/logo.png" alt="" width="120"></a>
+      </div>
+      <div class="nk-gap"></div>
+
+      <p>
+        &copy; 2018 Z Team Inc. All Rights Reserved.
+      </p>
+
+      <div class="nk-gap-4"></div>
+    </div>
+  </footer>
+  <!-- END: Footer -->
+
+
+</div>
+
+
+
+<!--
+START: Share Buttons
+.nk-share-buttons-left
+-->
+
+<!--
+START: Side Buttons
+.nk-side-buttons-visible
+-->
+
+
+
+<!--
+START: Search
+
+Additional Classes:
+.nk-search-light
+-->
+<!-- END: Search -->
+
+
+
+
+<!--
+START: Shopping Cart
+
+Additional Classes:
+.nk-cart-light
+-->
+<!-- END: Shopping Cart -->
+
+
+
+
+<!--
+START: Sign Form
+
+Additional Classes:
+.nk-sign-form-light
+-->
+<!-- END: Sign Form -->
+
+
+
+
+<!-- START: Scripts -->
+
+<!-- Object Fit Polyfill -->
+<script src="../../assets/vendor/object-fit-images/dist/ofi.min.js"></script>
+
+<!-- GSAP -->
+<script src="../../assets/vendor/gsap/src/minified/TweenMax.min.js"></script>
+<script src="../../assets/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+
+<!-- Popper -->
+<script src="../../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="../../assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Sticky Kit -->
+<script src="../../assets/vendor/sticky-kit/dist/sticky-kit.min.js"></script>
+
+<!-- Jarallax -->
+<script src="../../assets/vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="../../assets/vendor/jarallax/dist/jarallax-video.min.js"></script>
+
+<!-- imagesLoaded -->
+<script src="../../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
+<!-- Flickity -->
+<script src="../../assets/vendor/flickity/dist/flickity.pkgd.min.js"></script>
+
+<!-- Isotope -->
+<script src="../../assets/vendor/isotope-layout/dist/isotope.pkgd.min.js"></script>
+
+<!-- Photoswipe -->
+<script src="../../assets/vendor/photoswipe/dist/photoswipe.min.js"></script>
+<script src="../../assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+
+<!-- Typed.js -->
+<script src="../../assets/vendor/typed.js/lib/typed.min.js"></script>
+
+<!-- Jquery Validation -->
+<script src="../../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+
+<!-- Jquery Countdown + Moment -->
+<script src="../../assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="../../assets/vendor/moment/min/moment.min.js"></script>
+<script src="../../assets/vendor/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
+
+<!-- Hammer.js -->
+<script src="../../assets/vendor/hammerjs/hammer.min.js"></script>
+
+<!-- NanoSroller -->
+<script src="../../assets/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js"></script>
+
+<!-- SoundManager2 -->
+<script src="../../assets/vendor/soundmanager2/script/soundmanager2-nodebug-jsmin.js"></script>
+
+<!-- DateTimePicker -->
+<script src="../../assets/vendor/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+
+<!-- Revolution Slider -->
+<script src="../../assets/vendor/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="../../assets/vendor/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="../../assets/vendor/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="../../assets/vendor/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="../../assets/vendor/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+
+<!-- Keymaster -->
+<script src="../../assets/vendor/keymaster/keymaster.js"></script>
+
+<!-- Summernote -->
+<script src="../../assets/vendor/summernote/dist/summernote-bs4.min.js"></script>
+
+<!-- GODLIKE -->
+<script src="../../assets/js/godlike.min.js"></script>
+<script src="../../assets/js/godlike-init.js"></script>
+<!-- END: Scripts -->
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+
+
+</body>
+
+</html>
