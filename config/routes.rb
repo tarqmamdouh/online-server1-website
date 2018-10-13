@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users ,:controllers =>{:registrations => "user/registrations", :confirmations => "user/confirmations",:passwords => "user/passwords" }
   root 'welcome#index'
   get 'welcome/give_time', to: 'welcome#give_time'
+  get 'overview/lavahound', to: 'overview#lavaHound'
   get 'confirmed' , to: 'welcome#confirmed'
   get 'unconfirmed', to: 'welcome#unconfirmed'
   get 'admin/pins', to: 'admin#pins'
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   get '/user/preferences/generate_code' , to: 'preferences#generate_code'
   get '/user/preferences/charge_code' , to: 'preferences#charge_code'
   put 'tickets/:id/close_ticket' => 'tickets#close_ticket', :as => 'close_ticket'
+
   match '/guilds/:guildname',     to: 'guild#activity',       via: 'get'
   match '/guilds/:guildname/members',     to: 'guild#members',       via: 'get'
   match '/guilds/:guildname/manage',     to: 'guild#manage',       via: 'get'

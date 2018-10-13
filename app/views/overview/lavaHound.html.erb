@@ -1,0 +1,298 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <%= javascript_include_tag "validation.js" %>
+
+  <!-- Meta Data -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Z Online | Lava Hound </title>
+
+  <!-- Fav Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/media/Z_ICO.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/media/Z_ICO.ico">
+  <meta name="theme-color" content="#3d0e03">
+
+  <!-- Dependency Styles -->
+  <link rel="stylesheet" href="../../assets/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../../assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="../../assets/dependencies/swiper/swiper.min.css" type="text/css">
+  <link rel="stylesheet" href="../../assets/dependencies/wow/css/animate.css" type="text/css">
+  <link rel="stylesheet" href="../../assets/dependencies/magnific-popup/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="../../assets/dependencies/jquery-animated-headlines/css/jquery.animatedheadline.css" type="text/css">
+  <link rel="stylesheet" href="../../assets/home-dependencies/woocommerce.css" type="text/css">
+  <link rel="stylesheet" href="../../assets/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="../../assets/home-dependencies/app.css" type="text/css">
+
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Khand:300,400,500,600,700%7C;Source+Sans+Pro:200,300,400,600,600i,700,900" rel="stylesheet">
+
+
+</head>
+
+<body id="home-version-1" class="home-version-1" data-style="default">
+<!--
+<div id="loader-wrapper">
+<div class="loader">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div> -->
+<div id="loader-wrapper">
+  <div class='loader'></div>
+</div>
+
+<div class="switch-top">
+  <p>Back To Top</p>
+  <a href="#main_content" data-type="section-switch" class="return-to-top">
+    <i class="fa fa-angle-double-up"></i>
+  </a>
+</div>
+
+<div id="main_content">
+
+
+
+
+  <!--=========================-->
+  <!--=        Banner         =-->
+  <!--=========================-->
+  <section id="page-header" data-bg-image="../../assets/media/banner/10.jpg">
+    <div class="container">
+      <div class="page-title-wrap">
+        <div class="page-title-inner">
+          <h1>Overview</h1>
+          <h3>Feature Overview</h3>
+          <span class="delemitter" data-bg-image="../../assets/media/banner/s1.png"></span>
+        </div>
+        <!-- /.page-title-inner -->
+      </div>
+      <!-- /.page-title-wrap -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#page-header -->
+
+  <!--================================-->
+  <!--=        Purchase Game         =-->
+  <!--================================-->
+  <section id="purchase" data-bg-image="../../assets/media/background/6.jpg" style="padding: 0px 0px 0px 0px">
+    <div class="container-fluid">
+
+      <%= render "welcome/Navbar" %>
+
+      <div class="row">
+
+        <div class="col-md-6">
+        </div>
+        <!-- /.col-offset-6 -->
+
+        <div class="col-md-6">
+          <style>
+            video {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              z-index: 0;
+              object-fit: cover;
+              height: 100%;
+              width: 100%;
+              -ms-transform: translateX(-50%) translateY(-50%);
+              -moz-transform: translateX(-50%) translateY(-50%);
+              -webkit-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+              opacity: 0.4;
+            }
+
+          </style>
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="../../assets/media/overview/Backgrounds/smoke.mp4" type="video/mp4">
+          </video>
+
+          <div style="padding-top: 10%"></div>
+
+          <div class="purhase-game-inner text-center" style="z-index: 2;position: relative;" >
+
+            <div style="padding-top: 2%;"></div>
+            <img src="../../assets/media/adds/4.png" width="20%" style="margin: auto;display: block;">
+            <div style="padding-top: 2%;"></div>
+
+            <h2 id="fire-title" style="text-align: center;">
+              <strong> Lava Hound </strong>
+            </h2>
+
+            <p style="font-size: 28px;line-height: 35px;text-align: center;">
+              (The New Fellow Pet)
+            </p>
+          </div>
+          <!-- /.purhase-game-inner -->
+
+          <div style="padding-top: 10%"></div>
+
+        </div>
+        <!-- /.col-md-6 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+
+
+  <!--===============================-->
+  <!--=        Game Download        =-->
+  <!--===============================-->
+  <section id="game-download" class="bgb section-padding" style="background-image: url(../../assets/media/overview/Backgrounds/bg.jpg);background-repeat: no-repeat;background-size: cover;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6" align="center">
+          <div style="padding-top: 15%"></div>
+          <div class="download-inner">
+            <h2 class="title wow fadeInUp" data-wow-duration="1000ms" style="font-size: 40px">
+              Lava Hound<br>
+              <span>The fire creature</span>
+            </h2>
+
+            <p class="wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3" style="font-size: 24px;line-height: 32px;">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+            </p>
+
+            <p class="wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.5" style="font-size: 24px;line-height: 32px;">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+            </p>
+
+
+          </div>
+          <!-- /.download-inner -->
+        </div>
+        <!-- /.col-md-6 -->
+
+        <div class="col-lg-6">
+          <div class="download-image-wrap">
+            <img src="../../assets/media/adds/5.png" alt="thumb" style="width:100%;-webkit-transform: scaleX(-1);transform: scaleX(-1);" >
+          </div>
+          <!-- /.download-image-wrap -->
+        </div>
+        <!-- /.col-md-6 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /#game-download -->
+
+
+
+  <!--===============================-->
+  <!--=        Game Download        =-->
+  <!--===============================-->
+  <section id="screenshot">
+    <div class="row no-gutters">
+      <div class="col-lg-2 col-sm-6">
+        <div class="feature-image">
+          <a href="../../assets/media/screenshort/1.jpg" class="popup-image">
+            <img src="../../assets/media/screenshort/1.jpg" alt="thumb">
+          </a>
+        </div>
+      </div>
+      <!-- /.col-lg-2 -->
+
+      <div class="col-lg-2 col-sm-6">
+        <div class="feature-image">
+          <a href="../../assets/media/screenshort/2.jpg" class="popup-image">
+            <img src="../../assets/media/screenshort/2.jpg" alt="thumb">
+          </a>
+        </div>
+        <div class="feature-image">
+          <a href="../../assets/media/screenshort/3.jpg" class="popup-image">
+            <img src="../../assets/media/screenshort/3.jpg" alt="thumb">
+          </a>
+        </div>
+      </div>
+      <!-- /.col-lg-2 -->
+
+
+      <div class="col-lg-4 col-sm-12">
+
+        <div class="game-video-item">
+          <div class="feature-image">
+            <a href="#"><img src="../../assets/media/screenshort/4.jpg" alt="thumb"></a>
+            <a href="https://www.youtube.com/watch?v=0I8GmbDU7c4" class="video-play-btn bdr"><i class="fa fa-angle-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-lg-4 -->
+
+      <div class="col-lg-2 col-sm-6">
+        <div class="feature-image">
+          <a href="../../assets/media/screenshort/5.jpg" class="popup-image">
+            <img src="../../assets/media/screenshort/5.jpg" alt="thumb">
+          </a>
+        </div>
+      </div>
+      <!-- /.col-lg-2 -->
+
+      <div class="col-lg-2 col-sm-6">
+        <div class="feature-image">
+          <a href="../../assets/media/screenshort/6.jpg" class="popup-image">
+            <img src="../../assets/media/screenshort/6.jpg" alt="thumb">
+          </a>
+        </div>
+        <div class="feature-image">
+          <a href="../../assets/media/screenshort/7.jpg" class="popup-image">
+            <img src="../../assets/media/screenshort/7.jpg" alt="thumb">
+          </a>
+        </div>
+      </div>
+      <!-- /.col-lg-2 -->
+    </div>
+    <!-- /.row -->
+  </section>
+
+  <%= render "welcome/Footer" %>
+
+
+
+</div>
+<!-- /#site -->
+
+<!-- Dependency Scripts -->
+<script src="../../assets/dependencies/jquery/jquery.min.js"></script>
+<script src="../../assets/dependencies/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../assets/dependencies/swiper/js/swiper.min.js"></script>
+<script src="../../assets/dependencies/swiperRunner/swiperRunner.min.js"></script>
+<script src="../../assets/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+<script src="../../assets/dependencies/jquery-ui/jquery-ui.min.js"></script>
+<script src="../../assets/dependencies/jquery-animated-headlines/js/jquery.animatedheadline.min.js"></script>
+<script src="../../assets/dependencies/jquery.countdown/jquery.countdown.min.js"></script>
+<script src="../../assets/dependencies/countUp.js/js/countUp.min.js"></script>
+<script src="../../assets/dependencies/jquery.appear.bas2k/jquery.appear.js"></script>
+<script src="../../assets/dependencies/jquery.ripples/jquery.ripples.js"></script>
+<script src="../../assets/dependencies/wow/js/wow.min.js"></script>
+
+<!-- Site Scripts -->
+<script src="../../assets/home-dependencies/app.js"></script>
+
+</body>
+</html>
