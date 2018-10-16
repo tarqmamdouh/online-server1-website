@@ -57,18 +57,19 @@
   <!--=========================-->
   <!--=        Banner         =-->
   <!--=========================-->
-  <section id="page-header" data-bg-image="../assets/media/background/z6.jpg">
-    <div class="container">
-      <div class="page-title-wrap">
-        <div class="page-title-inner">
-          <h1> Report bug </h1>
-          <span class="delemitter" data-bg-image="../assets/media/banner/s1.png"></span>
-        </div>
-        <!-- /.page-title-inner -->
-      </div>
-      <!-- /.page-title-wrap -->
-    </div>
-    <!-- /.container -->
+  <section id="page-header" data-bg-image="" style="background-color: black;max-height: 200px">
+    <!--    <div class="container">-->
+    <!--      <div class="page-title-wrap">-->
+    <!--        <div class="page-title-inner">-->
+    <!--          <h1>Overview</h1>-->
+    <!--          <h3>Feature Overview</h3>-->
+    <!--          <span class="delemitter" data-bg-image="../../assets/media/banner/s1.png"></span>-->
+    <!--        </div>-->
+    <!--        <!-- /.page-title-inner -->
+    <!--      </div>-->
+    <!--      <!-- /.page-title-wrap -->
+    <!--    </div>-->
+    <!--    <!-- /.container -->
   </section>
   <!-- /#page-header -->
 
@@ -113,7 +114,7 @@
                 <%= f.text_area :details, rows: 10, cols: 30, class: "form-control", placeholder: "Describe the bug you want to report in details" %>
                 <%= f.file_field :image, as: :attachinary,onchange: "validateFiles(this);", data: { max_file_size: 2.megabytes} %>
                 <div style="padding-top: 15%"></div>
-                <%= f.submit class: 'tim-btn-bg brn float-right' %>
+                <%= f.submit "Report Bug", class: 'tim-btn-bg brn float-right' %>
               <% end %>
             </div>
           </div>
