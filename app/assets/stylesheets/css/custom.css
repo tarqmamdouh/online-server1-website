@@ -31,3 +31,8 @@
             0 0 0 20px hsl(0, 0%, 0%);
 
 }
+
+.item-data {
+    color: #ffffff;
+    font-size: 20px;
+}

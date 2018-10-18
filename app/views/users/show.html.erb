@@ -660,157 +660,237 @@ Additional Classes:
 
       </div>
 
+      <style>
+        .parent {
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+        .image1 {
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+        .image2 {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+      </style>
+
       <div class="col-lg-4 offset-lg-1 bg-color" style="opacity: 0.9;z-index: 500;">
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="
+            <div class="parent" data-toggle="tooltip" title=" <% if @weapon_id.zero? %> <%  else %> <span class='equ-tooltip'> </span>  <% end %> " data-html="true" >
+              <img class="image1" src="
             <% if @weapon_id.zero? %>
             ../assets/profile/equipment/equip_slot_weapon.PNG
             <% else %>
             ..\assets\profile\<%= @weapon[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
-            " width="100%" data-toggle="tooltip" title=" <% if @weapon_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
-
+            " width="100%" />
+            <% if @weapon[:rarity] != 0 && @weapon[:rarity] != 3 %>
+            <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+            <% end %>
+            </div>
           </div>
+
           <div class="col-lg-3 offset-md-3">
             <div class="nk-gap-1"></div>
-            <img src="
+            <div class="parent" data-toggle="tooltip" title=" <% if @shield_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" >
+              <img class="image1" src="
              <% if @shield_id.zero? %>
             ../assets/profile/equipment/equip_slot_shield.PNG
              <% else %>
             ..\assets\profile\<%= @shield[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
 
-            " width="100%" data-toggle="tooltip" title=" <% if @shield_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" />
+            " width="100%" />
+              <% if @shield[:rarity] != 0 && @shield[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="row">
+
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="<% if @helm_id.zero? %>
+            <div class="parent" data-toggle="tooltip" title=" <% if @helm_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true">
+              <img class="image1" src="<% if @helm_id.zero? %>
             ../assets/profile/equipment/equip_slot_helm.PNG
             <% else %>
             ..\assets\profile\<%= @helm[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
 
-" width="100%" data-toggle="tooltip" title=" <% if @helm_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" />
+" width="100%"  />
+              <% if @helm[:rarity] != 0 && @helm[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
+
+
           <div class="col-lg-3 offset-md-3">
             <div class="nk-gap-1"></div>
-            <img src="
+            <div class="parent" data-toggle="tooltip" title=" <% if @shoulder_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" >
+              <img class="image1" src="
               <% if @shoulder_id.zero? %>
                 ../assets/profile/equipment/equip_slot_shoulderguard.PNG
               <% else %>
                 ..\assets\profile\<%= @shoulder[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
-                  " width="100%" data-toggle="tooltip" title=" <% if @shoulder_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" />
+                  " width="100%" />
+              <% if @shoulder[:rarity] != 0 && @shoulder[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
         </div>
+
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="<% if @mail_id.zero? %>
+            <div class="parent" data-toggle="tooltip" title=" <% if @mail_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" >
+              <img class="image1" src="<% if @mail_id.zero? %>
             ../assets/profile/equipment/equip_slot_mail.PNG
             <% else %>
                 ..\assets\profile\<%= @mail[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
 
-            " width="100%" data-toggle="tooltip" title=" <% if @mail_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" />
+            " width="100%" />
+              <% if @mail[:rarity] != 0 && @mail[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <img src="
+            <div class="parent" data-toggle="tooltip" title=" <% if @gauntlet_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" >
+              <img class="image1" src="
             <% if @gauntlet_id.zero? %>
             ../assets/profile/equipment/equip_slot_gauntlet.PNG
             <% else %>
                 ..\assets\profile\<%= @gauntlet[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
-            " width="100%" data-toggle="tooltip" title=" <% if @gauntlet_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
-
+            " width="100%"  />
+              <% if @gauntlet[:rarity] != 0 && @gauntlet[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
         </div>
+
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="
+            <div class="parent" data-toggle="tooltip" title=" <% if @pants_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+              <img class="image1" src="
             <% if @pants_id.zero? %>
             ../assets/profile/equipment/equip_slot_pants.PNG
             <% else %>
                 ..\assets\profile\<%= @pants[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
-            " width="100%"  data-toggle="tooltip" title=" <% if @pants_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
+            " width="100%"   />
+              <% if @pants[:rarity] != 0 && @pants[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <img src="
+            <div class="parent" data-toggle="tooltip" title=" <% if @boots_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+              <img class="image1" src="
              <% if @boots_id.zero? %>
             ../assets/profile/equipment/equip_slot_boots.PNG
              <% else %>
                 ..\assets\profile\<%= @boots[:assocfileicon128].chomp('.ddj') %>.PNG
             <% end %>
-            " width="100%"  data-toggle="tooltip" title=" <% if @boots_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true"/>
-
+            " width="100%"  />
+              <% if @boots[:rarity] != 0 && @boots[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="
+
+            <div class="parent" data-toggle="tooltip" title=" <% if @earring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+              <img class="image1" src="
              <% if @earring_id.zero? %>
             ../assets/profile/equipment/equip_slot_earring.PNG
              <% else %>
                 ..\assets\profile\<%= @earring[:assocfileicon128].chomp('.ddj') %>.PNG
              <% end %>
-            " width="100%"  data-toggle="tooltip" title=" <% if @earring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true"/>
+            " width="100%"  />
+              <% if @earring[:rarity] != 0 && @earring[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <img src="
+            <div class="parent" data-toggle="tooltip" title=" <% if @necklace_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+              <img class="image1" src="
              <% if @necklace_id.zero? %>
             ../assets/profile/equipment/equip_slot_necklace.PNG
              <% else %>
                 ..\assets\profile\<%= @necklace[:assocfileicon128].chomp('.ddj') %>.PNG
              <% end %>
-            " width="100%"  data-toggle="tooltip" title=" <% if @necklace_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
-
+            " width="100%"   />
+              <% if @necklace[:rarity] != 0 && @necklace[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
         </div>
+
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <img src="
+            <div class="parent"  data-toggle="tooltip" title=" <% if @lring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+              <img class="image1" src="
               <% if @lring_id.zero? %>
             ../assets/profile/equipment/equip_slot_l_ring.PNG
               <% else %>
                 ..\assets\profile\<%= @lring[:assocfileicon128].chomp('.ddj') %>.PNG
              <% end %>
-            " width="100%"  data-toggle="tooltip" title=" <% if @lring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
+            " width="100%"/>
+              <% if @lring[:rarity] != 0 && @lring[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <img src="
+            <div class="parent" data-toggle="tooltip" title=" <% if @rring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+            <img class="image1" src="
               <% if @rring_id.zero? %>
             ../assets/profile/equipment/equip_slot_r_ring.PNG
               <% else %>
                 ..\assets\profile\<%= @rring[:assocfileicon128].chomp('.ddj') %>.PNG
              <% end %>
-            " width="100%"  data-toggle="tooltip" title=" <% if @rring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" />
-
+            " width="100%"   />
+              <% if @rring[:rarity] != 0 && @rring[:rarity] != 3 %>
+                <img src="../assets/profile/equipment/soxanimation.gif" width="100%" class="image2"/>
+              <% end %>
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-
           </div>
-          <div class="col-lg-3 offset-md-3">
 
+          <div class="col-lg-3 offset-md-3">
             <div class="nk-gap-6"></div>
             <img src="
 
