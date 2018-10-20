@@ -682,7 +682,10 @@ Additional Classes:
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <div class="parent" data-toggle="tooltip" title=" <% if @weapon_id.zero? %> <%  else %> <span class='equ-tooltip'> </span>  <% end %> " data-html="true" >
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @weapon_id.zero? %> <%  else %> <span class='equ-tooltip'> 
+              <%= render 'weaponStat', obj:@weapon , stat:@weapon_stats , rare:@weapon_rarity %> </span>  <% end %> " 
+              data-html="true" >
+
               <img class="image1" src="
             <% if @weapon_id.zero? %>
             ../assets/profile/equipment/equip_slot_weapon.PNG
@@ -698,7 +701,7 @@ Additional Classes:
 
           <div class="col-lg-3 offset-md-3">
             <div class="nk-gap-1"></div>
-            <div class="parent" data-toggle="tooltip" title=" <% if @shield_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" >
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @shield_id.zero? %> <%  else %> <span class='equ-tooltip'> <%= render 'shieldStat', obj:@shield , stat:@shield_stats , rare:@shield_rarity%> </span>  <% end %> "  data-html="true" >
               <img class="image1" src="
              <% if @shield_id.zero? %>
             ../assets/profile/equipment/equip_slot_shield.PNG
@@ -717,7 +720,7 @@ Additional Classes:
 
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <div class="parent" data-toggle="tooltip" title=" <% if @helm_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true">
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @helm_id.zero? %> <%  else %> <span class='equ-tooltip'> <%= render 'setStat', obj:@helm , stat:@helm_stats , rare:@helm_rarity %> </span>  <% end %> "  data-html="true">
               <img class="image1" src="<% if @helm_id.zero? %>
             ../assets/profile/equipment/equip_slot_helm.PNG
             <% else %>
@@ -734,7 +737,7 @@ Additional Classes:
 
           <div class="col-lg-3 offset-md-3">
             <div class="nk-gap-1"></div>
-            <div class="parent" data-toggle="tooltip" title=" <% if @shoulder_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" >
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @shoulder_id.zero? %> <%  else %> <span class='equ-tooltip'><%= render 'setStat', obj:@shoulder, stat:@shoulder_stats , rare:@shoulder_rarity %></span>  <% end %> "  data-html="true" >
               <img class="image1" src="
               <% if @shoulder_id.zero? %>
                 ../assets/profile/equipment/equip_slot_shoulderguard.PNG
@@ -752,7 +755,7 @@ Additional Classes:
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <div class="parent" data-toggle="tooltip" title=" <% if @mail_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> "  data-html="true" >
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @mail_id.zero? %> <%  else %> <span class='equ-tooltip'><%= render 'setStat', obj:@mail , stat:@mail_stats , rare:@mail_rarity %></span>  <% end %> "  data-html="true" >
               <img class="image1" src="<% if @mail_id.zero? %>
             ../assets/profile/equipment/equip_slot_mail.PNG
             <% else %>
@@ -768,7 +771,7 @@ Additional Classes:
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <div class="parent" data-toggle="tooltip" title=" <% if @gauntlet_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true" >
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @gauntlet_id.zero? %> <%  else %> <span class='equ-tooltip'><%= render 'setStat', obj:@gauntlet , stat:@gauntlet_stats , rare:@gauntlet_rarity%></span>  <% end %> " data-html="true" >
               <img class="image1" src="
             <% if @gauntlet_id.zero? %>
             ../assets/profile/equipment/equip_slot_gauntlet.PNG
@@ -786,7 +789,7 @@ Additional Classes:
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <div class="parent" data-toggle="tooltip" title=" <% if @pants_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @pants_id.zero? %> <%  else %> <span class='equ-tooltip'><%= render 'setStat', obj:@pants , stat:@pants_stats , rare:@pants_rarity %></span>  <% end %> " data-html="true">
               <img class="image1" src="
             <% if @pants_id.zero? %>
             ../assets/profile/equipment/equip_slot_pants.PNG
@@ -802,7 +805,7 @@ Additional Classes:
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <div class="parent" data-toggle="tooltip" title=" <% if @boots_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @boots_id.zero? %> <%  else %> <span class='equ-tooltip'><%= render 'setStat', obj:@boots , stat:@boots_stats , rare:@boots_rarity %></span>  <% end %> " data-html="true">
               <img class="image1" src="
              <% if @boots_id.zero? %>
             ../assets/profile/equipment/equip_slot_boots.PNG
@@ -820,7 +823,7 @@ Additional Classes:
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
 
-            <div class="parent" data-toggle="tooltip" title=" <% if @earring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @earring_id.zero? %> <%  else %> <span class='equ-tooltip'> <%= render 'accStat', obj:@earring , stat:@earring_stats , rare:@earring_rarity %> </span>  <% end %> " data-html="true">
               <img class="image1" src="
              <% if @earring_id.zero? %>
             ../assets/profile/equipment/equip_slot_earring.PNG
@@ -836,7 +839,7 @@ Additional Classes:
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <div class="parent" data-toggle="tooltip" title=" <% if @necklace_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @necklace_id.zero? %> <%  else %> <span class='equ-tooltip'> <%= render 'accStat', obj:@necklace , stat:@necklace_stats , rare:@necklace_rarity %> </span>  <% end %> " data-html="true">
               <img class="image1" src="
              <% if @necklace_id.zero? %>
             ../assets/profile/equipment/equip_slot_necklace.PNG
@@ -854,7 +857,7 @@ Additional Classes:
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <div class="parent"  data-toggle="tooltip" title=" <% if @lring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+            <div class="parent zee-weapon-size"  data-toggle="tooltip" title=" <% if @lring_id.zero? %> <%  else %> <span class='equ-tooltip'> <%= render 'accStat', obj:@lring , stat:@lring_stats , rare:@lring_rarity%> </span>  <% end %> " data-html="true">
               <img class="image1" src="
               <% if @lring_id.zero? %>
             ../assets/profile/equipment/equip_slot_l_ring.PNG
@@ -870,7 +873,7 @@ Additional Classes:
           <div class="col-lg-3 offset-md-3">
 
             <div class="nk-gap-1"></div>
-            <div class="parent" data-toggle="tooltip" title=" <% if @rring_id.zero? %> <%  else %> <span class='equ-tooltip'></span>  <% end %> " data-html="true">
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @rring_id.zero? %> <%  else %> <span class='equ-tooltip'> <%= render 'accStat', obj:@rring , stat:@rring_stats , rare:@rring_rarity %> </span>  <% end %> " data-html="true">
             <img class="image1" src="
               <% if @rring_id.zero? %>
             ../assets/profile/equipment/equip_slot_r_ring.PNG

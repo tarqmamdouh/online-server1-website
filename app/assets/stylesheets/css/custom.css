@@ -10,10 +10,14 @@
     cursor: pointer;
 }
 
+.zee-weapon-size{
+    width: 48px;
+    height: 48px;
+}
 
 .equ-tooltip {
     background: #020c46;
-    opacity: 0.65;
+    opacity: 1;
     position: absolute;
     z-index: 1000;
     min-width: 250px;
@@ -33,6 +37,39 @@
 }
 
 .item-data {
+    font-family: 'Arial';
     color: #ffffff;
-    font-size: 20px;
+    opacity: 1;
+    font-size: 18px;
+    float: left;
+}
+.item-name{
+    font-weight: 800;
+}
+.item-sort{
+    font-weight: 400;
+    float: left;
+    font-size: 14px;
+    color: #ffe1d6;
+}
+
+.item-type{
+    font-weight: 800;
+    float: left;
+}
+
+.sox {
+    float: left;
+    color: #ffe056;
+}
+
+.stats
+{
+    color: #FFFFFF;
+    font-size: 14px;
+    float: left;
+}
+.elixir
+{
+font-weight: 400;
 }

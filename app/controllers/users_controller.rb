@@ -43,6 +43,7 @@ class UsersController < ApplicationController
       @weapon_id = @weapon[:itemid]
       @weapon_stats = @DB[:_Items].where(:id64 => @weapon[:itemid]).all.last
       @weapon = @DB[:_RefObjCommon].where(:id => @weapon_stats[:refitemid]).all.last
+      @weapon_rarity = @DB[:_RefObjItem].where(:id => @weapon[:link]).all.last
       #-----------------------------------------------------------------------------
 
       #-----------------------------------------------------------------------------
@@ -50,6 +51,7 @@ class UsersController < ApplicationController
       @shield_id = @shield[:itemid]
       @shield_stats = @DB[:_Items].where(:id64 => @shield[:itemid]).all.last
       @shield = @DB[:_RefObjCommon].where(:id => @shield_stats[:refitemid]).all.last
+      @shield_rarity = @DB[:_RefObjItem].where(:id => @shield[:link]).all.last
       #-----------------------------------------------------------------------------
 
 
@@ -58,6 +60,7 @@ class UsersController < ApplicationController
       @helm_id = @helm[:itemid]
       @helm_stats = @DB[:_Items].where(:id64 => @helm[:itemid]).all.last
       @helm = @DB[:_RefObjCommon].where(:id => @helm_stats[:refitemid]).all.last
+      @helm_rarity = @DB[:_RefObjItem].where(:id => @helm[:link]).all.last
       #-----------------------------------------------------------------------------
 
 
@@ -66,6 +69,7 @@ class UsersController < ApplicationController
       @mail_id = @mail[:itemid]
       @mail_stats = @DB[:_Items].where(:id64 => @mail[:itemid]).all.last
       @mail = @DB[:_RefObjCommon].where(:id => @mail_stats[:refitemid]).all.last
+      @mail_rarity = @DB[:_RefObjItem].where(:id => @mail[:link]).all.last
       #-----------------------------------------------------------------------------
 
       #-----------------------------------------------------------------------------
@@ -73,6 +77,7 @@ class UsersController < ApplicationController
       @shoulder_id = @shoulder[:itemid]
       @shoulder_stats = @DB[:_Items].where(:id64 => @shoulder[:itemid]).all.last
       @shoulder = @DB[:_RefObjCommon].where(:id => @shoulder_stats[:refitemid]).all.last
+      @shoulder_rarity = @DB[:_RefObjItem].where(:id => @shoulder[:link]).all.last
       #-----------------------------------------------------------------------------
 
       #-----------------------------------------------------------------------------
@@ -80,6 +85,7 @@ class UsersController < ApplicationController
       @gauntlet_id = @gauntlet[:itemid]
       @gauntlet_stats = @DB[:_Items].where(:id64 => @gauntlet[:itemid]).all.last
       @gauntlet = @DB[:_RefObjCommon].where(:id => @gauntlet_stats[:refitemid]).all.last
+      @gauntlet_rarity = @DB[:_RefObjItem].where(:id => @gauntlet[:link]).all.last
       #-----------------------------------------------------------------------------
 
       #-----------------------------------------------------------------------------
@@ -87,6 +93,7 @@ class UsersController < ApplicationController
       @pants_id = @pants[:itemid]
       @pants_stats = @DB[:_Items].where(:id64 => @pants[:itemid]).all.last
       @pants = @DB[:_RefObjCommon].where(:id => @pants_stats[:refitemid]).all.last
+      @pants_rarity = @DB[:_RefObjItem].where(:id => @pants[:link]).all.last
       #-----------------------------------------------------------------------------
 
       #-----------------------------------------------------------------------------
@@ -94,6 +101,7 @@ class UsersController < ApplicationController
       @boots_id = @boots[:itemid]
       @boots_stats = @DB[:_Items].where(:id64 => @boots[:itemid]).all.last
       @boots = @DB[:_RefObjCommon].where(:id => @boots_stats[:refitemid]).all.last
+      @boots_rarity = @DB[:_RefObjItem].where(:id => @boots[:link]).all.last
       #-----------------------------------------------------------------------------
 
 
@@ -102,6 +110,7 @@ class UsersController < ApplicationController
       @earring_id = @earring[:itemid]
       @earring_stats = @DB[:_Items].where(:id64 => @earring[:itemid]).all.last
       @earring = @DB[:_RefObjCommon].where(:id => @earring_stats[:refitemid]).all.last
+      @earring_rarity = @DB[:_RefObjItem].where(:id => @earring[:link]).all.last
       #-----------------------------------------------------------------------------
 
       #-----------------------------------------------------------------------------
@@ -109,6 +118,7 @@ class UsersController < ApplicationController
       @necklace_id = @necklace[:itemid]
       @necklace_stats = @DB[:_Items].where(:id64 => @necklace[:itemid]).all.last
       @necklace = @DB[:_RefObjCommon].where(:id => @necklace_stats[:refitemid]).all.last
+      @necklace_rarity = @DB[:_RefObjItem].where(:id => @necklace[:link]).all.last
       #-----------------------------------------------------------------------------
 
       #-----------------------------------------------------------------------------
@@ -116,6 +126,7 @@ class UsersController < ApplicationController
       @lring_id = @lring[:itemid]
       @lring_stats = @DB[:_Items].where(:id64 => @lring[:itemid]).all.last
       @lring = @DB[:_RefObjCommon].where(:id => @lring_stats[:refitemid]).all.last
+      @lring_rarity = @DB[:_RefObjItem].where(:id => @lring[:link]).all.last
       #-----------------------------------------------------------------------------
 
       #-----------------------------------------------------------------------------
@@ -123,7 +134,38 @@ class UsersController < ApplicationController
       @rring_id = @rring[:itemid]
       @rring_stats = @DB[:_Items].where(:id64 => @rring[:itemid]).all.last
       @rring = @DB[:_RefObjCommon].where(:id => @rring_stats[:refitemid]).all.last
+      @rring_rarity = @DB[:_RefObjItem].where(:id => @rring[:link]).all.last
       #-----------------------------------------------------------------------------
+      @sort_of_weapon = []
+      @sort_of_weapon[2] = "Sword"
+      @sort_of_weapon[3] = "Blade"
+      @sort_of_weapon[4] = "Spear"
+      @sort_of_weapon[5] = "Glaive"
+      @sort_of_weapon[6] = "Bow"
+
+      @sort_of_acc = []
+      @sort_of_acc[1] = "Earring"
+      @sort_of_acc[2] = "Necklace"
+      @sort_of_acc[3] = "Ring"
+
+      @sort_of_clothes = []
+      @sort_of_clothes[1] = "Head"
+      @sort_of_clothes[2] = "Shoulder"
+      @sort_of_clothes[3] = "Chest"
+      @sort_of_clothes[4] = "Legs"
+      @sort_of_clothes[5] = "Hands"
+      @sort_of_clothes[6] = "Foot"
+
+      @type_of_clothes = []
+      @type_of_clothes[1] = "Germant"
+      @type_of_clothes[2] = "Protector"
+      @type_of_clothes[3] = "Armor"
+
+      @sox_types = []
+      @sox_types[1] = "Seal of Star"
+      @sox_types[2] = "Seal of Moon"
+      @sox_types[0] = "Seal of Sun"
+
 
     end
   end

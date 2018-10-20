@@ -621,7 +621,7 @@
 /* #undef TDS72 */
 
 /* Define to use TDS 7.3 by default */
-#define TDS73 1
+/* #undef TDS73 */
 
 /* Define to use TDS 7.4 by default */
 /* #undef TDS74 */

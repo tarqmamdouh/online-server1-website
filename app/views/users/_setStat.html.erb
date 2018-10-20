@@ -1,0 +1,40 @@
+<div class='item-data'>
+  <div class='item-name <% if obj[:rarity] == 2 || obj[:rarity] == 6 %> sox  <% end %> '> <i> <img src='https://i.imgur.com/XRQbRPq.png'> </i> <%= obj[:objname128] %>  <% if stat[:optlevel] != 0 %> (+ <%= stat[:optlevel] %>) <%end %> </div>
+  <div class='nk-gap-1'></div>
+  <br/>
+  <% if obj[:rarity] == 2 || obj[:rarity] == 6 %> 
+  <div class='item-type sox'>  <%= @sox_types[rare[:itemclass] % 3] %> </div>
+  <% end %>
+  <br/>
+  <div class='item-sort'> Sort of item: <%= @type_of_clothes[obj[:typeid3]] %>  </div>
+  <br/>
+  <div class='item-sort'> Mounting part: <%= @sort_of_clothes[obj[:typeid4]] %> </div>
+  <br/>
+  <div class='item-sort'> Degree:  <%= (rare[:itemclass] / 3.to_f).ceil() %> </div>
+  <div class='nk-gap-1'></div>
+  <br/>
+
+  <div class='stats'> Phy.def.pwr  </div>
+  <br/>
+  <div class='stats'> Mag.def.pwr  </div>
+  <br/>
+  <div class='stats'> Durability  </div>
+  <br/>
+  <div class='stats'> Parry rate   </div>
+  <br/>
+  <div class='stats'> Phy. reinforce  </div>
+  <br/>
+  <div class='stats'> Mag. reinforce  </div>
+
+  <div class='nk-gap-1'></div>
+  <br/>
+  <div class='stats'> Required level  </div>
+  <br/>
+  <div class='stats'> Male  </div>
+  <br/>
+  <div class='stats'> Chinese  </div>
+  <br/>
+  <div class='item-sort'> Max.no.of magic options:  </div>
+  <br/>
+  <div class='elixir'> Able to use Advanced elixir  </div>
+</div>
