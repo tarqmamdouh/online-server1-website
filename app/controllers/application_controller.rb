@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  #before_action :set_variables
+  before_action :set_variables
 
   def set_variables
     @a = Category.find_by_name("Announcements")

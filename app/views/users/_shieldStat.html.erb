@@ -1,9 +1,51 @@
+<%
+  variance = stat[:variance]
+  @elixir = @DB[:_BindingOptionWithItem].where(:nitemdbid => obj[:id])
+  @DurPrecent = 0
+  @PhyReinPrecent = 0
+  @MagReinPrecent = 0
+  @BlockPrecent = 0
+  @PhyDefPrecent = 0
+  @MagDefPrecent = 0
+
+  while variance > 0
+
+    tempvariance = variance
+    i = 0
+
+    while tempvariance >= 32
+      i = i + 1
+      tempvariance = tempvariance / 32
+    end
+
+    case i
+    when 0
+      @DurPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 1
+      @PhyReinPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 2
+      @MagReinPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 3
+      @BlockPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 4
+      @PhyDefPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 5
+      @MagDefPrecent = (100.to_d() /31.to_d()) * tempvariance
+    end
+
+    tempvariance = tempvariance * 32**i
+    variance = variance - tempvariance
+
+  end
+
+%>
+
 <div class='item-data'>
   <div class='item-name <% if obj[:rarity] == 2 || obj[:rarity] == 6 %> sox  <% end %> '> <i> <img src='https://i.imgur.com/XRQbRPq.png'> </i> <%= obj[:objname128] %> <% if stat[:optlevel] != 0 %> (+ <%= stat[:optlevel] %>) <%end %> </div>
   <div class='nk-gap-1'></div>
   <br/>
-  <% if obj[:rarity] == 2 || obj[:rarity] == 6 %> 
-  <div class='item-type sox'> <%= @sox_types[rare[:itemclass] % 3] %>   </div>
+  <% if obj[:rarity] == 2 || obj[:rarity] == 6 %>
+    <div class='item-type sox'> <%= @sox_types[rare[:itemclass] % 3] %>   </div>
   <% end %>
   <br/>
   <div class='item-sort'> Sort of item: Shield  </div>
@@ -12,25 +54,38 @@
   <div class='nk-gap-1'></div>
   <br/>
 
-  <div class='stats'> Phy.def.pwr  </div>
+  <div class='stats'> Phy.def.pwr
+    <% if @PhyDefPrecent.zero? %>
+     <%= stat[:pd_l] %>
+    <% elsif @PhyDefPrecent == 100 %>
+      <%= stat[:pd_u] %>
+    <% end %>
+    (+<%= @PhyDefPrecent %>%)
+  </div>
   <br/>
-  <div class='stats'> Mag.def.pwr  </div>
+  <div class='stats'> Mag.def.pwr (+<%= @MagDefPrecent %>%) </div>
   <br/>
-  <div class='stats'> Durability  </div>
+  <div class='stats'> Durability (+<%= @DurPrecent %>%) </div>
   <br/>
-  <div class='stats'> Blocking rate   </div>
+  <div class='stats'> Blocking rate (+<%= @BlockPrecent %>%)  </div>
   <br/>
-  <div class='stats'> Phy. reinforce  </div>
+  <div class='stats'> Phy. reinforce (+<%= @PhyReinPrecent %>%) </div>
   <br/>
-  <div class='stats'> Mag. reinforce  </div>
+  <div class='stats'> Mag. reinforce (+<%= @MagReinPrecent %>%) </div>
 
   <div class='nk-gap-1'></div>
   <br/>
-  <div class='stats'> Required level  </div>
+  <div class='stats'> Required level <%= obj[:reqlevel1] %> </div>
   <br/>
   <div class='stats'> Chinese  </div>
   <br/>
-  <div class='item-sort'> Max.no.of magic options:  </div>
+  <div class='item-sort'> Max.no.of magic options: <%= pluralize(rare[:maxmagicoptcount], 'Unit') %> </div>
   <br/>
-  <div class='elixir'> Able to use Advanced elixir  </div>
+  <div class='elixir'>
+    <% if @elixir.nil? %>
+      Able to use Advanced elixir
+    <% elsif @elixir != nil %>
+      Advanced Elixir used (+)
+    <% end %>
+  </div>
 </div>

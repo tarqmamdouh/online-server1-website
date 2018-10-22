@@ -1,3 +1,5 @@
+<% @blabla = 15 %>
+
 <div class='item-data'>
   <div class='item-name <% if obj[:rarity] == 2 || obj[:rarity] == 6 %> sox  <% end %> '> <i> <img src='https://i.imgur.com/XRQbRPq.png'> </i> <%= obj[:objname128] %>  <% if stat[:optlevel] != 0 %> (+ <%= stat[:optlevel] %>) <%end %> </div>
   <div class='nk-gap-1'></div>
@@ -14,7 +16,7 @@
   <div class='nk-gap-1'></div>
   <br/>
 
-  <div class='stats'> Phy.def.pwr  </div>
+  <div class='stats'> Phy.def.pwr <%= @blabla %>  </div>
   <br/>
   <div class='stats'> Mag.def.pwr  </div>
   <br/>

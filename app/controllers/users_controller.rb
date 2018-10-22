@@ -86,6 +86,7 @@ class UsersController < ApplicationController
       @gauntlet_stats = @DB[:_Items].where(:id64 => @gauntlet[:itemid]).all.last
       @gauntlet = @DB[:_RefObjCommon].where(:id => @gauntlet_stats[:refitemid]).all.last
       @gauntlet_rarity = @DB[:_RefObjItem].where(:id => @gauntlet[:link]).all.last
+
       #-----------------------------------------------------------------------------
 
       #-----------------------------------------------------------------------------
@@ -165,6 +166,7 @@ class UsersController < ApplicationController
       @sox_types[1] = "Seal of Star"
       @sox_types[2] = "Seal of Moon"
       @sox_types[0] = "Seal of Sun"
+
 
 
     end
