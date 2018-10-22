@@ -1,6 +1,6 @@
 <%
   variance = stat[:variance]
-  @elixir = @DB[:_BindingOptionWithItem].where(:nitemdbid => obj[:id])
+  @elixir = @DB[:_BindingOptionWithItem].where(:nitemdbid => obj[:id]).all.last
   @DurPrecent = 0
   @PhyReinPrecent = 0
   @MagReinPrecent = 0
@@ -56,22 +56,69 @@
 
   <div class='stats'> Phy.def.pwr
     <% if @PhyDefPrecent.zero? %>
-     <%= stat[:pd_l] %>
+     <%= rare[:pd_l].round(2) + (stat[:optlevel] * rare[:pdinc] ) %>
     <% elsif @PhyDefPrecent == 100 %>
-      <%= stat[:pd_u] %>
+      <%= rare[:pd_u].round(2) + (stat[:optlevel] * rare[:pdinc] ) %>
+    <% else %>
+      <%= ((rare[:pd_u].round(2) - rare[:pd_l].round(2)) * @PhyDefPrecent) + (stat[:optlevel] * rare[:pdinc] ) %>
     <% end %>
     (+<%= @PhyDefPrecent %>%)
   </div>
   <br/>
-  <div class='stats'> Mag.def.pwr (+<%= @MagDefPrecent %>%) </div>
+  <div class='stats'> Mag.def.pwr
+    <% if @MagDefPrecent.zero? %>
+      <%= rare[:md_l].round(2)  + (stat[:optlevel] * rare[:mdinc] ) %>
+    <% elsif @MagDefPrecent == 100 %>
+      <%= rare[:md_u].round(2) + (stat[:optlevel] * rare[:mdinc] ) %>
+    <% else %>
+      <%= ((rare[:md_u].round(2) - rare[:md_l].round(2)) * @MagDefPrecent) + (stat[:optlevel] * rare[:mdinc] ) %>
+    <% end %>
+    (+<%= @MagDefPrecent %>%)
+  </div>
   <br/>
-  <div class='stats'> Durability (+<%= @DurPrecent %>%) </div>
+  <div class='stats'> Durability
+    <% if @DurPrecent.zero? %>
+     <%= stat[:data] %>/<%= rare[:dur_l].round(0) %>
+    <% elsif @DurPrecent == 100 %>
+      <%= stat[:data] %>/<%= rare[:dur_u].round(0) %>
+    <% else %>
+      <%= stat[:data] %>/<%= (rare[:dur_u].round(0) - rare[:dur_l].round(0)) * @DurPrecent %>
+    <% end %>
+    (+<%= @DurPrecent %>%)
+  </div>
   <br/>
-  <div class='stats'> Blocking rate (+<%= @BlockPrecent %>%)  </div>
+  <div class='stats'> Blocking rate
+    <% if @BlockPrecent.zero? %>
+      <%= rare[:br_l].round(0) %>
+    <% elsif @BlockPrecent == 100 %>
+      <%= rare[:br_u].round(0) %>
+    <% else %>
+      <%= (rare[:br_u].round(0) - rare[:br_l].round(0)) * @BlockPrecent %>
+    <% end %>
+    (+<%= @BlockPrecent %>%)
+  </div>
   <br/>
-  <div class='stats'> Phy. reinforce (+<%= @PhyReinPrecent %>%) </div>
+  <div class='stats'> Phy. reinforce
+    <% if @PhyReinPrecent.zero? %>
+      <%= rare[:pdstr_l].round(2) / 10 %> %
+    <% elsif @PhyReinPrecent == 100 %>
+      <%= rare[:pdstr_u].round(2) / 10 %> %
+    <% else %>
+      <%= (rare[:pdstr_u].round(2) - rare[:pdstr_l].round(2)) * @PhyReinPrecent / 10 %> %
+    <% end %>
+    (+<%= @PhyReinPrecent %>%)
+ </div>
   <br/>
-  <div class='stats'> Mag. reinforce (+<%= @MagReinPrecent %>%) </div>
+  <div class='stats'> Mag. reinforce
+    <% if @MagReinPrecent.zero? %>
+      <%= rare[:mdint_l].round(2) / 10 %> %
+    <% elsif @MagReinPrecent == 100 %>
+      <%= rare[:mdint_u].round(2) / 10 %> %
+    <% else %>
+      <%= (rare[:mdint_u].round(2) - rare[:mdint_l].round(2)) * @MagReinPrecent / 10 %> %
+    <% end %>
+    (+<%= @MagReinPrecent %>%)
+  </div>
 
   <div class='nk-gap-1'></div>
   <br/>
@@ -85,7 +132,7 @@
     <% if @elixir.nil? %>
       Able to use Advanced elixir
     <% elsif @elixir != nil %>
-      Advanced Elixir used (+)
+      Advanced Elixir used (+ <%= @elixir[:noptvalue] %>)
     <% end %>
   </div>
 </div>
