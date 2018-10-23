@@ -1,0 +1,88 @@
+<%
+    paramsList = []
+
+    if stat[:magparam1] != nil && stat[:magparam1] != 0
+      paramsList << stat[:magparam1]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam2] != nil && stat[:magparam2] != 0
+      paramsList << stat[:magparam2]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam3] != nil && stat[:magparam3] != 0
+      paramsList << stat[:magparam3]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam4] != nil && stat[:magparam4] != 0
+      paramsList << stat[:magparam4]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam5] != nil && stat[:magparam5] != 0
+      paramsList << stat[:magparam5]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam6] != nil && stat[:magparam6] != 0
+      paramsList << stat[:magparam6]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam7] != nil && stat[:magparam7] != 0
+      paramsList << stat[:magparam7]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam8] != nil && stat[:magparam8] != 0
+      paramsList << stat[:magparam8]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam9] != nil && stat[:magparam9] != 0
+      paramsList << stat[:magparam9]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam10] != nil && stat[:magparam10] != 0
+      paramsList << stat[:magparam10]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam11] != nil && stat[:magparam11] != 0
+      paramsList << stat[:magparam11]
+    end
+    #---------------------------------------------------
+
+    if stat[:magparam12] != nil && stat[:magparam12] != 0
+      paramsList << stat[:magparam12]
+    end
+    #---------------------------------------------------
+
+
+
+
+%>
+
+<% paramsList.each do |param|  %>
+
+<%
+  hexval = param.to_s(16)
+  @value = (hexval[0..(hexval/2)])
+  @value = @value.tr('0','')
+  @value = @value.to_i(16)
+  @ID = (hexval[(hexval.length/2)..(hexval.length)])
+  @ID = @ID.tr('0','')
+  @ID = @ID.to_i(16)
+  @string = @DB[:_RefMagicOpt].where(:ID => @ID).all.last
+  @string = @DB[:_RefObjShit].where(:ShitName => @string[:moptname128]).all.last
+%>
+
+  <div class='blues'>
+    <%= @string %> <%= @value %> Increase
+  </div>
+  <br/>
+
+<% end %>

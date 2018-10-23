@@ -45,6 +45,7 @@
 }
 .item-name{
     font-weight: 800;
+    float:left;
 }
 .item-sort{
     font-weight: 400;
@@ -71,5 +72,12 @@
 }
 .elixir
 {
-font-weight: 400;
+    font-weight: 400;
+    float:left;
+}
+
+.blues
+{
+    color: #21bbdd;
+    float: left;
 }

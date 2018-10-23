@@ -1,3 +1,48 @@
+<%
+  variance = stat[:variance]
+  @elixir = @DB[:_BindingOptionWithItem].where(:nitemdbid => obj[:id]).all.last
+  @DurPrecent = 0
+  @PhyReinPrecent = 0
+  @MagReinPrecent = 0
+  @AttackRatePrecent = 0
+  @PhyAtkPrecent = 0
+  @MagAtkPrecent = 0
+  @CriticalPercent = 0
+
+  while variance > 0
+
+    tempvariance = variance
+    i = 0
+
+    while tempvariance >= 32
+      i = i + 1
+      tempvariance = tempvariance / 32
+    end
+
+    case i
+    when 0
+      @DurPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 1
+      @PhyReinPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 2
+      @MagReinPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 3
+      @AttackRatePrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 4
+      @PhyAtkPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 5
+      @MagAtkPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 6
+      @CriticalPercent = (100.to_d() /31.to_d()) * tempvariance
+    end
+
+    tempvariance = tempvariance * 32**i
+    variance = variance - tempvariance
+
+  end
+
+%>
+
 <div class='item-data'>
   <div class='item-name <% if obj[:rarity] == 2 || obj[:rarity] == 6 %> sox  <% end %> '> <i> <img src='https://i.imgur.com/XRQbRPq.png'> </i> <%= obj[:objname128] %> <% if stat[:optlevel] != 0 %> (+ <%= stat[:optlevel] %>) <%end %> </div>
   <div class='nk-gap-1'></div>
@@ -12,29 +57,94 @@
   <div class='nk-gap-1'></div>
   <br/>
 
-  <div class='stats'> Phy.atk.pwr  </div>
+  <div class='stats' style='float:left;'> Phy.atk.pwr
+    <% if @PhyAtkPrecent.zero? %>
+      <%= (rare[:pattackmin_l] + (stat[:optlevel] * rare[:pattackinc] )).round(2) %> ~ <%= (rare[:pattackmax_l] + (stat[:optlevel] * rare[:pattackinc] )).round(2) %>
+    <% elsif @PhyAtkPrecent == 100 %>
+      <%= (rare[:pattackmin_u] + (stat[:optlevel] * rare[:pattackinc] )).round(2) %> ~ <%= (rare[:pattackmax_u] + (stat[:optlevel] * rare[:pattackinc] )).round(2) %>
+    <% else %>
+      <%= (((rare[:pattackmin_u] - rare[:pattackmin_l]) * @PhyAtkPrecent) + (stat[:optlevel] * rare[:pattackinc] )).round(2) %> ~ <%= (((rare[:pattackmax_u] - rare[:pattackmax_l]) * @PhyAtkPrecent) + (stat[:optlevel] * rare[:pattackinc] )).round(2) %>
+    <% end %>
+    (+<%= @PhyAtkPrecent %>%)
+  </div>
   <br/>
-  <div class='stats'> Mag.atk.pwr  </div>
+  <div class='stats' style='float:left;'> Mag.atk.pwr
+    <% if @MagAtkPrecent.zero? %>
+      <%= (rare[:mattackmin_l] + (stat[:optlevel] * rare[:mattackinc] )).round(2) %> ~ <%= (rare[:mattackmax_l] + (stat[:optlevel] * rare[:mattackinc] )).round(2) %>
+    <% elsif @MagAtkPrecent == 100 %>
+      <%= (rare[:mattackmin_u] + (stat[:optlevel] * rare[:mattackinc] )).round(2) %> ~ <%= (rare[:mattackmax_u] + (stat[:optlevel] * rare[:mattackinc] )).round(2) %>
+    <% else %>
+      <%= (((rare[:mattackmin_u] - rare[:mattackmin_l]) * @MagAtkPrecent) + (stat[:optlevel] * rare[:mattackinc] )).round(2) %> ~ <%= (((rare[:mattackmax_u] - rare[:mattackmax_l]) * @MagAtkPrecent) + (stat[:optlevel] * rare[:mattackinc] )).round(2) %>
+    <% end %>
+    (+<%= @MagAtkPrecent %>%)
+  </div>
   <br/>
-  <div class='stats'> Durability  </div>
+  <div class='stats'> Durability
+    <% if @DurPrecent.zero? %>
+      <%= stat[:data] %>/<%= rare[:dur_l].round(0) %>
+    <% elsif @DurPrecent == 100 %>
+      <%= stat[:data] %>/<%= rare[:dur_u].round(0) %>
+    <% else %>
+      <%= stat[:data] %>/<%= (rare[:dur_u].round(0) - rare[:dur_l].round(0)) * @DurPrecent %>
+    <% end %>
+    (+<%= @DurPrecent %>%)
+  </div>
   <br/>
-  <div class='stats'> Attack distance  </div>
+  <div class='stats'> Attack distance
+     <%= (rare[:range] / 10).to_f %> m
+  </div>
   <br/>
-  <div class='stats'> Attack rate  </div>
+  <div class='stats'> Attack rate
+  <% if @AttackRatePrecent.zero? %>
+    <%= rare[:hr_l].round(2)  + (stat[:optlevel] * rare[:hrinc] ) %>
+  <% elsif @AttackRatePrecent == 100 %>
+    <%= rare[:hr_u].round(2) + (stat[:optlevel] * rare[:hrinc] ) %>
+  <% else %>
+    <%= ((rare[:hr_u].round(2) - rare[:hr_l].round(2)) * @AttackRatePrecent) + (stat[:optlevel] * rare[:hrinc] ) %>
+  <% end %>
+  (+<%= @AttackRatePrecent %>%)
+  </div>
   <br/>
-  <div class='stats'> Critical  </div>
+  <div class='stats'> Critical
+    <% if @CriticalPercent.zero? %>
+      <%= rare[:chr_l].round(2) %>
+    <% elsif @CriticalPercent == 100 %>
+      <%= rare[:chr_u].round(2)  %>
+    <% else %>
+      <%= ((rare[:chr_u].round(2) - rare[:chr_l].round(2)) * @CriticalPercent)  %>
+    <% end %>
+    (+<%= @CriticalPercent %>%)
+  </div>
   <br/>
-  <div class='stats'> Phy. reinforce  </div>
+  <div class='stats' style='float:left;'> Phy. reinforce
+    <% if @PhyReinPrecent.zero? %>
+      <%= (rare[:pastrmin_l]).round(2) / 10 %> % ~ <%= (rare[:pastrmax_l] ).round(2) / 10 %> %
+    <% elsif @PhyReinPrecent == 100 %>
+      <%= (rare[:pastrmin_u]).round(2) / 10 %> % ~ <%= (rare[:pastrmax_u]).round(2) / 10 %> %
+    <% else %>
+      <%= (((rare[:pastrmin_u] - rare[:pastrmin_l]) * @PhyReinPrecent)).round(2) / 10 %> % ~ <%= (((rare[:pastrmax_u] - rare[:pastrmax_l]) * @PhyReinPrecent) ).round(2) / 10 %> %
+    <% end %>
+    (+<%= @PhyReinPrecent %>%)
+  </div>
   <br/>
-  <div class='stats'> Mag. reinforce  </div>
-
+  <div class='stats' style='float:left!important;'> Mag. reinforce
+    <% if @MagReinPrecent.zero? %>
+      <%= (rare[:maint_min_l]).round(2) / 10 %>%~ <%= (rare[:maint_max_u] ).round(2) / 10 %>%
+    <% elsif @MagReinPrecent == 100 %>
+      <%= (rare[:maint_min_u]).round(2) / 10 %>%~ <%= (rare[:maint_max_u]).round(2) / 10 %>%
+    <% else %>
+      <%= (((rare[:maint_min_u] - rare[:maint_min_l]) * @MagReinPrecent)).round(2) / 10 %>% ~ <%= (((rare[:maint_max_u] - rare[:maint_max_u]) * @MagReinPrecent) ).round(2) / 10 %>%
+    <% end %> (+<%= @MagReinPrecent %>%)
+  </div>
+  <br/>
   <div class='nk-gap-1'></div>
   <br/>
-  <div class='stats'> Require level  </div>
+  <div class='stats'> Require level  <%= obj[:reqlevel1] %>  </div>
   <br/>
   <div class='stats'> Chinese  </div>
   <br/>
-  <div class='item-sort'> Max.no.of magic options:  </div>
+  <div class='item-sort'> Max.no.of magic options: <%= pluralize(rare[:maxmagicoptcount], 'Unit') %> </div>
   <br/>
+  <%= render 'blueStates', stat: stat %>
   <div class='elixir'> Able to use Advanced elixir  </div>
 </div>
