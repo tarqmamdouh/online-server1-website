@@ -1,3 +1,33 @@
+<%
+  variance = stat[:variance]
+  @elixir = @DB[:_BindingOptionWithItem].where(:nitemdbid => obj[:id]).all.last
+  @PhyAbsPrecent = 0
+  @MagAbsPrecent = 0
+
+  while variance > 0
+
+    tempvariance = variance
+    i = 0
+
+    while tempvariance >= 32
+      i = i + 1
+      tempvariance = tempvariance / 32
+    end
+
+    case i
+    when 0
+      @PhyAbsPrecent = (100.to_d() /31.to_d()) * tempvariance
+    when 1
+      @MagAbsPrecent = (100.to_d() /31.to_d()) * tempvariance
+    end
+
+    tempvariance = tempvariance * 32**i
+    variance = variance - tempvariance
+
+  end
+
+%>
+
 <div class='item-data'>
   <div class='item-name <% if obj[:rarity] == 2 || obj[:rarity] == 6 %> sox  <% end %> '> <i> <img src='https://i.imgur.com/XRQbRPq.png'> </i> <%= obj[:objname128]  %> <% if stat[:optlevel] != 0 %> (+ <%= stat[:optlevel] %>) <%end %> </div>
   <div class='nk-gap-1'></div>
@@ -11,17 +41,45 @@
   <div class='item-sort'> Degree: <%= (rare[:itemclass] / 3.to_f).ceil() %> </div>
   <div class='nk-gap-1'></div>
   <br/>
-  <div class='stats'> Phy. absorption  </div>
+
+  <div class='stats'> Phy. absorption
+    <% if @PhyAbsPrecent.zero? %>
+      <%= (rare[:par_l] + (stat[:optlevel] * rare[:parinc] )).round(1) %>
+    <% elsif @PhyAbsPrecent == 100 %>
+      <%= (rare[:par_u].round(2) + (stat[:optlevel] * rare[:parinc] )).round(1) %>
+    <% else %>
+      <%= (((rare[:par_u].round(2) - rare[:par_l].round(2)) * @PhyAbsPrecent) + (stat[:optlevel] * rare[:parinc] )).round(1) %>
+    <% end %>
+    (+<%= @PhyAbsPrecent %>%)
+  </div>
+
   <br/>
-  <div class='stats'> Mag. absorption  </div>
+
+  <div class='stats'> Mag. absorption
+    <% if @MagAbsPrecent.zero? %>
+      <%= (rare[:mar_l] + (stat[:optlevel] * rare[:marinc] )).round(1) %>
+    <% elsif @MagAbsPrecent == 100 %>
+      <%= (rare[:mar_u].round(2) + (stat[:optlevel] * rare[:marinc] )).round(1) %>
+    <% else %>
+      <%= (((rare[:mar_u].round(2) - rare[:mar_l].round(2)) * @MagAbsPrecent) + (stat[:optlevel] * rare[:marinc] )).round(1) %>
+    <% end %>
+    (+<%= @MagAbsPrecent %>%)
+  </div>
 
   <div class='nk-gap-1'></div>
   <br/>
-  <div class='stats'> Required level  </div>
+  <div class='stats'> Required level <%= obj[:reqlevel1] %> </div>
   <br/>
   <div class='stats'> Chinese  </div>
   <br/>
-  <div class='item-sort'> Max.no.of magic options:  </div>
+  <div class='item-sort'> Max.no.of magic options: <%= pluralize(rare[:maxmagicoptcount], 'Unit') %> </div>
   <br/>
-  <div class='elixir'> Able to use Advanced elixir  </div>
+  <%= render 'blueStates', stat: stat %>
+  <div class='elixir'>
+    <% if @elixir.nil? %>
+      Able to use Advanced elixir
+    <% elsif @elixir != nil %>
+      Advanced Elixir used (+ <%= @elixir[:noptvalue] %>)
+    <% end %>
+  </div>
 </div>
