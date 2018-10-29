@@ -25,6 +25,8 @@ class UsersController < ApplicationController
       end
 
       inventory = @DB[:_Inventory].where(:charid => @info[:charid])
+      inventoryforavatar = @DB[:_InventoryForAvatar].where(:charid => @info[:charid])
+
       # 0: EQUIP_SLOT_HELM
       # 1: EQUIP_SLOT_MAIL,
       # 2: EQUIP_SLOT_SHOULDERGUARD,
@@ -137,6 +139,61 @@ class UsersController < ApplicationController
       @rring = @DB[:_RefObjCommon].where(:id => @rring_stats[:refitemid]).all.last
       @rring_rarity = @DB[:_RefObjItem].where(:id => @rring[:link]).all.last
       #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @job = inventory.where(:slot => 8).all.last
+      @job_id = @job[:itemid]
+      @job_stats = @DB[:_Items].where(:id64 => @job[:itemid]).all.last
+      @job = @DB[:_RefObjCommon].where(:id => @job_stats[:refitemid]).all.last
+      @job_rarity = @DB[:_RefObjItem].where(:id => @job[:link]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @slot1 = inventoryforavatar.where(:slot => 0).all.last
+      @slot1_id = @slot1[:itemid]
+      @slot1_stats = @DB[:_Items].where(:id64 => @slot1[:itemid]).all.last
+      @slot1 = @DB[:_RefObjCommon].where(:id => @slot1_stats[:refitemid]).all.last
+      @slot1_rarity = @DB[:_RefObjItem].where(:id => @slot1[:link]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @slot2 = inventoryforavatar.where(:slot => 1).all.last
+      @slot2_id = @slot2[:itemid]
+      @slot2_stats = @DB[:_Items].where(:id64 => @slot2[:itemid]).all.last
+      @slot2 = @DB[:_RefObjCommon].where(:id => @slot2_stats[:refitemid]).all.last
+      @slot2_rarity = @DB[:_RefObjItem].where(:id => @slot2[:link]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @slot3 = inventoryforavatar.where(:slot => 2).all.last
+      @slot3_id = @slot3[:itemid]
+      @slot3_stats = @DB[:_Items].where(:id64 => @slot3[:itemid]).all.last
+      @slot3 = @DB[:_RefObjCommon].where(:id => @slot3_stats[:refitemid]).all.last
+      @slot3_rarity = @DB[:_RefObjItem].where(:id => @slot3[:link]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @slot4 = inventoryforavatar.where(:slot => 3).all.last
+      @slot4_id = @slot4[:itemid]
+      @slot4_stats = @DB[:_Items].where(:id64 => @slot4[:itemid]).all.last
+      @slot4 = @DB[:_RefObjCommon].where(:id => @slot4_stats[:refitemid]).all.last
+      @slot4_rarity = @DB[:_RefObjItem].where(:id => @slot4[:link]).all.last
+      #-----------------------------------------------------------------------------
+
+      #-----------------------------------------------------------------------------
+      @devil = inventoryforavatar.where(:slot => 4).all.last
+      @devil_id = @devil[:itemid]
+      @devil_stats = @DB[:_Items].where(:id64 => @devil[:itemid]).all.last
+      @devil = @DB[:_RefObjCommon].where(:id => @devil_stats[:refitemid]).all.last
+      @devil_rarity = @DB[:_RefObjItem].where(:id => @devil[:link]).all.last
+      #-----------------------------------------------------------------------------
+
+      @slots = []
+      @slots << @slot1
+      @slots << @slot2
+      @slots << @slot3
+      @slots << @slot4
+
       @sort_of_weapon = []
       @sort_of_weapon[2] = "Sword"
       @sort_of_weapon[3] = "Blade"
@@ -166,9 +223,12 @@ class UsersController < ApplicationController
       @sox_types[1] = "Seal of Star"
       @sox_types[2] = "Seal of Moon"
       @sox_types[0] = "Seal of Sun"
+      #--------------------------- (( Logs )) ----------------------------#
 
-
-
+      @DBB = SQL.connect_shardlog
+      @lastUniqueKills = @DBB[:_LogEventUnique].where(:charid => @info[:charid], :killtype => 0).all.last(10).reverse
+      @lastPVPKills = @DBB[:_LogEventCombat_PVP].where(:charid => @info[:charid], :deadcharid => @info[:charid] ).all.last(10).reverse
+      @lastJOBKills = @DBB[:_LogEventCombat_JOB].where(:charid => @info[:charid], :deadcharid => @info[:charid] ).all.last(10).reverse
     end
   end
 

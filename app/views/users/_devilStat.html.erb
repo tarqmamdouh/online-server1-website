@@ -1,0 +1,37 @@
+<% @Description = @DB[:_RefAvatarDesc].where(:codename => obj[:descstrid128]).all.last %>
+<div class='item-data'>
+  <div class='item-name'> <i> <img src='https://i.imgur.com/XRQbRPq.png'> </i> <%= obj[:objname128]  %> <% if stat[:optlevel] != 0 %> (+ <%= stat[:optlevel] %>) <%end %> </div>
+  <div class='nk-gap-1'></div>
+  <br/>
+
+  <div class='item-sort'> Sort of item: Devil's Spirit </div>
+  <br/>
+
+  <div class='stats text-left' >
+    <%= @Description[:description] if !@Description.nil? %>
+  </div>
+  <br/>
+  <br>
+  <div class='nk-gap-2'></div>
+  <br/>
+
+
+  <div class='stats'>
+    <% if rare[:reqgender].zero? %>
+      Female
+    <% else %>
+      Male
+    <% end %>
+  </div>
+  <br/>
+
+  <div class='item-sort bold'> Awaken period. </div>
+  <br/>
+
+  <div class='stats'>
+    <%= stat[:data] %>
+  </div>
+
+  <%= render 'blueStates', stat: stat %>
+
+</div>

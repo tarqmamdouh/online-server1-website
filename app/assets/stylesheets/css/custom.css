@@ -78,6 +78,19 @@
 
 .blues
 {
+    font-size: 14px;
+    font-weight: 800;
     color: #21bbdd;
     float: left;
+}
+
+.nk-tabs .nav-tabs .nav-link.active, .nk-tabs .nav-tabs .nav-link.active:focus, .nk-tabs .nav-tabs .nav-link.active:hover
+{
+    border-bottom: 2px solid;
+    color:#e08821;
+    fill: #e08821;
+}
+
+.zee-svg{
+    fill:currentColor;
 }

@@ -70,7 +70,7 @@
 
 <%
   hexval = param.to_s(16)
-  @value = (hexval[0..(hexval/2)])
+  @value = (hexval[0..(hexval.length/2)])
   @value = @value.tr('0','')
   @value = @value.to_i(16)
   @ID = (hexval[(hexval.length/2)..(hexval.length)])
@@ -81,7 +81,7 @@
 %>
 
   <div class='blues'>
-    <%= @string %> <%= @value %> Increase
+    <%= @string[:string] %> <%= @value %> Increase
   </div>
   <br/>
 

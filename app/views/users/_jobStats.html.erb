@@ -1,0 +1,55 @@
+<div class='item-data'>
+  <div class='item-name'> <i> <img src='https://i.imgur.com/XRQbRPq.png'> </i> <%= obj[:objname128]  %> <% if stat[:optlevel] != 0 %> (+ <%= stat[:optlevel] %>) <%end %> </div>
+  <div class='nk-gap-1'></div>
+  <br/>
+  <% if obj[:typeid4] == 1 || obj[:typeid4] == 6  %>
+    <div class='item-sort'> Sort of item: Trader suit </div>
+    <br/>
+    <div class='stats text-left' >
+      A flag worn with white band that beginner trader uses to indicate merchant camp they're in
+    </div>
+    <br/>
+  <% elsif obj[:typeid4] == 3 || obj[:typeid4] == 7 %>
+    <div class='item-sort'> Sort of item: Hunter suit </div>
+    <br/>
+    <div class='stats text-left'>
+      A half-circled shaped tablet encrusted with 3 spokes that indicate warrior status that just began hunting
+    </div>
+    <br/>
+  <% else %>
+    <div class='item-sort'> Sort of item: Thief suit </div>
+    <br/>
+    <div class='stats text-left'>
+      A Black full-body dress drawn with evil figure that elementary thieves use to hide their mistake
+    </div>
+    <br/>
+  <% end %>
+  <div class='nk-gap-1'></div>
+  <br/>
+
+  <div class='item-sort'> Max.no.of magic options: <%= pluralize(rare[:maxmagicoptcount], 'Unit') %> </div>
+  <br/>
+
+  <div class='nk-gap-1'></div>
+  <br/>
+
+  <div class='stats'> Required level <%= obj[:reqlevel1] %> </div>
+  <br/>
+
+
+  <div class='stats'>
+    <% if rare[:reqgender].zero? %>
+      Female
+    <% else %>
+      Male
+    <% end %>
+  </div>
+  <br/>
+
+  <div class='stats'> Chinese  </div>
+  <br/>
+
+  <%= render 'blueStates', stat: stat %>
+
+
+</div>
