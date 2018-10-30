@@ -226,9 +226,11 @@ class UsersController < ApplicationController
       #--------------------------- (( Logs )) ----------------------------#
 
       @DBB = SQL.connect_shardlog
-      @lastUniqueKills = @DBB[:_LogEventUnique].where(:charid => @info[:charid], :killtype => 0).all.last(10).reverse
+      @lastUniqueKills = @DBB[:_LogEventUnique].where(:charid => @info[:charid]).all.last(10).reverse
       @lastPVPKills = @DBB[:_LogEventCombat_PVP].where(:charid => @info[:charid], :deadcharid => @info[:charid] ).all.last(10).reverse
       @lastJOBKills = @DBB[:_LogEventCombat_JOB].where(:charid => @info[:charid], :deadcharid => @info[:charid] ).all.last(10).reverse
+      @CharTitles = @DB[:_CharHwan].where(:charid => @info[:charid]).all
+
     end
   end
 
