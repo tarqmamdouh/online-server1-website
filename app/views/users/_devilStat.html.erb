@@ -1,6 +1,6 @@
 <% @Description = @DB[:_RefAvatarDesc].where(:codename => obj[:descstrid128]).all.last %>
 <div class='item-data'>
-  <div class='item-name'> <i> <img src='https://i.imgur.com/XRQbRPq.png'> </i> <%= obj[:objname128]  %> <% if stat[:optlevel] != 0 %> (+ <%= stat[:optlevel] %>) <%end %> </div>
+  <div class='item-name text-left'> <i> <img src='https://i.imgur.com/XRQbRPq.png'> </i> <%= obj[:objname128]  %> <% if stat[:optlevel] != 0 %> (+ <%= stat[:optlevel] %>) <%end %> </div>
   <div class='nk-gap-1'></div>
   <br/>
 

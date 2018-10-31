@@ -9435,7 +9435,7 @@ select.orderby {
 
 /* Footer */
 #footer-three {
-    padding: 100px 0 30px;
+    padding: 50px 0 30px;
     background-size: cover;
     position: relative;
 }
@@ -9443,7 +9443,7 @@ select.orderby {
 #footer-three .copy-right {
     border: 0;
     padding: 0;
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 .footer-about .footer-social-link {
