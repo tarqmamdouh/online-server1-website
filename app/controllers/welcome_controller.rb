@@ -36,6 +36,7 @@ class WelcomeController < ApplicationController
         @uniques << unique[:objectname128]
     end
 
+   @onlineplayerscount = @DB[:_OnlinePlayerCount].all.last
    # @charid
    # @charname=
    # @uniquename= @lastkill[:ObjectName]

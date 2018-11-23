@@ -518,7 +518,7 @@ Additional Classes:
 
 
 
-  <!--  <!-- START: Honors -->
+  <!--   START: Honors -->
   <!--  <div class="nk-box text-center text-white bg-dark-1">-->
   <!--    <div class="nk-gap-4"></div>-->
   <!--    <div class="container">-->
@@ -551,7 +551,7 @@ Additional Classes:
   <!--    </div>-->
   <!--    <div class="nk-gap-4"></div>-->
   <!--  </div>-->
-  <!--  <!-- END: Honors -->
+  <!--   END: Honors -->
 
 
   <!-- START: Honors Not Logged in -->
@@ -617,7 +617,7 @@ Additional Classes:
     <div class="row">
       <div class="col-lg-3 ">
         <!-- Get Char skin -->
-        <img src="../assets/profile/chars_full/<%= @info[:refobjid] %>.png" style=""/>
+        <img src="../assets/profile/chars_full/<%= @info[:refobjid] %>.png" style="margin-left: -30%;"/>
         <!-- -->
       </div>
       <style>
@@ -988,7 +988,7 @@ Additional Classes:
         <div class="row">
           <div class="col-lg-3 offset-md-1">
             <div class="nk-gap-1"></div>
-            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @weapon_id.zero? %> <%  else %> <span class='equ-tooltip'> 
+            <div class="parent zee-weapon-size" data-toggle="tooltip" title=" <% if @weapon_id.zero? %> <%  else %> <span class='equ-tooltip'>
               <%= render 'weaponStat', obj:@weapon , stat:@weapon_stats , rare:@weapon_rarity %> </span>  <% end %> "
                  data-html="true" >
 
