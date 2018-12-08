@@ -1,6 +1,6 @@
 require "SQL"
 class WelcomeController < ApplicationController
-  skip_before_action :authenticate_user! , only: [:index,:unconfirmed , :confirmed, :give_time, :download]
+  #skip_before_action :authenticate_user! , only: [:index,:unconfirmed , :confirmed, :give_time, :download]
   before_action :require_admin , only: [:admin, :pins]
   def index
       @a = Category.find_by_name("Announcements")
