@@ -39,7 +39,7 @@
             <% if user_signed_in? %>
               <ul class="user-link nav justify-content-end">
                 <%#= link_to , users_path(@current_user), "test<span>*</span>".html_safe %>
-                <li><a href="<%= user_preferences_path %>"><i class="fa fa-user"></i> <%= current_user.username %></a></li>
+                <li><a href="<%= user_preferences_path %>"><i class="fa fa-user"></i> <%= current_user.name %></a></li>
 
                 <% if current_user.seller? %>
                   <li><a href="#"><i class="fa  fa-usd"></i> <%= current_user.pins %></a></li>
