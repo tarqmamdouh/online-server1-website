@@ -16,7 +16,7 @@ The website developed in 1 month with expecting to go live with 7000 users.
 ![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/pp.png)
 *Login Page*
 
-![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture9.PNG)
+![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture3.PNG)
 *Home page - news sections*
 
 ![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture2.PNG)
