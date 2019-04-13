@@ -6,15 +6,35 @@ This application also connects to MSSQL database (Game Database)
 
 The website developed in 1 month with expecting to go live with 7000 users.
 
-![alt text](https://agora-file-storage-prod.s3-us-west-1.amazonaws.com/profile/portfolio/attachment/7184380891367839601?response-content-disposition=inline%3B%20filename%3D%22Capture6.PNG%22%3B%20filename%2A%3Dutf-8%27%27Capture6.PNG&X-Amz-Security-Token=FQoGZXIvYXdzEMX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDN1Tcvm10hwrnT74DiK3AwqoY7iX%2FhUAhF608FsdnMlDyg%2BH85XT%2FwwMVaaIn5faHXXYJR5H3mDCXxa2u9Qep9QZzll1QG4j4wJqMGfLieAdeB9hSA8SRUPySsvg%2BnuNRQJtw1bn0rFC9KLYFuC30DYp6lqKnGadHmk9VwlLZyDqllZQqYlVBos88qpaLNGPgHQy%2Fk30L8WICUZXR0yCjdb8EOE%2FP4NgGB7MRMi0dZYtvPJlSBEpYnR3qQH925qW3tFd7mSASRaCTjXqa0aa5iA88uAMxUTcV9xTZUd5f3Bw75VTDhPGTZvTmAUhifrdQdBU9KZ2Pu1LM8cTB8TBjHUd4a%2BOk8w%2FwkXsc5yeJ47r3bntPOlU4ecakeUHzUDrOcpvfE7nk1D4PxcDqbCQgQ4qGN%2F%2BggESZ%2FD49%2FCkBZjY8fTFOc380XwBCMg9gsLapzctPnPOgxXvtueREqpPJcCMk%2FNhLnAvX5FowUyytEwWADSWAHL%2FG4l00BMohlF9pN6kLasbLdJJvrZsCC%2FJ%2FLKmACv5f72fBE3rG%2Fu3gd4Df2i3BC9SBdboY1jRJQ%2FK66yb1i%2B5uEmG51OA3YZFveOY4A64uDMo2vCf4wU%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190216T132307Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=ASIA2YR6PYW5YOJL27GX%2F20190216%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Signature=99d7e59d60102f0532b792fab0b691e1c0f7cc0c0bec0f07cd1ea842509d6324)
+![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture13.PNG)
+*Registration Page*
 
 
+![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture15.PNG)
+*E-mail Verification*
 
-![alt text](https://agora-file-storage-prod.s3-us-west-1.amazonaws.com/profile/portfolio/attachment/1618668270456939601?response-content-disposition=inline%3B%20filename%3D%22Capture13.PNG%22%3B%20filename%2A%3Dutf-8%27%27Capture13.PNG&X-Amz-Security-Token=FQoGZXIvYXdzEMf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDN3LuwZd2uA6uzWRniK3A3klGp%2FRielmULuPzlqwHwqQGmtLL4u32Yyo48yfr2mVAmOdlL%2F21bqPWGnhl3x%2BXiuCtK%2FAZqQFj92d4HSSGCqjrDXC0y%2BzV2QraSNK0WAuHOR1DrAyyKKfN4wXUD1zDurnhmczadopTsLX3CAatnAZmh9aNN9YqpIZkKcCibF%2BCxnN94Ge8I5adie0WOOvUdtxHBPR0%2BzIvXTbkQ1KFek%2FrPIUKUiLo2TINRPVnVsrL2UXEepcTyubX%2FxotrVbZV8VP6x2%2BVMGt%2BPexHcp%2FiwnL9wOhWoZgAoeyU90%2FFjfPQzFiUfwYKW2mrhRvcYCELNUY5s4Vy7VlliRzIUAUMzB%2BAxFiqTwdi5TJHHa8Gev1TFAuKdNOHRzmDzCpaW%2FMwQtT%2FHMH4YWA16dbU3%2F%2BZKrk0aP2wsWfpkR%2FMCATTozksIS0qrUU8eFtAtVYMmV5%2BM%2BIfTurO5RUVKmvuGqWf%2BVc9d6xPbsuhskE%2FNAESy5Ddp84n9g%2BMTBbU44k8l3VcUFkp4uJmzPcOiwtu%2BU94D5FBAbaX8jr5pe61rXjAQgd0vHVSHg3IKm9meufn6AykbDPHcAZq8oypqg4wU%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190216T133753Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=ASIA2YR6PYW5STFGEWPE%2F20190216%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Signature=fe16341ec7ab063fbf4cc2076a1014482022bea867166fe12a775e10096e9953)
+![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/pp.png)
+*Login Page*
 
-![alt text](https://agora-file-storage-prod.s3-us-west-1.amazonaws.com/profile/portfolio/attachment/5471595876014939601?response-content-disposition=inline%3B%20filename%3D%22Capture3.PNG%22%3B%20filename%2A%3Dutf-8%27%27Capture3.PNG&X-Amz-Security-Token=FQoGZXIvYXdzEMX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDN1Tcvm10hwrnT74DiK3AwqoY7iX%2FhUAhF608FsdnMlDyg%2BH85XT%2FwwMVaaIn5faHXXYJR5H3mDCXxa2u9Qep9QZzll1QG4j4wJqMGfLieAdeB9hSA8SRUPySsvg%2BnuNRQJtw1bn0rFC9KLYFuC30DYp6lqKnGadHmk9VwlLZyDqllZQqYlVBos88qpaLNGPgHQy%2Fk30L8WICUZXR0yCjdb8EOE%2FP4NgGB7MRMi0dZYtvPJlSBEpYnR3qQH925qW3tFd7mSASRaCTjXqa0aa5iA88uAMxUTcV9xTZUd5f3Bw75VTDhPGTZvTmAUhifrdQdBU9KZ2Pu1LM8cTB8TBjHUd4a%2BOk8w%2FwkXsc5yeJ47r3bntPOlU4ecakeUHzUDrOcpvfE7nk1D4PxcDqbCQgQ4qGN%2F%2BggESZ%2FD49%2FCkBZjY8fTFOc380XwBCMg9gsLapzctPnPOgxXvtueREqpPJcCMk%2FNhLnAvX5FowUyytEwWADSWAHL%2FG4l00BMohlF9pN6kLasbLdJJvrZsCC%2FJ%2FLKmACv5f72fBE3rG%2Fu3gd4Df2i3BC9SBdboY1jRJQ%2FK66yb1i%2B5uEmG51OA3YZFveOY4A64uDMo2vCf4wU%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190216T132311Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=ASIA2YR6PYW5YOJL27GX%2F20190216%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Signature=e31a3aba938f871584a4e94d5b01cbb770cca26465d071dfc06556254a725e82)
+![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture9.PNG)
+*Home page - news sections*
 
-![alt text](https://agora-file-storage-prod.s3-us-west-1.amazonaws.com/profile/portfolio/attachment/3958782994898939601?response-content-disposition=inline%3B%20filename%3D%22Capture15.PNG%22%3B%20filename%2A%3Dutf-8%27%27Capture15.PNG&X-Amz-Security-Token=FQoGZXIvYXdzEMf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDN3LuwZd2uA6uzWRniK3A3klGp%2FRielmULuPzlqwHwqQGmtLL4u32Yyo48yfr2mVAmOdlL%2F21bqPWGnhl3x%2BXiuCtK%2FAZqQFj92d4HSSGCqjrDXC0y%2BzV2QraSNK0WAuHOR1DrAyyKKfN4wXUD1zDurnhmczadopTsLX3CAatnAZmh9aNN9YqpIZkKcCibF%2BCxnN94Ge8I5adie0WOOvUdtxHBPR0%2BzIvXTbkQ1KFek%2FrPIUKUiLo2TINRPVnVsrL2UXEepcTyubX%2FxotrVbZV8VP6x2%2BVMGt%2BPexHcp%2FiwnL9wOhWoZgAoeyU90%2FFjfPQzFiUfwYKW2mrhRvcYCELNUY5s4Vy7VlliRzIUAUMzB%2BAxFiqTwdi5TJHHa8Gev1TFAuKdNOHRzmDzCpaW%2FMwQtT%2FHMH4YWA16dbU3%2F%2BZKrk0aP2wsWfpkR%2FMCATTozksIS0qrUU8eFtAtVYMmV5%2BM%2BIfTurO5RUVKmvuGqWf%2BVc9d6xPbsuhskE%2FNAESy5Ddp84n9g%2BMTBbU44k8l3VcUFkp4uJmzPcOiwtu%2BU94D5FBAbaX8jr5pe61rXjAQgd0vHVSHg3IKm9meufn6AykbDPHcAZq8oypqg4wU%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190216T133935Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=ASIA2YR6PYW5STFGEWPE%2F20190216%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Signature=4998c43e576c0d129c74b775c175a6e16b95148e7f99f588dd6426f872adfc1e)
+![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture2.PNG)
+*Home page - Games information and upcoming activities*
+
+
+![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture11.PNG)
+*Ticket submission*
+
+![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture10.PNG)
+*Players Ranking in certain module*
+
+![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture7.PNG)
+*News Listing*
+
+![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture8.PNG)
+*Download - The game is uploaded in Google cloud HDD*
+
 
 
 
