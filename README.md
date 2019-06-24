@@ -6,6 +6,8 @@ This application also connects to MSSQL database (Game Database)
 
 The website developed in 1 month with expecting to go live with 7000 users.
 
+This Project where fully developed by me and [Mostafa Abdelsalam](https://github.com/3bsalam)
+
 ![alt text](https://github.com/tarqmamdouh/online-server1-website/blob/master/images/Capture13.PNG)
 *Registration Page*
 
